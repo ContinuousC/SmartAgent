@@ -1,0 +1,2924 @@
+{
+    "Checks": {
+        "Azure_Virtual_Machine_SmartM": {
+            "Description": "Azure Virtual Machines are image service instances that provide on-demand and scalable computing resources with usage-based pricing. More broadly, a virtual machine behaves like a server: it is a computer within a computer that provides the user the same experience they would have on the host operating system itself.",
+            "MP": "Azure",
+            "Name": "Virtual Machine",
+            "Tables": [
+                "Azure_Virtual Machine_Microsoft.Compute/virtualMachines",
+                "Azure_Virtual Machine_Microsoft.ContainerService/managedClusters",
+                "Azure_Virtual Machine_Microsoft.Compute/virtualMachineScaleSets"
+            ]
+        }
+    },
+    "DataFields": {
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Consumed.Total.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Consumed.Total.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Remaining.Total.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Remaining.Total.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Bytes.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Bytes.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Operations/Sec.Total.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Operations/Sec.Total.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Bytes.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Bytes.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Operations/Sec.Total.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Operations/Sec.Total.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Inbound_Flows.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Inbound_Flows.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_In.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_In.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_Out.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_Out.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Outbound_Flows.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Outbound_Flows.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Per_Disk_QD.Total.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Per_Disk_QD.Total.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Percentage_CPU.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Percentage_CPU.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_Resource.None.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": true,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_Resource.None.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets_ResourceGroup.None.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+            "IsKey": true,
+            "Name": "Azure_Microsoft.Compute/virtualMachineScaleSets_ResourceGroup.None.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Bytes.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Bytes.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Operations/Sec.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Operations/Sec.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Bytes.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Bytes.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Operations/Sec.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Operations/Sec.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachines_Network_In.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachines_Network_In.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachines_Network_Out.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachines_Network_Out.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachines_Percentage_CPU.Average.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.Compute/virtualMachines_Percentage_CPU.Average.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachines_Resource.None.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+            "IsKey": true,
+            "Name": "Azure_Microsoft.Compute/virtualMachines_Resource.None.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.Compute/virtualMachines_ResourceGroup.None.": {
+            "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+            "IsKey": true,
+            "Name": "Azure_Microsoft.Compute/virtualMachines_ResourceGroup.None.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None.": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters.status2",
+            "IsKey": true,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters.status2",
+            "IsKey": true,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.NotReady": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters.status2",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.NotReady",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.Ready": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters.status2",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.Ready",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.unknown": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters.status2",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.unknown",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters_Resource.None.": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters",
+            "IsKey": true,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters_Resource.None.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters",
+            "IsKey": true,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_cpu_cores.Total.": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_cpu_cores.Total.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_memory_bytes.Total.": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_memory_bytes.Total.",
+            "Protocol": "Azure"
+        },
+        "Azure_Microsoft.ContainerService/managedClusters_kube_pod_status_ready.Total.": {
+            "DataTable": "Azure_Microsoft.ContainerService/managedClusters",
+            "IsKey": false,
+            "Name": "Azure_Microsoft.ContainerService/managedClusters_kube_pod_status_ready.Total.",
+            "Protocol": "Azure"
+        }
+    },
+    "DataTableFields": {
+        "Azure_Microsoft.Compute/virtualMachineScaleSets": [
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Resource.None.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_Out.Average.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Percentage_CPU.Average.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Operations/Sec.Total.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_ResourceGroup.None.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Remaining.Total.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Operations/Sec.Total.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Bytes.Average.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Consumed.Total.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Inbound_Flows.Average.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Per_Disk_QD.Total.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_In.Average.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Bytes.Average.",
+            "Azure_Microsoft.Compute/virtualMachineScaleSets_Outbound_Flows.Average."
+        ],
+        "Azure_Microsoft.Compute/virtualMachines": [
+            "Azure_Microsoft.Compute/virtualMachines_Percentage_CPU.Average.",
+            "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Bytes.Average.",
+            "Azure_Microsoft.Compute/virtualMachines_ResourceGroup.None.",
+            "Azure_Microsoft.Compute/virtualMachines_Network_Out.Average.",
+            "Azure_Microsoft.Compute/virtualMachines_Resource.None.",
+            "Azure_Microsoft.Compute/virtualMachines_Network_In.Average.",
+            "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Bytes.Average.",
+            "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Operations/Sec.Average.",
+            "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Operations/Sec.Average."
+        ],
+        "Azure_Microsoft.ContainerService/managedClusters": [
+            "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_memory_bytes.Total.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.",
+            "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.NotReady",
+            "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_cpu_cores.Total.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.unknown",
+            "Azure_Microsoft.ContainerService/managedClusters_kube_pod_status_ready.Total.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.Ready",
+            "Azure_Microsoft.ContainerService/managedClusters_Resource.None."
+        ],
+        "Azure_Microsoft.ContainerService/managedClusters.status2": [
+            "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_memory_bytes.Total.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.",
+            "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.NotReady",
+            "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_cpu_cores.Total.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.unknown",
+            "Azure_Microsoft.ContainerService/managedClusters_kube_pod_status_ready.Total.",
+            "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.Ready",
+            "Azure_Microsoft.ContainerService/managedClusters_Resource.None."
+        ]
+    },
+    "DataTables": {
+        "Azure_Microsoft.Compute/virtualMachineScaleSets": {
+            "Name": "Microsoft.Compute/virtualMachineScaleSets",
+            "Protocol": "Azure",
+            "Singleton": false
+        },
+        "Azure_Microsoft.Compute/virtualMachines": {
+            "Name": "Microsoft.Compute/virtualMachines",
+            "Protocol": "Azure",
+            "Singleton": false
+        },
+        "Azure_Microsoft.ContainerService/managedClusters": {
+            "Name": "Microsoft.ContainerService/managedClusters",
+            "Protocol": "Azure",
+            "Singleton": false
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2": {
+            "Name": "Microsoft.ContainerService/managedClusters.status2",
+            "Protocol": "Azure",
+            "Singleton": false
+        }
+    },
+    "Fields": {
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.CPU_Credits_Consumed.Total.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Total number of credits consumed by the Virtual Machine",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "CPU Credits Consumed",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.CPU_Credits_Consumed.Total.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Consumed.Total.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Consumed.Total.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": {
+                        "gt": 30
+                    },
+                    "warning": {
+                        "gt": 20
+                    }
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.CPU_Credits_Remaining.Total.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Total number of credits available to burst",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "CPU Credits Remaining",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.CPU_Credits_Remaining.Total.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                "<",
+                "<="
+            ],
+            "Perfdata": true,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Remaining.Total.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Remaining.Total.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Read_Bytes.Average.": {
+            "AutoScale": true,
+            "Check_MK": true,
+            "Description": "Bytes read from disk during monitoring period",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Mega"
+                }
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Read",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Disk_Read_Bytes.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Bytes.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Bytes.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Information": {
+                        "Byte": "Unit"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Kilo"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Mega"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Giga"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Read_Operations/Sec.Total.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Disk Read IOPS",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Read Operations",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Disk_Read_Operations/Sec.Total.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Operations/Sec.Total.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Operations/Sec.Total.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Write_Bytes.Average.": {
+            "AutoScale": true,
+            "Check_MK": true,
+            "Description": "Bytes written to disk during monitoring period",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Mega"
+                }
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Write",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Disk_Write_Bytes.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Bytes.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Bytes.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Information": {
+                        "Byte": "Unit"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Kilo"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Mega"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Giga"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Write_Operations/Sec.Total.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Disk Write IOPS",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Write Operations",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Disk_Write_Operations/Sec.Total.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Operations/Sec.Total.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Operations/Sec.Total.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Inbound_Flows.Average.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Inbound Flows are number of current flows in the inbound direction (traffic going into the VM)",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Inbound Flow",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Inbound_Flows.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Inbound_Flows.Average.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Inbound_Flows.Average.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Network_In.Average.": {
+            "AutoScale": true,
+            "Check_MK": true,
+            "Description": "The number of billable bytes received on all network interfaces by the Virtual Machine(s) (Incoming Traffic) (Deprecated)",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Mega"
+                }
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Network In",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Network_In.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": true,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_In.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_In.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Information": {
+                        "Byte": "Unit"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Kilo"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Mega"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Giga"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Network_Out.Average.": {
+            "AutoScale": true,
+            "Check_MK": true,
+            "Description": "The number of billable bytes out on all network interfaces by the Virtual Machine(s) (Outgoing Traffic) (Deprecated)",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Mega"
+                }
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Network Out",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Network_Out.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": true,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_Out.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_Out.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Information": {
+                        "Byte": "Unit"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Kilo"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Mega"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Giga"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Outbound_Flows.Average.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Outbound Flows are number of current flows in the outbound direction (traffic going out of the VM)",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Outbound Flow",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Outbound_Flows.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Outbound_Flows.Average.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Outbound_Flows.Average.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Per_Disk_QD.Total.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Data Disk Queue Depth(or Queue Length)",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Disk Queue",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Per_Disk_QD.Total.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": true,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Per_Disk_QD.Total.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Per_Disk_QD.Total.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": {
+                        "gt": 30
+                    },
+                    "warning": {
+                        "gt": 20
+                    }
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Percentage_CPU.Average.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "The percentage of allocated compute units that are currently in use by the Virtual Machine(s)",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Dimensionless": "Percent"
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "CPU",
+            "InputType": {
+                "quantity": "Dimensionless"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Percentage_CPU.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": true,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Percentage_CPU.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Dimensionless": "Percent"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Percentage_CPU.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Dimensionless": "Percent"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": {
+                        "gt": 95
+                    },
+                    "warning": {
+                        "gt": 90
+                    }
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.Resource": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Name of the resource",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Resource",
+            "InputType": "unicodestring",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.Resource",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Resource.None.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Resource.None.",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachineScaleSets.ResourceGroup": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Name of the resourcegroup",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "ResourceGroup",
+            "InputType": "unicodestring",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachineScaleSets.ResourceGroup",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_ResourceGroup.None.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_ResourceGroup.None.",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachines.Disk_Read_Bytes.Average.": {
+            "AutoScale": true,
+            "Check_MK": true,
+            "Description": "Bytes read from disk during monitoring period",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Mega"
+                }
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Read",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachines.Disk_Read_Bytes.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Bytes.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Bytes.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Information": {
+                        "Byte": "Unit"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Kilo"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Mega"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Giga"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachines.Disk_Read_Operations/Sec.Average.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Disk Read IOPS",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Disk Read Operatiors /s",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachines.Disk_Read_Operations/Sec.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Operations/Sec.Average.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Operations/Sec.Average.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Frequency": {
+                        "PerTime": {
+                            "Second": "Unit"
+                        }
+                    }
+                },
+                {
+                    "Frequency": {
+                        "PerTime": "Minute"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachines.Disk_Write_Bytes.Average.": {
+            "AutoScale": true,
+            "Check_MK": true,
+            "Description": "Bytes written to disk during monitoring period",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Mega"
+                }
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Write",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachines.Disk_Write_Bytes.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Bytes.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Bytes.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Information": {
+                        "Byte": "Unit"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Kilo"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Mega"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Giga"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachines.Disk_Write_Operations/Sec.Average.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Disk Write IOPS",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Disk Write Operations /s",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachines.Disk_Write_Operations/Sec.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Operations/Sec.Average.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Operations/Sec.Average.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Frequency": {
+                        "PerTime": {
+                            "Second": "Unit"
+                        }
+                    }
+                },
+                {
+                    "Frequency": {
+                        "PerTime": "Minute"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachines.Network_In.Average.": {
+            "AutoScale": true,
+            "Check_MK": true,
+            "Description": "The number of billable bytes received on all network interfaces by the Virtual Machine(s) (Incoming Traffic) (Deprecated)",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Mega"
+                }
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Network In",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachines.Network_In.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Network_In.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Network_In.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Information": {
+                        "Byte": "Unit"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Kilo"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Mega"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Giga"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachines.Network_Out.Average.": {
+            "AutoScale": true,
+            "Check_MK": true,
+            "Description": "The number of billable bytes out on all network interfaces by the Virtual Machine(s) (Outgoing Traffic) (Deprecated)",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Mega"
+                }
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Network Out",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachines.Network_Out.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Network_Out.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Network_Out.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": [
+                {
+                    "Information": {
+                        "Byte": "Unit"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Kilo"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Mega"
+                    }
+                },
+                {
+                    "Information": {
+                        "Byte": "Giga"
+                    }
+                }
+            ]
+        },
+        "Azure_Microsoft.Compute/virtualMachines.Percentage_CPU.Average.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "The percentage of allocated compute units that are currently in use by the Virtual Machine(s)",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Dimensionless": "Percent"
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "CPU",
+            "InputType": {
+                "quantity": "Dimensionless"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachines.Percentage_CPU.Average.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Percentage_CPU.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Dimensionless": "Percent"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Percentage_CPU.Average.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Dimensionless": "Percent"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": {
+                        "gt": 95
+                    },
+                    "warning": {
+                        "gt": 90
+                    }
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachines.Resource.None.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Name of the resource",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Resource",
+            "InputType": "unicodestring",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachines.Resource.None.",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Resource.None.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_Resource.None.",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.Compute/virtualMachines.ResourceGroup.None.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Name of the resourcegroup",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "ResourceGroup",
+            "InputType": "unicodestring",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.Compute/virtualMachines.ResourceGroup.None.",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_ResourceGroup.None.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.Compute/virtualMachines",
+                    "Azure_Microsoft.Compute/virtualMachines_ResourceGroup.None.",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.Resource": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Name of the resource",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Resource",
+            "InputType": "unicodestring",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.Resource",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_Resource.None.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_Resource.None.",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.ResourceGroup": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Name of the resourcegroup",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "ResourceGroup",
+            "InputType": "unicodestring",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.ResourceGroup",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.kube_node_status_allocatable_cpu_cores.Total.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Total number of available cpu cores in a managed cluster",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "CPU Cores",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.kube_node_status_allocatable_cpu_cores.Total.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_cpu_cores.Total.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_cpu_cores.Total.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.kube_node_status_allocatable_memory_bytes.Total.": {
+            "AutoScale": true,
+            "Check_MK": true,
+            "Description": "Total amount of available memory in a managed cluster",
+            "Discovery": false,
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Mega"
+                }
+            },
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Memory",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.kube_node_status_allocatable_memory_bytes.Total.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_memory_bytes.Total.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_memory_bytes.Total.",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.kube_pod_status_ready.Total.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Number of pods in Ready state",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Pods Ready",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.kube_pod_status_ready.Total.",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">=",
+                "<",
+                "<=",
+                "="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_pod_status_ready.Total.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_pod_status_ready.Total.",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2.Resource.None.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Name of the resource",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": null,
+            "InputType": "unicodestring",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.status2.Resource.None.",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None.",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2.ResourceGroup.None.": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Name of the resourcegroup",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": null,
+            "InputType": "unicodestring",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.status2.ResourceGroup.None.",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.NotReady": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Statuses for various node conditions",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Nodes Not Ready",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.NotReady",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">=",
+                "<",
+                "<=",
+                "="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.NotReady",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.NotReady",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.Ready": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Statuses for various node conditions",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Nodes Ready",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.Ready",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">=",
+                "<",
+                "<=",
+                "="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.Ready",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.Ready",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Azure_Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.unknown": {
+            "AutoScale": false,
+            "Check_MK": true,
+            "Description": "Statuses for various node conditions",
+            "Discovery": false,
+            "DisplayUnit": null,
+            "ElasticData": false,
+            "ElasticField": null,
+            "Header": "Nodes with unknown state",
+            "InputType": "float",
+            "Inventorized": false,
+            "Monitoring": true,
+            "Name": "Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.unknown",
+            "NumericFormat": "%.2f",
+            "Operators": [
+                ">",
+                ">=",
+                "<",
+                "<=",
+                "="
+            ],
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.unknown",
+                    "Data"
+                ]
+            },
+            "Source2": {
+                "Data": [
+                    "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.unknown",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "selector": {
+                    "critical": null,
+                    "warning": null
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        }
+    },
+    "Input": {
+        "API": {
+            "DataFields": {},
+            "DataTableFields": {},
+            "DataTables": {}
+        },
+        "Azure": {
+            "DataFields": {
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Consumed.Total.": {
+                    "Aggregation": "Total",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "CPU Credits Consumed",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Remaining.Total.": {
+                    "Aggregation": "Total",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "CPU Credits Remaining",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Bytes.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Disk Read Bytes",
+                    "Unit": "Bytes"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Operations/Sec.Total.": {
+                    "Aggregation": "Total",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Disk Read Operations/Sec",
+                    "Unit": "CountPerSecond"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Bytes.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Disk Write Bytes",
+                    "Unit": "Bytes"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Operations/Sec.Total.": {
+                    "Aggregation": "Total",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Disk Write Operations/Sec",
+                    "Unit": "CountPerSecond"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Inbound_Flows.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Inbound Flows",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_In.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Network In",
+                    "Unit": "Bytes"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_Out.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Network Out",
+                    "Unit": "Bytes"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Outbound_Flows.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Outbound Flows",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Per_Disk_QD.Total.": {
+                    "Aggregation": "Total",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Per Disk QD",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Percentage_CPU.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Percentage CPU",
+                    "Unit": "Percent"
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_Resource.None.": {
+                    "Aggregation": "None",
+                    "DimensionValue": null,
+                    "IsKey": true,
+                    "MetricName": "Resource",
+                    "Unit": null
+                },
+                "Azure_Microsoft.Compute/virtualMachineScaleSets_ResourceGroup.None.": {
+                    "Aggregation": "None",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "ResourceGroup",
+                    "Unit": null
+                },
+                "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Bytes.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Disk Read Bytes",
+                    "Unit": "Bytes"
+                },
+                "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Operations/Sec.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Disk Read Operations/Sec",
+                    "Unit": "CountPerSecond"
+                },
+                "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Bytes.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Disk Write Bytes",
+                    "Unit": "Bytes"
+                },
+                "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Operations/Sec.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Disk Write Operations/Sec",
+                    "Unit": "CountPerSecond"
+                },
+                "Azure_Microsoft.Compute/virtualMachines_Network_In.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Network In",
+                    "Unit": "Bytes"
+                },
+                "Azure_Microsoft.Compute/virtualMachines_Network_Out.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Network Out",
+                    "Unit": "Bytes"
+                },
+                "Azure_Microsoft.Compute/virtualMachines_Percentage_CPU.Average.": {
+                    "Aggregation": "Average",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "Percentage CPU",
+                    "Unit": "Percent"
+                },
+                "Azure_Microsoft.Compute/virtualMachines_Resource.None.": {
+                    "Aggregation": "None",
+                    "DimensionValue": null,
+                    "IsKey": true,
+                    "MetricName": "Resource",
+                    "Unit": null
+                },
+                "Azure_Microsoft.Compute/virtualMachines_ResourceGroup.None.": {
+                    "Aggregation": "None",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "ResourceGroup",
+                    "Unit": null
+                },
+                "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None.": {
+                    "Aggregation": "None",
+                    "DimensionValue": null,
+                    "IsKey": true,
+                    "MetricName": "Resource",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.": {
+                    "Aggregation": "None",
+                    "DimensionValue": null,
+                    "IsKey": true,
+                    "MetricName": "ResourceGroup",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.NotReady": {
+                    "Aggregation": "Total",
+                    "DimensionValue": "NotReady",
+                    "IsKey": false,
+                    "MetricName": "kube_node_status_condition",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.Ready": {
+                    "Aggregation": "Total",
+                    "DimensionValue": "Ready",
+                    "IsKey": false,
+                    "MetricName": "kube_node_status_condition",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.unknown": {
+                    "Aggregation": "Total",
+                    "DimensionValue": "unknown",
+                    "IsKey": false,
+                    "MetricName": "kube_node_status_condition",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.ContainerService/managedClusters_Resource.None.": {
+                    "Aggregation": "None",
+                    "DimensionValue": null,
+                    "IsKey": true,
+                    "MetricName": "Resource",
+                    "Unit": null
+                },
+                "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.": {
+                    "Aggregation": "None",
+                    "DimensionValue": null,
+                    "IsKey": true,
+                    "MetricName": "ResourceGroup",
+                    "Unit": null
+                },
+                "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_cpu_cores.Total.": {
+                    "Aggregation": "Total",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "kube_node_status_allocatable_cpu_cores",
+                    "Unit": "Count"
+                },
+                "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_memory_bytes.Total.": {
+                    "Aggregation": "Total",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "kube_node_status_allocatable_memory_bytes",
+                    "Unit": "Bytes"
+                },
+                "Azure_Microsoft.ContainerService/managedClusters_kube_pod_status_ready.Total.": {
+                    "Aggregation": "Total",
+                    "DimensionValue": null,
+                    "IsKey": false,
+                    "MetricName": "kube_pod_status_ready",
+                    "Unit": "Count"
+                }
+            },
+            "DataTableFields": {
+                "Azure_Microsoft.Compute/virtualMachineScaleSets": [
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Resource.None.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_Out.Average.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Percentage_CPU.Average.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Operations/Sec.Total.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_ResourceGroup.None.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Remaining.Total.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Operations/Sec.Total.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Read_Bytes.Average.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_CPU_Credits_Consumed.Total.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Inbound_Flows.Average.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Per_Disk_QD.Total.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Network_In.Average.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Disk_Write_Bytes.Average.",
+                    "Azure_Microsoft.Compute/virtualMachineScaleSets_Outbound_Flows.Average."
+                ],
+                "Azure_Microsoft.Compute/virtualMachines": [
+                    "Azure_Microsoft.Compute/virtualMachines_Percentage_CPU.Average.",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Bytes.Average.",
+                    "Azure_Microsoft.Compute/virtualMachines_ResourceGroup.None.",
+                    "Azure_Microsoft.Compute/virtualMachines_Network_Out.Average.",
+                    "Azure_Microsoft.Compute/virtualMachines_Resource.None.",
+                    "Azure_Microsoft.Compute/virtualMachines_Network_In.Average.",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Bytes.Average.",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Read_Operations/Sec.Average.",
+                    "Azure_Microsoft.Compute/virtualMachines_Disk_Write_Operations/Sec.Average."
+                ],
+                "Azure_Microsoft.ContainerService/managedClusters": [
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_memory_bytes.Total.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.",
+                    "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.NotReady",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_cpu_cores.Total.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.unknown",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_pod_status_ready.Total.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.Ready",
+                    "Azure_Microsoft.ContainerService/managedClusters_Resource.None."
+                ],
+                "Azure_Microsoft.ContainerService/managedClusters.status2": [
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_memory_bytes.Total.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.",
+                    "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.NotReady",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_node_status_allocatable_cpu_cores.Total.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.unknown",
+                    "Azure_Microsoft.ContainerService/managedClusters_kube_pod_status_ready.Total.",
+                    "Azure_Microsoft.ContainerService/managedClusters.status2_kube_node_status_condition.Total.Ready",
+                    "Azure_Microsoft.ContainerService/managedClusters_Resource.None."
+                ]
+            },
+            "DataTables": {
+                "Azure_Microsoft.Compute/virtualMachineScaleSets": {
+                    "DimensionName": null,
+                    "NameSpace": "Microsoft.Compute/virtualMachineScaleSets"
+                },
+                "Azure_Microsoft.Compute/virtualMachines": {
+                    "DimensionName": null,
+                    "NameSpace": "Microsoft.Compute/virtualMachines"
+                },
+                "Azure_Microsoft.ContainerService/managedClusters": {
+                    "DimensionName": null,
+                    "NameSpace": "Microsoft.ContainerService/managedClusters"
+                },
+                "Azure_Microsoft.ContainerService/managedClusters.status2": {
+                    "DimensionName": "status2",
+                    "NameSpace": "Microsoft.ContainerService/managedClusters"
+                }
+            }
+        },
+        "SNMP": {
+            "DataFields": {},
+            "DataTables": {},
+            "Events": {},
+            "Modules": {},
+            "Objects": {},
+            "Scalars": {},
+            "Tables": {}
+        },
+        "WMI": {
+            "DataFields": {},
+            "DataTableFields": {},
+            "DataTables": {}
+        }
+    },
+    "MPs": {
+        "Azure": {
+            "AgentAPI": "V1",
+            "Checks": [
+                "Azure_Virtual_Machine_SmartM"
+            ],
+            "Name": "Azure",
+            "Tag": "azure_compute"
+        }
+    },
+    "Queries": {
+        "Azure_Virtual Machine_Microsoft.Compute/virtualMachineScaleSets": {
+            "TableQueries": [
+                {
+                    "DataTable": "Azure_Microsoft.Compute/virtualMachineScaleSets",
+                    "ErrorAction": "warn",
+                    "IgnoreExistence": null,
+                    "JoinKey": {},
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    },
+                    "ReindexKeys": null,
+                    "ReindexSelect": null
+                }
+            ]
+        },
+        "Azure_Virtual Machine_Microsoft.Compute/virtualMachines": {
+            "TableQueries": [
+                {
+                    "DataTable": "Azure_Microsoft.Compute/virtualMachines",
+                    "ErrorAction": "warn",
+                    "IgnoreExistence": null,
+                    "JoinKey": {},
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    },
+                    "ReindexKeys": null,
+                    "ReindexSelect": null
+                }
+            ]
+        },
+        "Azure_Virtual Machine_Microsoft.ContainerService/managedClusters": {
+            "TableQueries": [
+                {
+                    "DataTable": "Azure_Microsoft.ContainerService/managedClusters.status2",
+                    "ErrorAction": "warn",
+                    "IgnoreExistence": null,
+                    "JoinKey": {
+                        "group": "Azure_Microsoft.ContainerService/managedClusters.status2_ResourceGroup.None.",
+                        "resource": "Azure_Microsoft.ContainerService/managedClusters.status2_Resource.None."
+                    },
+                    "JoinType": "inner",
+                    "PreFilter": {
+                        "all": []
+                    },
+                    "ReindexKeys": null,
+                    "ReindexSelect": null
+                },
+                {
+                    "DataTable": "Azure_Microsoft.ContainerService/managedClusters",
+                    "ErrorAction": "warn",
+                    "IgnoreExistence": null,
+                    "JoinKey": {
+                        "group": "Azure_Microsoft.ContainerService/managedClusters_ResourceGroup.None.",
+                        "resource": "Azure_Microsoft.ContainerService/managedClusters_Resource.None."
+                    },
+                    "JoinType": "inner",
+                    "PreFilter": {
+                        "all": []
+                    },
+                    "ReindexKeys": null,
+                    "ReindexSelect": null
+                }
+            ]
+        }
+    },
+    "Tables": {
+        "Azure_Virtual Machine_Microsoft.Compute/virtualMachineScaleSets": {
+            "Changes": {
+                "Added": "show",
+                "Configurable": true,
+                "Removed": "hide"
+            },
+            "Check_MK": true,
+            "Description": "Azure virtual machine scale sets let you create and manage a group of load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule. Scale sets provide high availability to your applications, and allow you to centrally manage, configure, and update a large number of VMs. With virtual machine scale sets, you can build large-scale services for areas such as compute, big data, and container workloads.",
+            "Discovery": false,
+            "ElasticIndex": null,
+            "Fields": [
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Percentage_CPU.Average.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.ResourceGroup",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Read_Bytes.Average.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Network_In.Average.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Write_Bytes.Average.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Read_Operations/Sec.Total.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.CPU_Credits_Remaining.Total.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Write_Operations/Sec.Total.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.CPU_Credits_Consumed.Total.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Network_Out.Average.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Per_Disk_QD.Total.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Inbound_Flows.Average.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Outbound_Flows.Average.",
+                "Azure_Microsoft.Compute/virtualMachineScaleSets.Resource"
+            ],
+            "ItemId": {
+                "Concat": [
+                    {
+                        "Concat": [
+                            {
+                                "Variable": "Microsoft.Compute/virtualMachineScaleSets.Resource"
+                            },
+                            {
+                                "Literal": {
+                                    "unicodestring": "."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Variable": "Microsoft.Compute/virtualMachineScaleSets.ResourceGroup"
+                    }
+                ]
+            },
+            "ItemName": {
+                "Concat": [
+                    {
+                        "Concat": [
+                            {
+                                "Variable": "Microsoft.Compute/virtualMachineScaleSets.Resource"
+                            },
+                            {
+                                "Literal": {
+                                    "unicodestring": "."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Variable": "Microsoft.Compute/virtualMachineScaleSets.ResourceGroup"
+                    }
+                ]
+            },
+            "ItemType": [
+                "Virtual Machine Scale Set",
+                "Virtual Machine Scale Sets"
+            ],
+            "Monitoring": true,
+            "Name": "Azure_Virtual Machine_Microsoft.Compute/virtualMachineScaleSets",
+            "Query": "Azure_Virtual Machine_Microsoft.Compute/virtualMachineScaleSets",
+            "Singleton": false,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.ResourceGroup",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Resource",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Percentage_CPU.Average.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Network_In.Average.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Network_Out.Average.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Read_Bytes.Average.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Write_Bytes.Average.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Read_Operations/Sec.Total.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Disk_Write_Operations/Sec.Total.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.CPU_Credits_Remaining.Total.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.CPU_Credits_Consumed.Total.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Per_Disk_QD.Total.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Inbound_Flows.Average.",
+                        "Azure_Microsoft.Compute/virtualMachineScaleSets.Outbound_Flows.Average."
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": "Virtual Machine Scale Sets"
+        },
+        "Azure_Virtual Machine_Microsoft.Compute/virtualMachines": {
+            "Changes": {
+                "Added": "show",
+                "Configurable": true,
+                "Removed": "hide"
+            },
+            "Check_MK": true,
+            "Description": "In computing, a virtual machine (VM) is an emulation of a computer system. Virtual machines are based on computer architectures and provide functionality of a physical computer. Their implementations may involve specialized hardware, software, or a combination. ",
+            "Discovery": false,
+            "ElasticIndex": null,
+            "Fields": [
+                "Azure_Microsoft.Compute/virtualMachines.Percentage_CPU.Average.",
+                "Azure_Microsoft.Compute/virtualMachines.Disk_Read_Bytes.Average.",
+                "Azure_Microsoft.Compute/virtualMachines.Resource.None.",
+                "Azure_Microsoft.Compute/virtualMachines.Network_In.Average.",
+                "Azure_Microsoft.Compute/virtualMachines.Disk_Read_Operations/Sec.Average.",
+                "Azure_Microsoft.Compute/virtualMachines.Network_Out.Average.",
+                "Azure_Microsoft.Compute/virtualMachines.Disk_Write_Operations/Sec.Average.",
+                "Azure_Microsoft.Compute/virtualMachines.ResourceGroup.None.",
+                "Azure_Microsoft.Compute/virtualMachines.Disk_Write_Bytes.Average."
+            ],
+            "ItemId": {
+                "Concat": [
+                    {
+                        "Concat": [
+                            {
+                                "Variable": "Microsoft.Compute/virtualMachines.Resource.None."
+                            },
+                            {
+                                "Literal": {
+                                    "unicodestring": "."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Variable": "Microsoft.Compute/virtualMachines.ResourceGroup.None."
+                    }
+                ]
+            },
+            "ItemName": {
+                "Concat": [
+                    {
+                        "Concat": [
+                            {
+                                "Variable": "Microsoft.Compute/virtualMachines.Resource.None."
+                            },
+                            {
+                                "Literal": {
+                                    "unicodestring": "."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Variable": "Microsoft.Compute/virtualMachines.ResourceGroup.None."
+                    }
+                ]
+            },
+            "ItemType": [
+                "Virtual Machine",
+                "Virtual Machines"
+            ],
+            "Monitoring": true,
+            "Name": "Azure_Virtual Machine_Microsoft.Compute/virtualMachines",
+            "Query": "Azure_Virtual Machine_Microsoft.Compute/virtualMachines",
+            "Singleton": false,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Azure_Microsoft.Compute/virtualMachines.ResourceGroup.None.",
+                        "Azure_Microsoft.Compute/virtualMachines.Resource.None.",
+                        "Azure_Microsoft.Compute/virtualMachines.Percentage_CPU.Average.",
+                        "Azure_Microsoft.Compute/virtualMachines.Network_In.Average.",
+                        "Azure_Microsoft.Compute/virtualMachines.Network_Out.Average.",
+                        "Azure_Microsoft.Compute/virtualMachines.Disk_Read_Bytes.Average.",
+                        "Azure_Microsoft.Compute/virtualMachines.Disk_Write_Bytes.Average.",
+                        "Azure_Microsoft.Compute/virtualMachines.Disk_Read_Operations/Sec.Average.",
+                        "Azure_Microsoft.Compute/virtualMachines.Disk_Write_Operations/Sec.Average."
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": "Virtual Machine"
+        },
+        "Azure_Virtual Machine_Microsoft.ContainerService/managedClusters": {
+            "Changes": {
+                "Added": "show",
+                "Configurable": true,
+                "Removed": "hide"
+            },
+            "Check_MK": true,
+            "Description": "A computer cluster is a set of loosely or tightly connected computers that work together so that, in many respects, they can be viewed as a single system. Unlike grid computers, computer clusters have each node set to perform the same task, controlled and scheduled by software. ",
+            "Discovery": false,
+            "ElasticIndex": null,
+            "Fields": [
+                "Azure_Microsoft.ContainerService/managedClusters.kube_node_status_allocatable_memory_bytes.Total.",
+                "Azure_Microsoft.ContainerService/managedClusters.status2.Resource.None.",
+                "Azure_Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.unknown",
+                "Azure_Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.Ready",
+                "Azure_Microsoft.ContainerService/managedClusters.Resource",
+                "Azure_Microsoft.ContainerService/managedClusters.status2.ResourceGroup.None.",
+                "Azure_Microsoft.ContainerService/managedClusters.kube_node_status_allocatable_cpu_cores.Total.",
+                "Azure_Microsoft.ContainerService/managedClusters.ResourceGroup",
+                "Azure_Microsoft.ContainerService/managedClusters.kube_pod_status_ready.Total.",
+                "Azure_Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.NotReady"
+            ],
+            "ItemId": {
+                "Concat": [
+                    {
+                        "Concat": [
+                            {
+                                "Variable": "Microsoft.ContainerService/managedClusters.Resource"
+                            },
+                            {
+                                "Literal": {
+                                    "unicodestring": "."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Variable": "Microsoft.ContainerService/managedClusters.ResourceGroup"
+                    }
+                ]
+            },
+            "ItemName": {
+                "Concat": [
+                    {
+                        "Concat": [
+                            {
+                                "Variable": "Microsoft.ContainerService/managedClusters.Resource"
+                            },
+                            {
+                                "Literal": {
+                                    "unicodestring": "."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Variable": "Microsoft.ContainerService/managedClusters.ResourceGroup"
+                    }
+                ]
+            },
+            "ItemType": [
+                "Cluster",
+                "Clusters"
+            ],
+            "Monitoring": true,
+            "Name": "Azure_Virtual Machine_Microsoft.ContainerService/managedClusters",
+            "Query": "Azure_Virtual Machine_Microsoft.ContainerService/managedClusters",
+            "Singleton": false,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Azure_Microsoft.ContainerService/managedClusters.ResourceGroup",
+                        "Azure_Microsoft.ContainerService/managedClusters.Resource",
+                        "Azure_Microsoft.ContainerService/managedClusters.kube_node_status_allocatable_cpu_cores.Total.",
+                        "Azure_Microsoft.ContainerService/managedClusters.kube_node_status_allocatable_memory_bytes.Total.",
+                        "Azure_Microsoft.ContainerService/managedClusters.kube_pod_status_ready.Total.",
+                        "Azure_Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.Ready",
+                        "Azure_Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.unknown",
+                        "Azure_Microsoft.ContainerService/managedClusters.status2.kube_node_status_condition.Total.NotReady"
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": "Clusters"
+        }
+    }
+}

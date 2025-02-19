@@ -1,0 +1,23 @@
+{
+    "test": {
+	
+    },
+    "snmp": {
+	"host_name": "localhost",
+	"ip_addr": "127.0.0.1",
+	"host_config": {
+            "snmpv3_contexts": [],
+            "bulk_opts": {
+		"max_width": 1
+            },
+            "auth": {
+		"version": "2c",
+		"community": "public"
+	    },
+            "timing": null,
+            "bulk_host": true,
+            "port": null,
+            "use_walk": false
+	}
+    }
+}

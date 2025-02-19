@@ -1,0 +1,29 @@
+[package]
+name = "type_check"
+version = "0.1.0"
+authors = ["Maarten Deprez <mdp@si-int.eu>"]
+repository = "https://github.com/ContinuousC/SmartAgent"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+tokio = { version = "1.0", features = ["fs"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+clap = "2.34"
+
+agent_utils = { path = "../agent_utils"}
+etc = { path = "../etc", features = ["tokio"] }
+etc_base = { path = "../etc_base" }
+protocol = { path = "../protocol" }
+snmp_protocol = { path = "../protocols/snmp" }
+azure_protocol = { path = "../protocols/azure" }
+wmi_protocol = { path = "../protocols/wmi" }
+api_protocol = { path = "../protocols/api" }
+sql_protocol = { path = "../protocols/sql" }
+ssh_protocol = { path = "../protocols/ssh" }
+powershell_protocol = { path = "../protocols/powershell" }
+value = { path = "../value" }
+expression = { path = "../expression" }

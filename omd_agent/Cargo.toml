@@ -1,0 +1,47 @@
+[package]
+name    = "omd_agent"
+version = "2.7.0"
+authors = [ "Maarten Deprez <mdp@si-int.eu>", "Vincent Stuyck <vst@si-int.eu>" ]
+repository = "https://github.com/ContinuousC/SmartAgent"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1", features = ["full", "tracing"] }
+tokio-rustls = "0.22"
+serde_cbor = "0.11"
+serde_json = "1.0"
+async-trait = "0.1"
+thiserror = "1.0"
+futures = "0.3"
+rustls = "0.20"
+webpki = "0.22"
+clap = "2.33"
+glob = "0.3.0"
+fs4 = { version = "0.5", features = ["tokio-async"] }
+chrono = { version = "0.4.11" }
+console-subscriber = "0.1.9"
+
+# rpc = { registry = "si", version = "0.1.6", features = ["serde_cbor"] }
+
+elastic = { path = "../elastic" }
+agent_utils = { path = "../agent_utils" }
+expression = { path = "../expression" }
+value = { path = "../value" }
+unit = { path = "../unit" }
+query = { path = "../query" }
+etc = { path = "../etc", features = ["tokio"] }
+etc_base = { path = "../etc_base" }
+protocol = { path = "../protocol" }
+snmp_protocol = { path = "../protocols/snmp" }
+azure_protocol = { path = "../protocols/azure" }
+wmi_protocol = { path = "../protocols/wmi" }
+api_protocol = { path = "../protocols/api" }
+sql_protocol = { path = "../protocols/sql" }
+ssh_protocol = { path = "../protocols/ssh" }
+powershell_protocol = { path = "../protocols/powershell" }
+logger = { path = "../logger" }
+log = "0.4.14"
+simplelog = "0.11.2"

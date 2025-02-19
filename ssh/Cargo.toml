@@ -1,0 +1,17 @@
+[package]
+name    = "ssh"
+version = "0.1.0"
+authors = [ "Maarten Deprez <mdp@si-int.eu>" ]
+repository = "https://github.com/ContinuousC/SmartAgent"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+tokio = "1.0"
+tokio-util = "0.6"
+thrussh = "0.32"
+thrussh-keys = "0.20"
+thiserror = "1.0"
+futures = "0.3"
+nom = "7.0"

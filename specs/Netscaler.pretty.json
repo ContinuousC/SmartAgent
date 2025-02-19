@@ -1,0 +1,1951 @@
+{
+  "Tables": {
+    "Netscaler_High_Availability_HA": {
+      "Query": "Netscaler_High_Availability_HA",
+      "Fields": [
+        "Netscaler_High_Availability_HA_haCurState",
+        "Netscaler_High_Availability_HA_sysIpAddress",
+        "Netscaler_High_Availability_HA_haTotStateTransitions",
+        "Netscaler_High_Availability_HA_sysHighAvailabilityMode",
+        "Netscaler_High_Availability_HA_haTimeofLastStateTransition",
+        "Netscaler_High_Availability_HA_haCurStatus",
+        "Netscaler_High_Availability_HA_haPeerIpAddress",
+        "Netscaler_High_Availability_HA_haPeerId",
+        "Netscaler_High_Availability_HA_haPeerState"
+      ]
+    },
+    "Netscaler_Connections_Connections": {
+      "Query": "Netscaler_Connections_Connections",
+      "Fields": [
+        "Netscaler_Connections_Connections_svcTotalClients",
+        "Netscaler_Connections_Connections_svcServiceType",
+        "Netscaler_Connections_Connections_svcState",
+        "Netscaler_Connections_Connections_svcServiceName",
+        "Netscaler_Connections_Connections_svcIpAddress",
+        "Netscaler_Connections_Connections_svcTotalServers",
+        "Netscaler_Connections_Connections_svcEstablishedConn"
+      ]
+    },
+    "Netscaler_Health_HealthVolt": {
+      "Query": "Netscaler_Health_HealthVolt",
+      "Fields": [
+        "Netscaler_Health_HealthVolt_sysHealthCounterName",
+        "Netscaler_Health_HealthVolt_sysHealthCounterValueVolt",
+        "Netscaler_Health_HealthVolt_sysHardwareVersionDesc"
+      ]
+    },
+    "Netscaler_Disk_Disk": {
+      "Query": "Netscaler_Disk_Disk",
+      "Fields": [
+        "Netscaler_Disk_Disk_sysHealthDiskName",
+        "Netscaler_Disk_Disk_sysHealthDiskPerusage",
+        "Netscaler_Disk_Disk_sysHealthDiskSize",
+        "Netscaler_Disk_Disk_sysHealthDiskUsed"
+      ]
+    },
+    "Netscaler_TCP_Connections_Table_1": {
+      "Query": "Netscaler_TCP_Connections_Table_1",
+      "Fields": [
+        "Netscaler_TCP_Connections_Table_1_tcpCurServerConnClosing",
+        "Netscaler_TCP_Connections_Table_1_tcpCurServerConn",
+        "Netscaler_TCP_Connections_Table_1_tcpCurClientConnOpening",
+        "Netscaler_TCP_Connections_Table_1_tcpSurgeQueueLen",
+        "Netscaler_TCP_Connections_Table_1_tcpCurClientConnClosing",
+        "Netscaler_TCP_Connections_Table_1_tcpCurClientConn",
+        "Netscaler_TCP_Connections_Table_1_tcpCurServerConnOpening",
+        "Netscaler_TCP_Connections_Table_1_tcpCurClientConnEstablished",
+        "Netscaler_TCP_Connections_Table_1_tcpCurServerConnEstablished",
+        "Netscaler_TCP_Connections_Table_1_tcpSpareConn",
+        "Netscaler_TCP_Connections_Table_1_tcpActiveServerConn"
+      ]
+    },
+    "Netscaler_Health_HealthTemp": {
+      "Query": "Netscaler_Health_HealthTemp",
+      "Fields": [
+        "Netscaler_Health_HealthTemp_sysHealthCounterValueTemp",
+        "Netscaler_Health_HealthTemp_sysHardwareVersionDesc",
+        "Netscaler_Health_HealthTemp_sysHealthCounterName"
+      ]
+    },
+    "Netscaler_Memory_Memory": {
+      "Query": "Netscaler_Memory_Memory",
+      "Fields": [
+        "Netscaler_Memory_Memory_resMemUsage",
+        "Netscaler_Memory_Memory_memSizeMB"
+      ]
+    },
+    "Netscaler_Health_HealthFan": {
+      "Query": "Netscaler_Health_HealthFan",
+      "Fields": [
+        "Netscaler_Health_HealthFan_sysHealthCounterValueFan",
+        "Netscaler_Health_HealthFan_sysHardwareVersionDesc",
+        "Netscaler_Health_HealthFan_sysHealthCounterName"
+      ]
+    },
+    "Netscaler_CPU_Table_2": {
+      "Query": "Netscaler_CPU_Table_2",
+      "Fields": [
+        "Netscaler_CPU_Table_2_nsCPUname",
+        "Netscaler_CPU_Table_2_nsCPUusage"
+      ]
+    },
+    "Netscaler_CPU_Table_1": {
+      "Query": "Netscaler_CPU_Table_1",
+      "Fields": [
+        "Netscaler_CPU_Table_1_cpuSpeedMHz",
+        "Netscaler_CPU_Table_1_numCPUs",
+        "Netscaler_CPU_Table_1_resCpuUsage"
+      ]
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers": {
+      "Query": "Netscaler_Virtual_Servers_Virtual_Servers",
+      "Fields": [
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrHealth",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrEntityType",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrType",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrName",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrEstablishedConn",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrState_inventorized",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrState",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrPort",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrIpAddress",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrFullName",
+        "Netscaler_Virtual_Servers_Virtual_Servers_vsvrTotSpillOvers",
+        "Netscaler_Virtual_Servers_Virtual_Servers_lbvsvrPersistanceType"
+      ]
+    }
+  },
+  "Fields": {
+    "Netscaler_CPU_Table_2_nsCPUusage": {
+      "Source": {
+        "Data": [
+          "SNMP_nsCPUEntry",
+          "nsCPUusage"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_High_Availability_HA_haPeerId": {
+      "Source": {
+        "Data": [
+          "SNMP_nsHighAvailabilityGroup",
+          "haPeerId"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Netscaler_High_Availability_HA_haPeerIpAddress": {
+      "Source": {
+        "Data": [
+          "SNMP_nsHighAvailabilityGroup",
+          "haPeerIpAddress"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Health_HealthFan_sysHardwareVersionDesc": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "sysHardwareVersionDesc"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Health_HealthVolt_sysHealthCounterName": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthEntry",
+          "sysHealthCounterName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Health_HealthFan_sysHealthCounterName": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthEntry",
+          "sysHealthCounterName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrFullName": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrFullName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_High_Availability_HA_haCurStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_nsHighAvailabilityGroup",
+          "haCurStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_CPU_Table_2_nsCPUname": {
+      "Source": {
+        "Data": [
+          "SNMP_nsCPUEntry",
+          "nsCPUname"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrName": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Disk_Disk_sysHealthDiskSize": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthDiskEntry",
+          "sysHealthDiskSize"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrType": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_Memory_Memory_memSizeMB": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "memSizeMB"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Netscaler_Connections_Connections_svcIpAddress": {
+      "Source": {
+        "Data": [
+          "SNMP_serviceEntry",
+          "svcIpAddress"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpCurServerConn": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpCurServerConn"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_lbvsvrPersistanceType": {
+      "Source": {
+        "Data": [
+          "SNMP_lbvserverEntry",
+          "lbvsvrPersistanceType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_Memory_Memory_resMemUsage": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "resMemUsage"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_CPU_Table_1_resCpuUsage": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "resCpuUsage"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Connections_Connections_svcServiceType": {
+      "Source": {
+        "Data": [
+          "SNMP_serviceEntry",
+          "svcServiceType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_Connections_Connections_svcServiceName": {
+      "Source": {
+        "Data": [
+          "SNMP_serviceEntry",
+          "svcServiceName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpCurServerConnOpening": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpCurServerConnOpening"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpCurServerConnClosing": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpCurServerConnClosing"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpCurClientConnEstablished": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpCurClientConnEstablished"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpSurgeQueueLen": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpSurgeQueueLen"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Health_HealthVolt_sysHealthCounterValueVolt": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthEntry",
+          "sysHealthCounterValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrState": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrState"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrState_inventorized": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrState"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_CPU_Table_1_cpuSpeedMHz": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "cpuSpeedMHz"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Netscaler_Disk_Disk_sysHealthDiskName": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthDiskEntry",
+          "sysHealthDiskName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Health_HealthTemp_sysHardwareVersionDesc": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "sysHardwareVersionDesc"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Disk_Disk_sysHealthDiskUsed": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthDiskEntry",
+          "sysHealthDiskUsed"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpCurServerConnEstablished": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpCurServerConnEstablished"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpCurClientConnOpening": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpCurClientConnOpening"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Disk_Disk_sysHealthDiskPerusage": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthDiskEntry",
+          "sysHealthDiskPerusage"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpActiveServerConn": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpActiveServerConn"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrHealth": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrHealth"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrEntityType": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrEntityType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpCurClientConn": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpCurClientConn"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Connections_Connections_svcState": {
+      "Source": {
+        "Data": [
+          "SNMP_serviceEntry",
+          "svcState"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_High_Availability_HA_sysHighAvailabilityMode": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "sysHighAvailabilityMode"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrIpAddress": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrIpAddress"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_High_Availability_HA_haPeerState": {
+      "Source": {
+        "Data": [
+          "SNMP_nsHighAvailabilityGroup",
+          "haPeerState"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpCurClientConnClosing": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpCurClientConnClosing"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_High_Availability_HA_haTimeofLastStateTransition": {
+      "Source": {
+        "Data": [
+          "SNMP_nsHighAvailabilityGroup",
+          "haTimeofLastStateTransition"
+        ]
+      },
+      "InputType": "age"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrEstablishedConn": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrEstablishedConn"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Netscaler_Connections_Connections_svcTotalServers": {
+      "Source": {
+        "Data": [
+          "SNMP_serviceEntry",
+          "svcTotalServers"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Connections_Connections_svcTotalClients": {
+      "Source": {
+        "Data": [
+          "SNMP_serviceEntry",
+          "svcTotalClients"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrTotSpillOvers": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrTotSpillOvers"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_High_Availability_HA_haTotStateTransitions": {
+      "Source": {
+        "Data": [
+          "SNMP_nsHighAvailabilityGroup",
+          "haTotStateTransitions"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_TCP_Connections_Table_1_tcpSpareConn": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "tcpSpareConn"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers_vsvrPort": {
+      "Source": {
+        "Data": [
+          "SNMP_vserverEntry",
+          "vsvrPort"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Netscaler_High_Availability_HA_haCurState": {
+      "Source": {
+        "Data": [
+          "SNMP_nsHighAvailabilityGroup",
+          "haCurState"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Netscaler_Health_HealthTemp_sysHealthCounterName": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthEntry",
+          "sysHealthCounterName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Health_HealthTemp_sysHealthCounterValueTemp": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthEntry",
+          "sysHealthCounterValue"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Netscaler_Health_HealthFan_sysHealthCounterValueFan": {
+      "Source": {
+        "Data": [
+          "SNMP_nsSysHealthEntry",
+          "sysHealthCounterValue"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Netscaler_High_Availability_HA_sysIpAddress": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "sysIpAddress"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Netscaler_Connections_Connections_svcEstablishedConn": {
+      "Source": {
+        "Data": [
+          "SNMP_serviceEntry",
+          "svcEstablishedConn"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Netscaler_CPU_Table_1_numCPUs": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "numCPUs"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Netscaler_Health_HealthVolt_sysHardwareVersionDesc": {
+      "Source": {
+        "Data": [
+          "SNMP_noIndex",
+          "sysHardwareVersionDesc"
+        ]
+      },
+      "InputType": "string"
+    }
+  },
+  "Checks": {
+    "Netscaler_Connections": {
+      "Tables": [
+        "Netscaler_Connections_Connections"
+      ],
+      "MP": "Netscaler",
+      "Name": "Connections"
+    },
+    "Netscaler_Health": {
+      "Tables": [
+        "Netscaler_Health_HealthFan",
+        "Netscaler_Health_HealthVolt",
+        "Netscaler_Health_HealthTemp"
+      ],
+      "MP": "Netscaler",
+      "Name": "Health"
+    },
+    "Netscaler_TCP_Connections": {
+      "Tables": [
+        "Netscaler_TCP_Connections_Table_1"
+      ],
+      "MP": "Netscaler",
+      "Name": "TCP Connections"
+    },
+    "Netscaler_High_Availability": {
+      "Tables": [
+        "Netscaler_High_Availability_HA"
+      ],
+      "MP": "Netscaler",
+      "Name": "High Availability"
+    },
+    "Netscaler_Memory": {
+      "Tables": [
+        "Netscaler_Memory_Memory"
+      ],
+      "MP": "Netscaler",
+      "Name": "Memory"
+    },
+    "Netscaler_CPU": {
+      "Tables": [
+        "Netscaler_CPU_Table_1",
+        "Netscaler_CPU_Table_2"
+      ],
+      "MP": "Netscaler",
+      "Name": "CPU"
+    },
+    "Netscaler_Virtual_Servers": {
+      "Tables": [
+        "Netscaler_Virtual_Servers_Virtual_Servers"
+      ],
+      "MP": "Netscaler",
+      "Name": "Virtual Servers"
+    },
+    "Netscaler_Disk": {
+      "Tables": [
+        "Netscaler_Disk_Disk"
+      ],
+      "MP": "Netscaler",
+      "Name": "Disk"
+    }
+  },
+  "DataTables": {
+    "SNMP_nsSysHealthDiskEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "nsSysHealthDiskEntry"
+    },
+    "SNMP_lbvserverEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "lbvserverEntry"
+    },
+    "SNMP_noIndex": {
+      "Singleton": true,
+      "Protocol": "SNMP",
+      "Name": "noIndex"
+    },
+    "SNMP_nsHighAvailabilityGroup": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "nsHighAvailabilityGroup"
+    },
+    "SNMP_vserverEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "vserverEntry"
+    },
+    "SNMP_nsSysHealthEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "nsSysHealthEntry"
+    },
+    "SNMP_serviceEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "serviceEntry"
+    },
+    "SNMP_nsCPUEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "nsCPUEntry"
+    }
+  },
+  "Queries": {
+    "Netscaler_High_Availability_HA": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_nsHighAvailabilityGroup"
+        },
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_noIndex"
+        }
+      ]
+    },
+    "Netscaler_Connections_Connections": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_serviceEntry"
+        }
+      ]
+    },
+    "Netscaler_Health_HealthVolt": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_nsSysHealthEntry"
+        },
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_noIndex"
+        }
+      ]
+    },
+    "Netscaler_Disk_Disk": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_nsSysHealthDiskEntry"
+        }
+      ]
+    },
+    "Netscaler_TCP_Connections_Table_1": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_noIndex"
+        }
+      ]
+    },
+    "Netscaler_Health_HealthTemp": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_nsSysHealthEntry"
+        },
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_noIndex"
+        }
+      ]
+    },
+    "Netscaler_Memory_Memory": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_noIndex"
+        }
+      ]
+    },
+    "Netscaler_Health_HealthFan": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_nsSysHealthEntry"
+        },
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_noIndex"
+        }
+      ]
+    },
+    "Netscaler_CPU_Table_2": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_nsCPUEntry"
+        }
+      ]
+    },
+    "Netscaler_CPU_Table_1": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_noIndex"
+        }
+      ]
+    },
+    "Netscaler_Virtual_Servers_Virtual_Servers": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_vserverEntry"
+        },
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_lbvserverEntry"
+        }
+      ]
+    }
+  },
+  "Input": {
+    "SNMP": {
+      "Tables": {
+        "serviceEntry": {
+          "Augments": null,
+          "Index": [
+            "svcServiceName"
+          ]
+        },
+        "nsSysHealthEntry": {
+          "Augments": null,
+          "Index": [
+            "sysHealthCounterName"
+          ]
+        },
+        "vserverEntry": {
+          "Augments": null,
+          "Index": [
+            "vsvrName"
+          ]
+        },
+        "nsHighAvailabilityGroup": {
+          "Augments": null,
+          "Index": [
+            "haPeerIpAddress"
+          ]
+        },
+        "nsCPUEntry": {
+          "Augments": null,
+          "Index": [
+            "nsCPUname"
+          ]
+        },
+        "nsSysHealthDiskEntry": {
+          "Augments": null,
+          "Index": [
+            "sysHealthDiskName"
+          ]
+        },
+        "lbvserverEntry": {
+          "Augments": null,
+          "Index": [
+            "vsvrName"
+          ]
+        }
+      },
+      "DataTables": {
+        "SNMP_nsSysHealthDiskEntry": "nsSysHealthDiskEntry",
+        "SNMP_lbvserverEntry": "lbvserverEntry",
+        "SNMP_noIndex": null,
+        "SNMP_nsHighAvailabilityGroup": "nsHighAvailabilityGroup",
+        "SNMP_vserverEntry": "vserverEntry",
+        "SNMP_nsSysHealthEntry": "nsSysHealthEntry",
+        "SNMP_serviceEntry": "serviceEntry",
+        "SNMP_nsCPUEntry": "nsCPUEntry"
+      },
+      "Scalars": {
+        "vsvrTotSpillOvers": {
+          "Table": "vserverEntry",
+          "Syntax": "Counter32"
+        },
+        "svcEstablishedConn": {
+          "Table": "serviceEntry",
+          "Syntax": "Counter32"
+        },
+        "nsCPUname": {
+          "Table": "nsCPUEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "sysHealthDiskSize": {
+          "Table": "nsSysHealthDiskEntry",
+          "Syntax": "Gauge32"
+        },
+        "tcpCurServerConn": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "haPeerState": {
+          "Table": "nsHighAvailabilityGroup",
+          "Syntax": "INTEGER"
+        },
+        "svcServiceName": {
+          "Table": "serviceEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "resMemUsage": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "cpuSpeedMHz": {
+          "Table": "noIndex",
+          "Syntax": "Integer32"
+        },
+        "sysHealthDiskPerusage": {
+          "Table": "nsSysHealthDiskEntry",
+          "Syntax": "Gauge32"
+        },
+        "vsvrIpAddress": {
+          "Table": "vserverEntry",
+          "Syntax": "IpAddress"
+        },
+        "memSizeMB": {
+          "Table": "noIndex",
+          "Syntax": "Integer32"
+        },
+        "sysHealthCounterName": {
+          "Table": "nsSysHealthEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "vsvrEntityType": {
+          "Table": "vserverEntry",
+          "Syntax": "INTEGER"
+        },
+        "vsvrHealth": {
+          "Table": "vserverEntry",
+          "Syntax": "Integer32"
+        },
+        "sysIpAddress": {
+          "Table": "noIndex",
+          "Syntax": "IpAddress"
+        },
+        "haPeerId": {
+          "Table": "nsHighAvailabilityGroup",
+          "Syntax": "Integer32"
+        },
+        "svcIpAddress": {
+          "Table": "serviceEntry",
+          "Syntax": "IpAddress"
+        },
+        "vsvrEstablishedConn": {
+          "Table": "vserverEntry",
+          "Syntax": "Gauge32"
+        },
+        "vsvrPort": {
+          "Table": "vserverEntry",
+          "Syntax": "Integer32"
+        },
+        "svcServiceType": {
+          "Table": "serviceEntry",
+          "Syntax": "INTEGER"
+        },
+        "numCPUs": {
+          "Table": "noIndex",
+          "Syntax": "Integer32"
+        },
+        "tcpCurClientConn": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "tcpCurServerConnEstablished": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "tcpSpareConn": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "sysHighAvailabilityMode": {
+          "Table": "noIndex",
+          "Syntax": "INTEGER"
+        },
+        "svcTotalClients": {
+          "Table": "serviceEntry",
+          "Syntax": "Counter64"
+        },
+        "sysHealthDiskUsed": {
+          "Table": "nsSysHealthDiskEntry",
+          "Syntax": "Gauge32"
+        },
+        "vsvrState": {
+          "Table": "vserverEntry",
+          "Syntax": "INTEGER"
+        },
+        "haTotStateTransitions": {
+          "Table": "nsHighAvailabilityGroup",
+          "Syntax": "Counter64"
+        },
+        "tcpSurgeQueueLen": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "nsCPUusage": {
+          "Table": "nsCPUEntry",
+          "Syntax": "Gauge32"
+        },
+        "tcpCurServerConnOpening": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "tcpCurClientConnOpening": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "svcTotalServers": {
+          "Table": "serviceEntry",
+          "Syntax": "Counter64"
+        },
+        "svcState": {
+          "Table": "serviceEntry",
+          "Syntax": "INTEGER"
+        },
+        "tcpActiveServerConn": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "tcpCurServerConnClosing": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "haPeerIpAddress": {
+          "Table": "nsHighAvailabilityGroup",
+          "Syntax": "IpAddress"
+        },
+        "haCurStatus": {
+          "Table": "nsHighAvailabilityGroup",
+          "Syntax": "INTEGER"
+        },
+        "sysHealthCounterValue": {
+          "Table": "nsSysHealthEntry",
+          "Syntax": "Integer32"
+        },
+        "tcpCurClientConnClosing": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "vsvrType": {
+          "Table": "vserverEntry",
+          "Syntax": "INTEGER"
+        },
+        "haTimeofLastStateTransition": {
+          "Table": "nsHighAvailabilityGroup",
+          "Syntax": "Timeticks"
+        },
+        "sysHardwareVersionDesc": {
+          "Table": "noIndex",
+          "Syntax": "OCTET STRING"
+        },
+        "sysHealthDiskName": {
+          "Table": "nsSysHealthDiskEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "vsvrName": {
+          "Table": "vserverEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "lbvsvrPersistanceType": {
+          "Table": "lbvserverEntry",
+          "Syntax": "INTEGER"
+        },
+        "resCpuUsage": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        },
+        "vsvrFullName": {
+          "Table": "vserverEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "haCurState": {
+          "Table": "nsHighAvailabilityGroup",
+          "Syntax": "INTEGER"
+        },
+        "tcpCurClientConnEstablished": {
+          "Table": "noIndex",
+          "Syntax": "Gauge32"
+        }
+      },
+      "Modules": {},
+      "DataFields": {
+        "vsvrTotSpillOvers": "vsvrTotSpillOvers",
+        "svcEstablishedConn": "svcEstablishedConn",
+        "nsCPUname": "nsCPUname",
+        "sysHealthDiskSize": "sysHealthDiskSize",
+        "tcpCurServerConn": "tcpCurServerConn",
+        "haPeerState": "haPeerState",
+        "svcServiceName": "svcServiceName",
+        "resMemUsage": "resMemUsage",
+        "cpuSpeedMHz": "cpuSpeedMHz",
+        "sysHealthDiskPerusage": "sysHealthDiskPerusage",
+        "vsvrIpAddress": "vsvrIpAddress",
+        "memSizeMB": "memSizeMB",
+        "sysHealthCounterName": "sysHealthCounterName",
+        "vsvrEntityType": "vsvrEntityType",
+        "vsvrHealth": "vsvrHealth",
+        "sysIpAddress": "sysIpAddress",
+        "haPeerId": "haPeerId",
+        "svcIpAddress": "svcIpAddress",
+        "vsvrEstablishedConn": "vsvrEstablishedConn",
+        "vsvrPort": "vsvrPort",
+        "svcServiceType": "svcServiceType",
+        "numCPUs": "numCPUs",
+        "tcpCurClientConn": "tcpCurClientConn",
+        "tcpCurServerConnEstablished": "tcpCurServerConnEstablished",
+        "tcpSpareConn": "tcpSpareConn",
+        "sysHighAvailabilityMode": "sysHighAvailabilityMode",
+        "svcTotalClients": "svcTotalClients",
+        "sysHealthDiskUsed": "sysHealthDiskUsed",
+        "vsvrState": "vsvrState",
+        "haTotStateTransitions": "haTotStateTransitions",
+        "tcpSurgeQueueLen": "tcpSurgeQueueLen",
+        "nsCPUusage": "nsCPUusage",
+        "tcpCurServerConnOpening": "tcpCurServerConnOpening",
+        "tcpCurClientConnOpening": "tcpCurClientConnOpening",
+        "svcTotalServers": "svcTotalServers",
+        "svcState": "svcState",
+        "tcpActiveServerConn": "tcpActiveServerConn",
+        "tcpCurServerConnClosing": "tcpCurServerConnClosing",
+        "haPeerIpAddress": "haPeerIpAddress",
+        "haCurStatus": "haCurStatus",
+        "sysHealthCounterValue": "sysHealthCounterValue",
+        "tcpCurClientConnClosing": "tcpCurClientConnClosing",
+        "vsvrType": "vsvrType",
+        "haTimeofLastStateTransition": "haTimeofLastStateTransition",
+        "sysHardwareVersionDesc": "sysHardwareVersionDesc",
+        "sysHealthDiskName": "sysHealthDiskName",
+        "vsvrName": "vsvrName",
+        "lbvsvrPersistanceType": "lbvsvrPersistanceType",
+        "resCpuUsage": "resCpuUsage",
+        "vsvrFullName": "vsvrFullName",
+        "haCurState": "haCurState",
+        "tcpCurClientConnEstablished": "tcpCurClientConnEstablished"
+      },
+      "Objects": {
+        "vsvrTotSpillOvers": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.54",
+          "Type": "Event",
+          "Name": "vsvrTotSpillOvers",
+          "Module": ".0"
+        },
+        "svcEstablishedConn": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.2.1.1.8",
+          "Type": "Event",
+          "Name": "svcEstablishedConn",
+          "Module": ".0"
+        },
+        "serviceEntry": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.2.1.1",
+          "Type": "Table",
+          "Name": "serviceEntry",
+          "Module": ".0"
+        },
+        "nsCPUname": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.6.1.1",
+          "Type": "Event",
+          "Name": "nsCPUname",
+          "Module": ".0"
+        },
+        "vsvrPort": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.3",
+          "Type": "Event",
+          "Name": "vsvrPort",
+          "Module": ".0"
+        },
+        "tcpCurServerConn": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.1",
+          "Type": "Event",
+          "Name": "tcpCurServerConn",
+          "Module": ".0"
+        },
+        "nsHighAvailabilityGroup": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.23",
+          "Type": "Table",
+          "Name": "nsHighAvailabilityGroup",
+          "Module": ".0"
+        },
+        "haPeerState": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.23.3",
+          "Type": "Event",
+          "Name": "haPeerState",
+          "Module": ".0"
+        },
+        "svcServiceName": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.2.1.1.1",
+          "Type": "Event",
+          "Name": "svcServiceName",
+          "Module": ".0"
+        },
+        "resMemUsage": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.2",
+          "Type": "Event",
+          "Name": "resMemUsage",
+          "Module": ".0"
+        },
+        "cpuSpeedMHz": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.15",
+          "Type": "Event",
+          "Name": "cpuSpeedMHz",
+          "Module": ".0"
+        },
+        "sysHealthDiskPerusage": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.8.1.5",
+          "Type": "Event",
+          "Name": "sysHealthDiskPerusage",
+          "Module": ".0"
+        },
+        "svcIpAddress": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.2.1.1.2",
+          "Type": "Event",
+          "Name": "svcIpAddress",
+          "Module": ".0"
+        },
+        "sysIpAddress": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.2",
+          "Type": "Event",
+          "Name": "sysIpAddress",
+          "Module": ".0"
+        },
+        "lbvserverEntry": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.6.1",
+          "Type": "Table",
+          "Name": "lbvserverEntry",
+          "Module": ".0"
+        },
+        "numCPUs": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.3",
+          "Type": "Event",
+          "Name": "numCPUs",
+          "Module": ".0"
+        },
+        "vsvrEntityType": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.64",
+          "Type": "Event",
+          "Name": "vsvrEntityType",
+          "Module": ".0"
+        },
+        "vsvrHealth": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.62",
+          "Type": "Event",
+          "Name": "vsvrHealth",
+          "Module": ".0"
+        },
+        "memSizeMB": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.4",
+          "Type": "Event",
+          "Name": "memSizeMB",
+          "Module": ".0"
+        },
+        "nsSysHealthEntry": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.7.1",
+          "Type": "Table",
+          "Name": "nsSysHealthEntry",
+          "Module": ".0"
+        },
+        "vsvrIpAddress": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.2",
+          "Type": "Event",
+          "Name": "vsvrIpAddress",
+          "Module": ".0"
+        },
+        "vsvrEstablishedConn": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.71",
+          "Type": "Event",
+          "Name": "vsvrEstablishedConn",
+          "Module": ".0"
+        },
+        "nsCPUEntry": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.6.1",
+          "Type": "Table",
+          "Name": "nsCPUEntry",
+          "Module": ".0"
+        },
+        "svcServiceType": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.2.1.1.4",
+          "Type": "Event",
+          "Name": "svcServiceType",
+          "Module": ".0"
+        },
+        "sysHealthCounterName": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.7.1.1",
+          "Type": "Event",
+          "Name": "sysHealthCounterName",
+          "Module": ".0"
+        },
+        "tcpCurClientConn": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.2",
+          "Type": "Event",
+          "Name": "tcpCurClientConn",
+          "Module": ".0"
+        },
+        "tcpCurServerConnEstablished": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.10",
+          "Type": "Event",
+          "Name": "tcpCurServerConnEstablished",
+          "Module": ".0"
+        },
+        "tcpSpareConn": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.14",
+          "Type": "Event",
+          "Name": "tcpSpareConn",
+          "Module": ".0"
+        },
+        "nsSysHealthDiskEntry": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.8.1",
+          "Type": "Table",
+          "Name": "nsSysHealthDiskEntry",
+          "Module": ".0"
+        },
+        "sysHighAvailabilityMode": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.6",
+          "Type": "Event",
+          "Name": "sysHighAvailabilityMode",
+          "Module": ".0"
+        },
+        "svcTotalClients": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.2.1.1.48",
+          "Type": "Event",
+          "Name": "svcTotalClients",
+          "Module": ".0"
+        },
+        "sysHealthDiskUsed": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.8.1.4",
+          "Type": "Event",
+          "Name": "sysHealthDiskUsed",
+          "Module": ".0"
+        },
+        "vsvrState": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.5",
+          "Type": "Event",
+          "Name": "vsvrState",
+          "Module": ".0"
+        },
+        "haTotStateTransitions": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.23.4",
+          "Type": "Event",
+          "Name": "haTotStateTransitions",
+          "Module": ".0"
+        },
+        "tcpSurgeQueueLen": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.15",
+          "Type": "Event",
+          "Name": "tcpSurgeQueueLen",
+          "Module": ".0"
+        },
+        "nsCPUusage": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.6.1.2",
+          "Type": "Event",
+          "Name": "nsCPUusage",
+          "Module": ".0"
+        },
+        "tcpCurServerConnOpening": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.16",
+          "Type": "Event",
+          "Name": "tcpCurServerConnOpening",
+          "Module": ".0"
+        },
+        "tcpCurClientConnOpening": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.11",
+          "Type": "Event",
+          "Name": "tcpCurClientConnOpening",
+          "Module": ".0"
+        },
+        "svcTotalServers": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.2.1.1.49",
+          "Type": "Event",
+          "Name": "svcTotalServers",
+          "Module": ".0"
+        },
+        "vserverEntry": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1",
+          "Type": "Table",
+          "Name": "vserverEntry",
+          "Module": ".0"
+        },
+        "svcState": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.2.1.1.5",
+          "Type": "Event",
+          "Name": "svcState",
+          "Module": ".0"
+        },
+        "tcpCurServerConnClosing": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.13",
+          "Type": "Event",
+          "Name": "tcpCurServerConnClosing",
+          "Module": ".0"
+        },
+        "haPeerIpAddress": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.23.2",
+          "Type": "Event",
+          "Name": "haPeerIpAddress",
+          "Module": ".0"
+        },
+        "haCurStatus": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.23.23",
+          "Type": "Event",
+          "Name": "haCurStatus",
+          "Module": ".0"
+        },
+        "tcpActiveServerConn": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.8",
+          "Type": "Event",
+          "Name": "tcpActiveServerConn",
+          "Module": ".0"
+        },
+        "sysHealthDiskSize": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.8.1.2",
+          "Type": "Event",
+          "Name": "sysHealthDiskSize",
+          "Module": ".0"
+        },
+        "sysHealthCounterValue": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.7.1.2",
+          "Type": "Event",
+          "Name": "sysHealthCounterValue",
+          "Module": ".0"
+        },
+        "tcpCurClientConnClosing": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.9",
+          "Type": "Event",
+          "Name": "tcpCurClientConnClosing",
+          "Module": ".0"
+        },
+        "vsvrType": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.4",
+          "Type": "Event",
+          "Name": "vsvrType",
+          "Module": ".0"
+        },
+        "haTimeofLastStateTransition": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.23.5",
+          "Type": "Event",
+          "Name": "haTimeofLastStateTransition",
+          "Module": ".0"
+        },
+        "sysHardwareVersionDesc": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.11",
+          "Type": "Event",
+          "Name": "sysHardwareVersionDesc",
+          "Module": ".0"
+        },
+        "sysHealthDiskName": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.8.1.1",
+          "Type": "Event",
+          "Name": "sysHealthDiskName",
+          "Module": ".0"
+        },
+        "vsvrName": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.1",
+          "Type": "Event",
+          "Name": "vsvrName",
+          "Module": ".0"
+        },
+        "lbvsvrPersistanceType": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.6.1.2",
+          "Type": "Event",
+          "Name": "lbvsvrPersistanceType",
+          "Module": ".0"
+        },
+        "resCpuUsage": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.41.1",
+          "Type": "Event",
+          "Name": "resCpuUsage",
+          "Module": ".0"
+        },
+        "vsvrFullName": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.3.1.1.59",
+          "Type": "Event",
+          "Name": "vsvrFullName",
+          "Module": ".0"
+        },
+        "haCurState": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.23.24",
+          "Type": "Event",
+          "Name": "haCurState",
+          "Module": ".0"
+        },
+        "tcpCurClientConnEstablished": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.46.12",
+          "Type": "Event",
+          "Name": "tcpCurClientConnEstablished",
+          "Module": ".0"
+        },
+        "haPeerId": {
+          "OID": ".1.3.6.1.4.1.5951.4.1.1.23.1",
+          "Type": "Event",
+          "Name": "haPeerId",
+          "Module": ".0"
+        }
+      },
+      "Events": {}
+    }
+  },
+  "DataTableFields": {
+    "SNMP_nsSysHealthDiskEntry": [
+      "sysHealthDiskPerusage",
+      "sysHealthDiskSize",
+      "sysHealthDiskUsed",
+      "sysHealthDiskName"
+    ],
+    "SNMP_lbvserverEntry": [
+      "lbvsvrPersistanceType",
+      "vsvrName"
+    ],
+    "SNMP_noIndex": [
+      "resMemUsage",
+      "cpuSpeedMHz",
+      "sysIpAddress",
+      "numCPUs",
+      "memSizeMB",
+      "tcpCurClientConn",
+      "tcpCurServerConnEstablished",
+      "tcpSpareConn",
+      "sysHighAvailabilityMode",
+      "tcpCurServerConn",
+      "tcpSurgeQueueLen",
+      "tcpCurServerConnOpening",
+      "tcpActiveServerConn",
+      "tcpCurServerConnClosing",
+      "tcpCurClientConnClosing",
+      "sysHardwareVersionDesc",
+      "tcpCurClientConnOpening",
+      "resCpuUsage",
+      "tcpCurClientConnEstablished"
+    ],
+    "SNMP_nsHighAvailabilityGroup": [
+      "haTotStateTransitions",
+      "haPeerState",
+      "haPeerId",
+      "haPeerIpAddress",
+      "haCurStatus",
+      "haTimeofLastStateTransition",
+      "haCurState"
+    ],
+    "SNMP_vserverEntry": [
+      "vsvrTotSpillOvers",
+      "vsvrPort",
+      "vsvrIpAddress",
+      "vsvrEntityType",
+      "vsvrHealth",
+      "vsvrEstablishedConn",
+      "vsvrState",
+      "vsvrType",
+      "vsvrName",
+      "vsvrFullName"
+    ],
+    "SNMP_nsSysHealthEntry": [
+      "sysHealthCounterName",
+      "sysHealthCounterValue"
+    ],
+    "SNMP_serviceEntry": [
+      "svcEstablishedConn",
+      "svcServiceName",
+      "svcIpAddress",
+      "svcTotalClients",
+      "svcTotalServers",
+      "svcState",
+      "svcServiceType"
+    ],
+    "SNMP_nsCPUEntry": [
+      "nsCPUname",
+      "nsCPUusage"
+    ]
+  },
+  "DataFields": {
+    "vsvrTotSpillOvers": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "svcEstablishedConn": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_serviceEntry"
+    },
+    "nsCPUname": {
+      "IsKey": true,
+      "JoinKey": "nsCPUname",
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsCPUEntry"
+    },
+    "sysHealthDiskSize": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsSysHealthDiskEntry"
+    },
+    "tcpCurServerConn": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "haPeerState": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsHighAvailabilityGroup"
+    },
+    "svcServiceName": {
+      "IsKey": true,
+      "JoinKey": "svcServiceName",
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_serviceEntry"
+    },
+    "resMemUsage": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "cpuSpeedMHz": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "sysHealthDiskPerusage": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsSysHealthDiskEntry"
+    },
+    "vsvrIpAddress": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "memSizeMB": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "sysHealthCounterName": {
+      "IsKey": true,
+      "JoinKey": "sysHealthCounterName",
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsSysHealthEntry"
+    },
+    "vsvrEntityType": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "vsvrHealth": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "sysIpAddress": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "haPeerId": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsHighAvailabilityGroup"
+    },
+    "svcIpAddress": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_serviceEntry"
+    },
+    "vsvrEstablishedConn": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "vsvrPort": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "svcServiceType": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_serviceEntry"
+    },
+    "numCPUs": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "tcpCurClientConn": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "tcpCurServerConnEstablished": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "tcpSpareConn": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "sysHighAvailabilityMode": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "svcTotalClients": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_serviceEntry"
+    },
+    "sysHealthDiskUsed": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsSysHealthDiskEntry"
+    },
+    "vsvrState": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "haTotStateTransitions": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsHighAvailabilityGroup"
+    },
+    "tcpSurgeQueueLen": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "nsCPUusage": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsCPUEntry"
+    },
+    "tcpCurServerConnOpening": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "tcpCurClientConnOpening": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "svcTotalServers": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_serviceEntry"
+    },
+    "svcState": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_serviceEntry"
+    },
+    "tcpActiveServerConn": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "tcpCurServerConnClosing": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "haPeerIpAddress": {
+      "IsKey": true,
+      "JoinKey": "haPeerIpAddress",
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsHighAvailabilityGroup"
+    },
+    "haCurStatus": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsHighAvailabilityGroup"
+    },
+    "sysHealthCounterValue": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsSysHealthEntry"
+    },
+    "tcpCurClientConnClosing": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "vsvrType": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "haTimeofLastStateTransition": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsHighAvailabilityGroup"
+    },
+    "sysHardwareVersionDesc": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "sysHealthDiskName": {
+      "IsKey": true,
+      "JoinKey": "sysHealthDiskName",
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsSysHealthDiskEntry"
+    },
+    "vsvrName": {
+      "IsKey": true,
+      "JoinKey": "vsvrName",
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "lbvsvrPersistanceType": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_lbvserverEntry"
+    },
+    "resCpuUsage": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    },
+    "vsvrFullName": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_vserverEntry"
+    },
+    "haCurState": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_nsHighAvailabilityGroup"
+    },
+    "tcpCurClientConnEstablished": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_noIndex"
+    }
+  },
+  "MPs": {
+    "Netscaler": {
+      "Tag": "appl_citrix_netscaler",
+      "Name": "Netscaler"
+    }
+  }
+}

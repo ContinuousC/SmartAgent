@@ -1,0 +1,14 @@
+[package]
+name    = "agent_serde"
+version = "0.1.3"
+authors = ["Maarten Deprez <mdp@si-int.eu>"]
+description = "Custom serde (de)serialization modules"
+repository = "https://github.com/ContinuousC/SmartAgent.git"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+chrono = "0.4"
+regex = "1.5.5"

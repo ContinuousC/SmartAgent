@@ -1,0 +1,103 @@
+{
+    "Input": {
+	"SSH": {
+	    "Commands": {
+		"df": {
+		    "CommandName": "df",
+		    "CommandLine": "df",
+		    "OutputType": "df"
+		}
+	    },
+	    "DataTables": {"SSH_df": "df"}
+	}
+    },
+    "DataTables": {
+	"SSH_df": {
+	    "Protocol": "SSH",
+	    "Name": "df",
+	    "Singleton": false
+	}
+    },
+    "DataFields": {
+	"SSH_df_filesystem": {
+	    "Protocol": "SSH",
+	    "Name": "filesystem",
+	    "IsKey": false
+	},
+	"SSH_df_size": {
+	    "Protocol": "SSH",
+	    "Name": "size",
+	    "IsKey": false
+	},
+	"SSH_df_used": {
+	    "Protocol": "SSH",
+	    "Name": "used",
+	    "IsKey": false
+	},
+	"SSH_df_available": {
+	    "Protocol": "SSH",
+	    "Name": "available",
+	    "IsKey": false
+	},
+	"SSH_df_mount_point": {
+	    "Protocol": "SSH",
+	    "Name": "mount point",
+	    "IsKey": true
+	}
+    },
+    "DataTableFields": {
+	"SSH_df": ["SSH_df_filesystem", "SSH_df_size", "SSH_df_used", "SSH_df_available", "SSH_df_mount_point"]
+    },
+    "MPs": {
+	"Linux": {
+	    "Tag": "Linux_OS",
+	    "Name": "Linux Server"
+	}
+    },
+    "Checks": {
+	"linux_filesystems": {
+	    "MP": "Linux",
+	    "Name": "Mounts",
+	    "Tables": ["df"]
+	}
+    },
+    "Queries": {
+	"df": {
+	    "TableQueries": [
+		{
+		    "JoinType": "outer",
+		    "JoinKey": {},
+		    "DataTable": "SSH_df"
+		}
+	    ]
+	}
+    },
+    "Tables": {
+	"df": {
+	    "Fields": ["df_filesystem", "df_size", "df_used", "df_available", "df_mount_point"],
+	    "Query": "df"
+	}
+    },
+    "Fields": {
+	"df_filesystem": {
+	    "Source": {"Data": ["SSH_df", "SSH_df_filesystem"]},
+	    "InputType": "string"
+	},
+	"df_size": {
+	    "Source": {"Data": ["SSH_df", "SSH_df_size"]},
+	    "InputType": "integer"
+	},
+	"df_used": {
+	    "Source": {"Data": ["SSH_df", "SSH_df_used"]},
+	    "InputType": "integer"
+	},
+	"df_available": {
+	    "Source": {"Data": ["SSH_df", "SSH_df_available"]},
+	    "InputType": "integer"
+	},
+	"df_mount_point": {
+	    "Source": {"Data": ["SSH_df", "SSH_df_mount_point"]},
+	    "InputType": "string"
+	}
+    }
+}

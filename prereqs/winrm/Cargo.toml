@@ -1,0 +1,28 @@
+[package]
+name    = "winrm_prereqs"
+description = "Prereq checks for protocols"
+version = "0.1.0"
+authors = ["Vincent Stuyck <vst@si-int.eu>"]
+repository = "https://github.com/ContinuousC/SmartAgent.git"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+serde       = { version = "1.0", features = ["derive"] }
+thiserror   = "1.0"
+tokio       = { version = "1", features = ["full"] }
+log         = "0.4"
+clap        = "3.2"
+simplelog   = "0.11"
+futures     = "0.3"
+colored     = "2"
+
+winrm_rs = { registry = "si", version = "2.2.0"  }
+# winrm_rs = { path = "../../tryout/winrm_rs/Source/Rust/" }
+
+agent_utils = { path = "../../agent_utils", features = ["key-reader"] }
+etc = { path = "../../etc", features = ["tokio"] }
+etc_base = { path = "../../etc_base" }
+lazy_static = "1.4.0"
+tap = "1.0.1"

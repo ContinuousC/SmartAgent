@@ -1,0 +1,23 @@
+# Editor backup files
+*~
+\#*#
+
+# Small tryout projects
+tryout/
+
+# Dependencies
+key-reader
+
+# Cargo artifacts
+target
+*.rs.bk
+
+# Python compiled files
+*.pyc
+
+# NPM artifacts
+/nodejs/node_modules/
+
+# Generated from template
+/nodejs/agent_connector.js
+/python/agent_connector.py

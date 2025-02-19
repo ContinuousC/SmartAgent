@@ -1,0 +1,1552 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AgentMsg",
+  "description": "Messages that can be sent by the agent.",
+  "anyOf": [
+    {
+      "description": "Send an asynchronous API request to the backend. The result will be received in a BackendMsg::Response.",
+      "type": "object",
+      "anyOf": [
+        {
+          "description": "Ping() -> Pong",
+          "type": "object",
+          "required": [
+            "request"
+          ],
+          "properties": {
+            "request": {
+              "type": "string",
+              "enum": [
+                "ping"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Data(data) -> Ok / Error",
+          "type": "object",
+          "required": [
+            "data",
+            "request"
+          ],
+          "properties": {
+            "request": {
+              "type": "string",
+              "enum": [
+                "data"
+              ]
+            },
+            "data": {
+              "type": "string"
+            }
+          }
+        }
+      ],
+      "required": [
+        "message",
+        "req_id"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": [
+            "request"
+          ]
+        },
+        "req_id": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    {
+      "description": "Send an asynchronous API response to the backend. This is a response to BackendMsg::Request.",
+      "type": "object",
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "response"
+          ],
+          "properties": {
+            "response": {
+              "type": "string",
+              "enum": [
+                "pong"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "response"
+          ],
+          "properties": {
+            "response": {
+              "type": "string",
+              "enum": [
+                "shutdown"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "response"
+          ],
+          "properties": {
+            "response": {
+              "type": "string",
+              "enum": [
+                "ok"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "error",
+            "response"
+          ],
+          "properties": {
+            "response": {
+              "type": "string",
+              "enum": [
+                "error"
+              ]
+            },
+            "error": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "data",
+            "response"
+          ],
+          "properties": {
+            "response": {
+              "type": "string",
+              "enum": [
+                "table"
+              ]
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/definitions/Value"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "data",
+            "response"
+          ],
+          "properties": {
+            "response": {
+              "type": "string",
+              "enum": [
+                "snmp_table"
+              ]
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/definitions/Value"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "required": [
+        "message",
+        "req_id"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": [
+            "response"
+          ]
+        },
+        "req_id": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "Value": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "string"
+          ],
+          "properties": {
+            "string": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "integer"
+          ],
+          "properties": {
+            "integer": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "float"
+          ],
+          "properties": {
+            "float": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "quantity"
+          ],
+          "properties": {
+            "quantity": {
+              "$ref": "#/definitions/Quantity"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "enum"
+          ],
+          "properties": {
+            "enum": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "int-enum"
+          ],
+          "properties": {
+            "int-enum": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "boolean"
+          ],
+          "properties": {
+            "boolean": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "time"
+          ],
+          "properties": {
+            "time": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "age"
+          ],
+          "properties": {
+            "age": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "macaddr"
+          ],
+          "properties": {
+            "macaddr": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              },
+              "maxItems": 6,
+              "minItems": 6
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "ipv4addr"
+          ],
+          "properties": {
+            "ipv4addr": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              },
+              "maxItems": 4,
+              "minItems": 4
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "ipv6addr"
+          ],
+          "properties": {
+            "ipv6addr": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint16",
+                "minimum": 0.0
+              },
+              "maxItems": 8,
+              "minItems": 8
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "option"
+          ],
+          "properties": {
+            "option": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/Type"
+                },
+                {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/Value"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "result"
+          ],
+          "properties": {
+            "result": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/Type"
+                },
+                {
+                  "$ref": "#/definitions/Type"
+                },
+                {
+                  "$ref": "#/definitions/Result_of_Value_or_Value"
+                }
+              ],
+              "maxItems": 3,
+              "minItems": 3
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "set"
+          ],
+          "properties": {
+            "set": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/Type"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/HashableValue"
+                  }
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "tuple"
+          ],
+          "properties": {
+            "tuple": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Value"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Quantity": {
+      "type": "array",
+      "items": [
+        {
+          "type": "number",
+          "format": "double"
+        },
+        {
+          "$ref": "#/definitions/Unit"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2
+    },
+    "Unit": {
+      "description": "Supported unit and prefix combinations, grouped by dimension.\n\nThis is a static system with hand-coded conversions between dimensions, which has the advantage of being light-weight (the enum fits in a register). The drawback is that derived dimensions must be defined before they can be used (even if used only in intermediate values).\n\nOnly one unit per base dimension is supported (eg. no m*cm).",
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Information"
+          ],
+          "properties": {
+            "Information": {
+              "$ref": "#/definitions/InformationUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Operations"
+          ],
+          "properties": {
+            "Operations": {
+              "$ref": "#/definitions/OperationUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Length"
+          ],
+          "properties": {
+            "Length": {
+              "$ref": "#/definitions/LengthUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Mass"
+          ],
+          "properties": {
+            "Mass": {
+              "$ref": "#/definitions/MassUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Time"
+          ],
+          "properties": {
+            "Time": {
+              "$ref": "#/definitions/TimeUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "TimeSquare"
+          ],
+          "properties": {
+            "TimeSquare": {
+              "$ref": "#/definitions/TimeUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Temperature"
+          ],
+          "properties": {
+            "Temperature": {
+              "$ref": "#/definitions/TemperatureUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Current"
+          ],
+          "properties": {
+            "Current": {
+              "$ref": "#/definitions/CurrentUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Potential"
+          ],
+          "properties": {
+            "Potential": {
+              "$ref": "#/definitions/PotentialUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Power"
+          ],
+          "properties": {
+            "Power": {
+              "$ref": "#/definitions/PowerUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Resistance"
+          ],
+          "properties": {
+            "Resistance": {
+              "$ref": "#/definitions/ResistanceUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Conductivity"
+          ],
+          "properties": {
+            "Conductivity": {
+              "$ref": "#/definitions/ConductivityUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Area"
+          ],
+          "properties": {
+            "Area": {
+              "$ref": "#/definitions/LengthUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Volume"
+          ],
+          "properties": {
+            "Volume": {
+              "$ref": "#/definitions/LengthUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Speed"
+          ],
+          "properties": {
+            "Speed": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/LengthUnit"
+                },
+                {
+                  "$ref": "#/definitions/TimeUnit"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Acceleration"
+          ],
+          "properties": {
+            "Acceleration": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/LengthUnit"
+                },
+                {
+                  "$ref": "#/definitions/TimeUnit"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "AbsoluteHumidity"
+          ],
+          "properties": {
+            "AbsoluteHumidity": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/MassUnit"
+                },
+                {
+                  "$ref": "#/definitions/LengthUnit"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Bandwidth"
+          ],
+          "properties": {
+            "Bandwidth": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/InformationUnit"
+                },
+                {
+                  "$ref": "#/definitions/TimeUnit"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "IOLatency"
+          ],
+          "properties": {
+            "IOLatency": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/TimeUnit"
+                },
+                {
+                  "$ref": "#/definitions/OperationUnit"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "IOPerformance"
+          ],
+          "properties": {
+            "IOPerformance": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/OperationUnit"
+                },
+                {
+                  "$ref": "#/definitions/TimeUnit"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "AvgOpSize"
+          ],
+          "properties": {
+            "AvgOpSize": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/InformationUnit"
+                },
+                {
+                  "$ref": "#/definitions/OperationUnit"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Frequency"
+          ],
+          "properties": {
+            "Frequency": {
+              "$ref": "#/definitions/FrequencyUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "FanSpeed"
+          ],
+          "properties": {
+            "FanSpeed": {
+              "$ref": "#/definitions/FanSpeedUnit"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Dimensionless"
+          ],
+          "properties": {
+            "Dimensionless": {
+              "$ref": "#/definitions/DimensionlessUnit"
+            }
+          }
+        }
+      ]
+    },
+    "InformationUnit": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Bit"
+          ],
+          "properties": {
+            "Bit": {
+              "$ref": "#/definitions/DecPrefix"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Byte"
+          ],
+          "properties": {
+            "Byte": {
+              "$ref": "#/definitions/BinPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "DecPrefix": {
+      "description": "Decimal (base 1000) prefixes.",
+      "type": "string",
+      "enum": [
+        "Unit",
+        "Kilo",
+        "Mega",
+        "Giga",
+        "Tera",
+        "Peta",
+        "Exa",
+        "Zetta",
+        "Yotta"
+      ]
+    },
+    "BinPrefix": {
+      "description": "Binary (base 1024) prefixes",
+      "type": "string",
+      "enum": [
+        "Unit",
+        "Kilo",
+        "Mega",
+        "Giga",
+        "Tera",
+        "Peta",
+        "Exa",
+        "Zetta",
+        "Yotta"
+      ]
+    },
+    "OperationUnit": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Operation"
+          ],
+          "properties": {
+            "Operation": {
+              "$ref": "#/definitions/DecPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "LengthUnit": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Meter"
+          ],
+          "properties": {
+            "Meter": {
+              "$ref": "#/definitions/SiPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "SiPrefix": {
+      "type": "string",
+      "enum": [
+        "Yocto",
+        "Zepto",
+        "Atto",
+        "Femto",
+        "Pico",
+        "Nano",
+        "Micro",
+        "Milli",
+        "Centi",
+        "Deci",
+        "Unit",
+        "Deca",
+        "Hecto",
+        "Kilo",
+        "Mega",
+        "Giga",
+        "Tera",
+        "Peta",
+        "Exa",
+        "Zetta",
+        "Yotta"
+      ]
+    },
+    "MassUnit": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Gram"
+          ],
+          "properties": {
+            "Gram": {
+              "$ref": "#/definitions/SiPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "TimeUnit": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "Minute",
+            "Hour",
+            "Day",
+            "Week"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "Second"
+          ],
+          "properties": {
+            "Second": {
+              "$ref": "#/definitions/FracPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "FracPrefix": {
+      "description": "Fractional Prefixes (eg. for seconds).",
+      "type": "string",
+      "enum": [
+        "Yocto",
+        "Zepto",
+        "Atto",
+        "Femto",
+        "Pico",
+        "Nano",
+        "Micro",
+        "Milli",
+        "Unit"
+      ]
+    },
+    "TemperatureUnit": {
+      "type": "string",
+      "enum": [
+        "Celsius",
+        "Fahrenheit",
+        "Kelvin"
+      ]
+    },
+    "CurrentUnit": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Ampere"
+          ],
+          "properties": {
+            "Ampere": {
+              "$ref": "#/definitions/SiPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "PotentialUnit": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Volt"
+          ],
+          "properties": {
+            "Volt": {
+              "$ref": "#/definitions/SiPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "PowerUnit": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "DBmW"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "Watt"
+          ],
+          "properties": {
+            "Watt": {
+              "$ref": "#/definitions/SiPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "ResistanceUnit": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Ohm"
+          ],
+          "properties": {
+            "Ohm": {
+              "$ref": "#/definitions/SiPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "ConductivityUnit": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Siemens"
+          ],
+          "properties": {
+            "Siemens": {
+              "$ref": "#/definitions/SiPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "FrequencyUnit": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "Hertz"
+          ],
+          "properties": {
+            "Hertz": {
+              "$ref": "#/definitions/SiPrefix"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "PerTime"
+          ],
+          "properties": {
+            "PerTime": {
+              "$ref": "#/definitions/TimeUnit"
+            }
+          }
+        }
+      ]
+    },
+    "FanSpeedUnit": {
+      "type": "string",
+      "enum": [
+        "RPM",
+        "RPS"
+      ]
+    },
+    "DimensionlessUnit": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "Percent",
+            "Permille"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "Count"
+          ],
+          "properties": {
+            "Count": {
+              "$ref": "#/definitions/DecPrefix"
+            }
+          }
+        }
+      ]
+    },
+    "Type": {
+      "description": "Possible types a value can take.",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "string",
+            "integer",
+            "float",
+            "boolean",
+            "time",
+            "age",
+            "macaddr",
+            "ip4vaddr",
+            "ipv6addr"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "quantity"
+          ],
+          "properties": {
+            "quantity": {
+              "$ref": "#/definitions/Dimension"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "set-enum"
+          ],
+          "properties": {
+            "set-enum": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "int-enum"
+          ],
+          "properties": {
+            "int-enum": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "option"
+          ],
+          "properties": {
+            "option": {
+              "$ref": "#/definitions/Type"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "result"
+          ],
+          "properties": {
+            "result": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/Type"
+                },
+                {
+                  "$ref": "#/definitions/Type"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "set"
+          ],
+          "properties": {
+            "set": {
+              "$ref": "#/definitions/Type"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "tuple"
+          ],
+          "properties": {
+            "tuple": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Type"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Dimension": {
+      "description": "Base dimensions. These can be considered a unit's \"type\". Conversion is possible only between units of the same dimension.",
+      "type": "string",
+      "enum": [
+        "Length",
+        "Mass",
+        "Time",
+        "Current",
+        "Temperature",
+        "Area",
+        "Volume",
+        "Speed",
+        "Acceleration",
+        "Potential",
+        "Power",
+        "Resistance",
+        "Conductivity",
+        "AbsoluteHumidity",
+        "Frequency",
+        "TimeSquare",
+        "Information",
+        "Operations",
+        "Bandwidth",
+        "IOLatency",
+        "IOPerformance",
+        "AvgOpSize",
+        "FanSpeed",
+        "Dimensionless"
+      ]
+    },
+    "Result_of_Value_or_Value": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "Ok"
+          ],
+          "properties": {
+            "Ok": {
+              "$ref": "#/definitions/Value"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Err"
+          ],
+          "properties": {
+            "Err": {
+              "$ref": "#/definitions/Value"
+            }
+          }
+        }
+      ]
+    },
+    "HashableValue": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "String"
+          ],
+          "properties": {
+            "String": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Integer"
+          ],
+          "properties": {
+            "Integer": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Enum"
+          ],
+          "properties": {
+            "Enum": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "IntEnum"
+          ],
+          "properties": {
+            "IntEnum": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Boolean"
+          ],
+          "properties": {
+            "Boolean": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "MacAddress"
+          ],
+          "properties": {
+            "MacAddress": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              },
+              "maxItems": 6,
+              "minItems": 6
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Ipv4Address"
+          ],
+          "properties": {
+            "Ipv4Address": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              },
+              "maxItems": 4,
+              "minItems": 4
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Ipv6Address"
+          ],
+          "properties": {
+            "Ipv6Address": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint16",
+                "minimum": 0.0
+              },
+              "maxItems": 8,
+              "minItems": 8
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Option"
+          ],
+          "properties": {
+            "Option": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/Type"
+                },
+                {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/HashableValue"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Result"
+          ],
+          "properties": {
+            "Result": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/Type"
+                },
+                {
+                  "$ref": "#/definitions/Type"
+                },
+                {
+                  "$ref": "#/definitions/Result_of_HashableValue_or_HashableValue"
+                }
+              ],
+              "maxItems": 3,
+              "minItems": 3
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Tuple"
+          ],
+          "properties": {
+            "Tuple": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HashableValue"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Result_of_HashableValue_or_HashableValue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "Ok"
+          ],
+          "properties": {
+            "Ok": {
+              "$ref": "#/definitions/HashableValue"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "Err"
+          ],
+          "properties": {
+            "Err": {
+              "$ref": "#/definitions/HashableValue"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

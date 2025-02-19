@@ -1,0 +1,25 @@
+{
+    "instances": ["main","dev"],
+    "data_dir": "/tmp/events",
+    "snmp": {
+	"listen": ["udp:1162", "udp:1163"],
+	"communities": ["public"],
+	"users": {
+	    "testuser": {
+		"engine_id": [1,2,3,4,5],
+		"auth": {
+		    "level": "authPriv",
+		    "auth": {
+			"protocol": "SHA",
+			"user": "testuser",
+			"password": "secret123"
+		    },
+		    "priv": {
+			"protocol": "AES",
+			"password": "secret456"
+		    }
+		}
+	    }
+	}
+    }
+}

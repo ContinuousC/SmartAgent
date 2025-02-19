@@ -1,0 +1,1507 @@
+{
+  "Tables": {
+    "Cisco_Nexus_Health_unknown": {
+      "Query": "Cisco_Nexus_Health_unknown",
+      "Fields": [
+        "Cisco_Nexus_Health_unknown_entSensorStatus",
+        "Cisco_Nexus_Health_unknown_entPhysicalName",
+        "Cisco_Nexus_Health_unknown_entSensorScale",
+        "Cisco_Nexus_Health_unknown_entSensorValue_unknown",
+        "Cisco_Nexus_Health_unknown_entSensorType",
+        "Cisco_Nexus_Health_unknown_entSensorPrecision"
+      ]
+    },
+    "Cisco_Nexus_Health_Frequency": {
+      "Query": "Cisco_Nexus_Health_Frequency",
+      "Fields": [
+        "Cisco_Nexus_Health_Frequency_entSensorType",
+        "Cisco_Nexus_Health_Frequency_entSensorPrecision",
+        "Cisco_Nexus_Health_Frequency_entSensorValue_Frequnecy",
+        "Cisco_Nexus_Health_Frequency_entSensorStatus",
+        "Cisco_Nexus_Health_Frequency_entPhysicalName",
+        "Cisco_Nexus_Health_Frequency_entSensorScale"
+      ]
+    },
+    "Cisco_Nexus_Health_VoltsDC": {
+      "Query": "Cisco_Nexus_Health_VoltsDC",
+      "Fields": [
+        "Cisco_Nexus_Health_VoltsDC_entPhysicalName",
+        "Cisco_Nexus_Health_VoltsDC_entSensorValue_VoltsDC",
+        "Cisco_Nexus_Health_VoltsDC_entSensorPrecision",
+        "Cisco_Nexus_Health_VoltsDC_entSensorStatus",
+        "Cisco_Nexus_Health_VoltsDC_entSensorType",
+        "Cisco_Nexus_Health_VoltsDC_entSensorScale"
+      ]
+    },
+    "Cisco_Nexus_Health_Table3": {
+      "Query": "Cisco_Nexus_Health_Table3",
+      "Fields": [
+        "Cisco_Nexus_Health_Table3_cefcFanTrayOperStatus",
+        "Cisco_Nexus_Health_Table3_entPhysicalName"
+      ]
+    },
+    "Cisco_Nexus_Health_Current": {
+      "Query": "Cisco_Nexus_Health_Current",
+      "Fields": [
+        "Cisco_Nexus_Health_Current_entPhysicalName",
+        "Cisco_Nexus_Health_Current_entSensorPrecision",
+        "Cisco_Nexus_Health_Current_entSensorValue_Current",
+        "Cisco_Nexus_Health_Current_entSensorType",
+        "Cisco_Nexus_Health_Current_entSensorStatus",
+        "Cisco_Nexus_Health_Current_entSensorScale"
+      ]
+    },
+    "Cisco_Nexus_Health_other": {
+      "Query": "Cisco_Nexus_Health_other",
+      "Fields": [
+        "Cisco_Nexus_Health_other_entSensorType",
+        "Cisco_Nexus_Health_other_entSensorValue_other",
+        "Cisco_Nexus_Health_other_entSensorPrecision",
+        "Cisco_Nexus_Health_other_entSensorStatus",
+        "Cisco_Nexus_Health_other_entPhysicalName",
+        "Cisco_Nexus_Health_other_entSensorScale"
+      ]
+    },
+    "Cisco_Nexus_Health_Table2": {
+      "Query": "Cisco_Nexus_Health_Table2",
+      "Fields": [
+        "Cisco_Nexus_Health_Table2_cefcFRUCurrent",
+        "Cisco_Nexus_Health_Table2_cefcPowerRedundancyMode",
+        "Cisco_Nexus_Health_Table2_cefcFRUPowerAdminStatus",
+        "Cisco_Nexus_Health_Table2_cefcTotalDrawnCurrent",
+        "Cisco_Nexus_Health_Table2_entPhysicalName",
+        "Cisco_Nexus_Health_Table2_cefcPowerNonRedundantReason",
+        "Cisco_Nexus_Health_Table2_cefcTotalAvailableCurrent",
+        "Cisco_Nexus_Health_Table2_cefcPowerRedundancyOperMode",
+        "Cisco_Nexus_Health_Table2_cefcFRUPowerOperStatus",
+        "Cisco_Nexus_Health_Table2_cefcPowerUnits",
+        "Cisco_Nexus_Health_Table2_entPhysicalSerialNum",
+        "Cisco_Nexus_Health_Table2_entPhysicalHardwareRev"
+      ]
+    },
+    "Cisco_Nexus_Health_Temperature": {
+      "Query": "Cisco_Nexus_Health_Temperature",
+      "Fields": [
+        "Cisco_Nexus_Health_Temperature_entSensorType",
+        "Cisco_Nexus_Health_Temperature_entSensorPrecision",
+        "Cisco_Nexus_Health_Temperature_entPhysicalName",
+        "Cisco_Nexus_Health_Temperature_entSensorStatus",
+        "Cisco_Nexus_Health_Temperature_entSensorScale",
+        "Cisco_Nexus_Health_Temperature_entSensorValue_Temperature"
+      ]
+    },
+    "Cisco_Nexus_Health_dBmW": {
+      "Query": "Cisco_Nexus_Health_dBmW",
+      "Fields": [
+        "Cisco_Nexus_Health_dBmW_entSensorScale",
+        "Cisco_Nexus_Health_dBmW_entSensorStatus",
+        "Cisco_Nexus_Health_dBmW_entPhysicalName",
+        "Cisco_Nexus_Health_dBmW_entSensorPrecision",
+        "Cisco_Nexus_Health_dBmW_entSensorType",
+        "Cisco_Nexus_Health_dBmW_entSensorValue_dBmW"
+      ]
+    },
+    "Cisco_Nexus_Health_Power": {
+      "Query": "Cisco_Nexus_Health_Power",
+      "Fields": [
+        "Cisco_Nexus_Health_Power_entSensorValue_Power",
+        "Cisco_Nexus_Health_Power_entSensorScale",
+        "Cisco_Nexus_Health_Power_entSensorStatus",
+        "Cisco_Nexus_Health_Power_entPhysicalName",
+        "Cisco_Nexus_Health_Power_entSensorPrecision",
+        "Cisco_Nexus_Health_Power_entSensorType"
+      ]
+    },
+    "Cisco_Nexus_Health_VoltsAC": {
+      "Query": "Cisco_Nexus_Health_VoltsAC",
+      "Fields": [
+        "Cisco_Nexus_Health_VoltsAC_entSensorPrecision",
+        "Cisco_Nexus_Health_VoltsAC_entSensorValue_VoltsAC",
+        "Cisco_Nexus_Health_VoltsAC_entPhysicalName",
+        "Cisco_Nexus_Health_VoltsAC_entSensorScale",
+        "Cisco_Nexus_Health_VoltsAC_entSensorStatus",
+        "Cisco_Nexus_Health_VoltsAC_entSensorType"
+      ]
+    }
+  },
+  "Fields": {
+    "Cisco_Nexus_Health_VoltsDC_entSensorScale": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorScale"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_unknown_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_Table2_cefcFRUPowerOperStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFRUPowerStatusEntry",
+          "cefcFRUPowerOperStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Frequency_entSensorPrecision": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorPrecision"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_Table2_cefcPowerNonRedundantReason": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFRUPowerSupplyGroupEntry",
+          "cefcPowerNonRedundantReason"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Current_entSensorPrecision": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorPrecision"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_Current_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_VoltsAC_entSensorStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_unknown_entSensorStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_dBmW_entSensorPrecision": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorPrecision"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_VoltsAC_entSensorValue_VoltsAC": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_VoltsDC_entSensorValue_VoltsDC": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_unknown_entSensorValue_unknown": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_other_entSensorType": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_other_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_dBmW_entSensorStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Table2_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_Table2_cefcPowerUnits": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFRUPowerSupplyGroupEntry",
+          "cefcPowerUnits"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_Table2_entPhysicalHardwareRev": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalHardwareRev"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_Temperature_entSensorType": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Frequency_entSensorValue_Frequnecy": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_Temperature_entSensorPrecision": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorPrecision"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_Frequency_entSensorStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_dBmW_entSensorType": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_unknown_entSensorPrecision": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorPrecision"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_Power_entSensorType": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Table2_cefcPowerRedundancyMode": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFRUPowerSupplyGroupEntry",
+          "cefcPowerRedundancyMode"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_dBmW_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_VoltsAC_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_other_entSensorValue_other": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_VoltsAC_entSensorType": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Power_entSensorPrecision": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorPrecision"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_dBmW_entSensorValue_dBmW": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_Current_entSensorStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_VoltsAC_entSensorPrecision": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorPrecision"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_VoltsAC_entSensorScale": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorScale"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Table2_cefcFRUPowerAdminStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFRUPowerStatusEntry",
+          "cefcFRUPowerAdminStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Temperature_entSensorScale": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorScale"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Table2_cefcTotalAvailableCurrent": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFRUPowerSupplyGroupEntry",
+          "cefcTotalAvailableCurrent"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_other_entSensorScale": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorScale"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Temperature_entSensorStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_other_entSensorPrecision": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorPrecision"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_Frequency_entSensorScale": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorScale"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Frequency_entSensorType": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Current_entSensorValue_Current": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_Table2_cefcTotalDrawnCurrent": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFRUPowerSupplyGroupEntry",
+          "cefcTotalDrawnCurrent"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_VoltsDC_entSensorStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Table2_cefcPowerRedundancyOperMode": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFRUPowerSupplyGroupEntry",
+          "cefcPowerRedundancyOperMode"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Power_entSensorValue_Power": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_Temperature_entSensorValue_Temperature": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorValue"
+        ]
+      },
+      "InputType": "float"
+    },
+    "Cisco_Nexus_Health_Table2_cefcFRUCurrent": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFRUPowerStatusEntry",
+          "cefcFRUCurrent"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_Frequency_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_VoltsDC_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_dBmW_entSensorScale": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorScale"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_other_entSensorStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Current_entSensorType": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Power_entSensorStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_unknown_entSensorScale": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorScale"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_unknown_entSensorType": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Current_entSensorScale": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorScale"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_VoltsDC_entSensorType": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorType"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_VoltsDC_entSensorPrecision": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorPrecision"
+        ]
+      },
+      "InputType": "integer"
+    },
+    "Cisco_Nexus_Health_Table3_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_Table3_cefcFanTrayOperStatus": {
+      "Source": {
+        "Data": [
+          "SNMP_cefcFanTrayStatusEntry",
+          "cefcFanTrayOperStatus"
+        ]
+      },
+      "InputType": "enum"
+    },
+    "Cisco_Nexus_Health_Temperature_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_Table2_entPhysicalSerialNum": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalSerialNum"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_Power_entPhysicalName": {
+      "Source": {
+        "Data": [
+          "SNMP_entPhysicalEntry",
+          "entPhysicalName"
+        ]
+      },
+      "InputType": "string"
+    },
+    "Cisco_Nexus_Health_Power_entSensorScale": {
+      "Source": {
+        "Data": [
+          "SNMP_entSensorValueEntry",
+          "entSensorScale"
+        ]
+      },
+      "InputType": "enum"
+    }
+  },
+  "Checks": {
+    "Cisco_Nexus_Health": {
+      "Tables": [
+        "Cisco_Nexus_Health_unknown",
+        "Cisco_Nexus_Health_Table2",
+        "Cisco_Nexus_Health_Temperature",
+        "Cisco_Nexus_Health_other",
+        "Cisco_Nexus_Health_dBmW",
+        "Cisco_Nexus_Health_Frequency",
+        "Cisco_Nexus_Health_Power",
+        "Cisco_Nexus_Health_VoltsAC",
+        "Cisco_Nexus_Health_Current",
+        "Cisco_Nexus_Health_Table3",
+        "Cisco_Nexus_Health_VoltsDC"
+      ],
+      "MP": "Cisco_Nexus",
+      "Name": "Health"
+    }
+  },
+  "DataTables": {
+    "SNMP_entSensorValueEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "entSensorValueEntry"
+    },
+    "SNMP_cefcFRUPowerStatusEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "cefcFRUPowerStatusEntry"
+    },
+    "SNMP_cefcFanTrayStatusEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "cefcFanTrayStatusEntry"
+    },
+    "SNMP_cefcFRUPowerSupplyGroupEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "cefcFRUPowerSupplyGroupEntry"
+    },
+    "SNMP_entPhysicalEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "entPhysicalEntry"
+    },
+    "SNMP_entSensorThresholdEntry": {
+      "Singleton": false,
+      "Protocol": "SNMP",
+      "Name": "entSensorThresholdEntry"
+    }
+  },
+  "Queries": {
+    "Cisco_Nexus_Health_unknown": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_entSensorValueEntry"
+        },
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_Frequency": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_entSensorValueEntry"
+        },
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_VoltsDC": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_entSensorValueEntry"
+        },
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_Table3": {
+      "TableQueries": [
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        },
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_cefcFanTrayStatusEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_Current": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_entSensorValueEntry"
+        },
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_other": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_entSensorValueEntry"
+        },
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_Table2": {
+      "TableQueries": [
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        },
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_cefcFRUPowerStatusEntry"
+        },
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_cefcFRUPowerSupplyGroupEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_Temperature": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_entSensorValueEntry"
+        },
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_dBmW": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_entSensorValueEntry"
+        },
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_Power": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_entSensorValueEntry"
+        },
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        }
+      ]
+    },
+    "Cisco_Nexus_Health_VoltsAC": {
+      "TableQueries": [
+        {
+          "JoinType": "outer",
+          "JoinKey": {},
+          "DataTable": "SNMP_entSensorValueEntry"
+        },
+        {
+          "JoinType": "inner",
+          "JoinKey": {},
+          "DataTable": "SNMP_entPhysicalEntry"
+        }
+      ]
+    }
+  },
+  "Input": {
+    "SNMP": {
+      "Tables": {
+        "cefcFRUPowerSupplyGroupEntry": {
+          "Augments": null,
+          "Index": [
+            "entPhysicalIndex"
+          ]
+        },
+        "entSensorValueEntry": {
+          "Augments": null,
+          "Index": [
+            "entPhysicalIndex"
+          ]
+        },
+        "entPhysicalEntry": {
+          "Augments": null,
+          "Index": [
+            "entPhysicalIndex"
+          ]
+        },
+        "cefcFanTrayStatusEntry": {
+          "Augments": null,
+          "Index": [
+            "entPhysicalIndex"
+          ]
+        },
+        "entSensorThresholdEntry": {
+          "Augments": null,
+          "Index": [
+            "entPhysicalIndex",
+            "entSensorThresholdIndex"
+          ]
+        },
+        "cefcFRUPowerStatusEntry": {
+          "Augments": null,
+          "Index": [
+            "entPhysicalIndex"
+          ]
+        }
+      },
+      "DataTables": {
+        "SNMP_entSensorValueEntry": "entSensorValueEntry",
+        "SNMP_cefcFRUPowerStatusEntry": "cefcFRUPowerStatusEntry",
+        "SNMP_cefcFanTrayStatusEntry": "cefcFanTrayStatusEntry",
+        "SNMP_cefcFRUPowerSupplyGroupEntry": "cefcFRUPowerSupplyGroupEntry",
+        "SNMP_entPhysicalEntry": "entPhysicalEntry",
+        "SNMP_entSensorThresholdEntry": "entSensorThresholdEntry"
+      },
+      "Scalars": {
+        "entSensorThresholdRelation": {
+          "Table": "entSensorThresholdEntry",
+          "Syntax": "INTEGER"
+        },
+        "entSensorThresholdSeverity": {
+          "Table": "entSensorThresholdEntry",
+          "Syntax": "INTEGER"
+        },
+        "cefcFanTrayOperStatus": {
+          "Table": "cefcFanTrayStatusEntry",
+          "Syntax": "INTEGER"
+        },
+        "cefcPowerNonRedundantReason": {
+          "Table": "cefcFRUPowerSupplyGroupEntry",
+          "Syntax": "INTEGER"
+        },
+        "entSensorThresholdIndex": {
+          "Table": "entSensorThresholdEntry",
+          "Syntax": "Integer32"
+        },
+        "entSensorThresholdValue": {
+          "Table": "entSensorThresholdEntry",
+          "Syntax": "INTEGER"
+        },
+        "cefcFRUPowerOperStatus": {
+          "Table": "cefcFRUPowerStatusEntry",
+          "Syntax": "INTEGER"
+        },
+        "cefcPowerRedundancyOperMode": {
+          "Table": "cefcFRUPowerSupplyGroupEntry",
+          "Syntax": "INTEGER"
+        },
+        "cefcPowerUnits": {
+          "Table": "cefcFRUPowerSupplyGroupEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "cefcTotalAvailableCurrent": {
+          "Table": "cefcFRUPowerSupplyGroupEntry",
+          "Syntax": "Integer32"
+        },
+        "cefcPowerRedundancyMode": {
+          "Table": "cefcFRUPowerSupplyGroupEntry",
+          "Syntax": "INTEGER"
+        },
+        "entPhysicalName": {
+          "Table": "entPhysicalEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "cefcFRUCurrent": {
+          "Table": "cefcFRUPowerStatusEntry",
+          "Syntax": "Integer32"
+        },
+        "entSensorThresholdEvaluation": {
+          "Table": "entSensorThresholdEntry",
+          "Syntax": "INTEGER"
+        },
+        "entSensorPrecision": {
+          "Table": "entSensorValueEntry",
+          "Syntax": "INTEGER"
+        },
+        "entSensorValue": {
+          "Table": "entSensorValueEntry",
+          "Syntax": "INTEGER"
+        },
+        "entPhysicalSerialNum": {
+          "Table": "entPhysicalEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "entSensorType": {
+          "Table": "entSensorValueEntry",
+          "Syntax": "INTEGER"
+        },
+        "entSensorStatus": {
+          "Table": "entSensorValueEntry",
+          "Syntax": "INTEGER"
+        },
+        "cefcFRUPowerAdminStatus": {
+          "Table": "cefcFRUPowerStatusEntry",
+          "Syntax": "INTEGER"
+        },
+        "entPhysicalHardwareRev": {
+          "Table": "entPhysicalEntry",
+          "Syntax": "OCTET STRING"
+        },
+        "entPhysicalIndex": {
+          "Table": "entPhysicalEntry",
+          "Syntax": "Integer32"
+        },
+        "cefcTotalDrawnCurrent": {
+          "Table": "cefcFRUPowerSupplyGroupEntry",
+          "Syntax": "Integer32"
+        },
+        "entSensorScale": {
+          "Table": "entSensorValueEntry",
+          "Syntax": "INTEGER"
+        }
+      },
+      "Modules": {},
+      "DataFields": {
+        "entSensorThresholdRelation": "entSensorThresholdRelation",
+        "entSensorThresholdSeverity": "entSensorThresholdSeverity",
+        "cefcFanTrayOperStatus": "cefcFanTrayOperStatus",
+        "cefcPowerNonRedundantReason": "cefcPowerNonRedundantReason",
+        "entSensorThresholdIndex": "entSensorThresholdIndex",
+        "entSensorThresholdValue": "entSensorThresholdValue",
+        "cefcFRUPowerOperStatus": "cefcFRUPowerOperStatus",
+        "cefcPowerRedundancyOperMode": "cefcPowerRedundancyOperMode",
+        "cefcPowerUnits": "cefcPowerUnits",
+        "cefcTotalAvailableCurrent": "cefcTotalAvailableCurrent",
+        "cefcPowerRedundancyMode": "cefcPowerRedundancyMode",
+        "entPhysicalName": "entPhysicalName",
+        "cefcFRUCurrent": "cefcFRUCurrent",
+        "entSensorThresholdEvaluation": "entSensorThresholdEvaluation",
+        "entSensorPrecision": "entSensorPrecision",
+        "entSensorValue": "entSensorValue",
+        "entPhysicalSerialNum": "entPhysicalSerialNum",
+        "entSensorType": "entSensorType",
+        "entSensorStatus": "entSensorStatus",
+        "cefcFRUPowerAdminStatus": "cefcFRUPowerAdminStatus",
+        "entPhysicalHardwareRev": "entPhysicalHardwareRev",
+        "entPhysicalIndex": "entPhysicalIndex",
+        "cefcTotalDrawnCurrent": "cefcTotalDrawnCurrent",
+        "entSensorScale": "entSensorScale"
+      },
+      "Objects": {
+        "entSensorThresholdRelation": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.2.1.1.3",
+          "Type": "Event",
+          "Name": "entSensorThresholdRelation",
+          "Module": ".0"
+        },
+        "entSensorThresholdSeverity": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.2.1.1.2",
+          "Type": "Event",
+          "Name": "entSensorThresholdSeverity",
+          "Module": ".0"
+        },
+        "cefcFanTrayOperStatus": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.4.1.1.1",
+          "Type": "Event",
+          "Name": "cefcFanTrayOperStatus",
+          "Module": ".0"
+        },
+        "cefcPowerNonRedundantReason": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.1.1.6",
+          "Type": "Event",
+          "Name": "cefcPowerNonRedundantReason",
+          "Module": ".0"
+        },
+        "entSensorThresholdIndex": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.2.1.1.1",
+          "Type": "Event",
+          "Name": "entSensorThresholdIndex",
+          "Module": ".0"
+        },
+        "entSensorThresholdValue": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.2.1.1.4",
+          "Type": "Event",
+          "Name": "entSensorThresholdValue",
+          "Module": ".0"
+        },
+        "cefcFRUPowerOperStatus": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.2.1.2",
+          "Type": "Event",
+          "Name": "cefcFRUPowerOperStatus",
+          "Module": ".0"
+        },
+        "cefcPowerRedundancyOperMode": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.1.1.5",
+          "Type": "Event",
+          "Name": "cefcPowerRedundancyOperMode",
+          "Module": ".0"
+        },
+        "cefcPowerUnits": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.1.1.2",
+          "Type": "Event",
+          "Name": "cefcPowerUnits",
+          "Module": ".0"
+        },
+        "cefcTotalAvailableCurrent": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.1.1.3",
+          "Type": "Event",
+          "Name": "cefcTotalAvailableCurrent",
+          "Module": ".0"
+        },
+        "cefcPowerRedundancyMode": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.1.1.1",
+          "Type": "Event",
+          "Name": "cefcPowerRedundancyMode",
+          "Module": ".0"
+        },
+        "entSensorValueEntry": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.1.1.1",
+          "Type": "Table",
+          "Name": "entSensorValueEntry",
+          "Module": ".0"
+        },
+        "entPhysicalEntry": {
+          "OID": ".1.3.6.1.2.1.47.1.1.1.1",
+          "Type": "Table",
+          "Name": "entPhysicalEntry",
+          "Module": ".0"
+        },
+        "entPhysicalName": {
+          "OID": ".1.3.6.1.2.1.47.1.1.1.1.7",
+          "Type": "Event",
+          "Name": "entPhysicalName",
+          "Module": ".0"
+        },
+        "cefcFanTrayStatusEntry": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.4.1.1",
+          "Type": "Table",
+          "Name": "cefcFanTrayStatusEntry",
+          "Module": ".0"
+        },
+        "cefcFRUCurrent": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.2.1.3",
+          "Type": "Event",
+          "Name": "cefcFRUCurrent",
+          "Module": ".0"
+        },
+        "entSensorThresholdEvaluation": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.2.1.1.5",
+          "Type": "Event",
+          "Name": "entSensorThresholdEvaluation",
+          "Module": ".0"
+        },
+        "entSensorPrecision": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.1.1.1.3",
+          "Type": "Event",
+          "Name": "entSensorPrecision",
+          "Module": ".0"
+        },
+        "cefcFRUPowerStatusEntry": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.2.1",
+          "Type": "Table",
+          "Name": "cefcFRUPowerStatusEntry",
+          "Module": ".0"
+        },
+        "entSensorValue": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.1.1.1.4",
+          "Type": "Event",
+          "Name": "entSensorValue",
+          "Module": ".0"
+        },
+        "entPhysicalSerialNum": {
+          "OID": ".1.3.6.1.2.1.47.1.1.1.1.11",
+          "Type": "Event",
+          "Name": "entPhysicalSerialNum",
+          "Module": ".0"
+        },
+        "entSensorType": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.1.1.1.1",
+          "Type": "Event",
+          "Name": "entSensorType",
+          "Module": ".0"
+        },
+        "entSensorStatus": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.1.1.1.5",
+          "Type": "Event",
+          "Name": "entSensorStatus",
+          "Module": ".0"
+        },
+        "cefcFRUPowerAdminStatus": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.2.1.1",
+          "Type": "Event",
+          "Name": "cefcFRUPowerAdminStatus",
+          "Module": ".0"
+        },
+        "entPhysicalHardwareRev": {
+          "OID": ".1.3.6.1.2.1.47.1.1.1.1.8",
+          "Type": "Event",
+          "Name": "entPhysicalHardwareRev",
+          "Module": ".0"
+        },
+        "cefcFRUPowerSupplyGroupEntry": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.1.1",
+          "Type": "Table",
+          "Name": "cefcFRUPowerSupplyGroupEntry",
+          "Module": ".0"
+        },
+        "entPhysicalIndex": {
+          "OID": ".1.3.6.1.2.1.47.1.1.1.1.1",
+          "Type": "Event",
+          "Name": "entPhysicalIndex",
+          "Module": ".0"
+        },
+        "entSensorScale": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.1.1.1.2",
+          "Type": "Event",
+          "Name": "entSensorScale",
+          "Module": ".0"
+        },
+        "entSensorThresholdEntry": {
+          "OID": ".1.3.6.1.4.1.9.9.91.1.2.1.1",
+          "Type": "Table",
+          "Name": "entSensorThresholdEntry",
+          "Module": ".0"
+        },
+        "cefcTotalDrawnCurrent": {
+          "OID": ".1.3.6.1.4.1.9.9.117.1.1.1.1.4",
+          "Type": "Event",
+          "Name": "cefcTotalDrawnCurrent",
+          "Module": ".0"
+        }
+      },
+      "Events": {}
+    }
+  },
+  "DataTableFields": {
+    "SNMP_entSensorValueEntry": [
+      "entSensorValue",
+      "entSensorStatus",
+      "entSensorType",
+      "entPhysicalIndex",
+      "entSensorScale",
+      "entSensorPrecision"
+    ],
+    "SNMP_cefcFRUPowerStatusEntry": [
+      "cefcFRUPowerOperStatus",
+      "cefcFRUPowerAdminStatus",
+      "entPhysicalIndex",
+      "cefcFRUCurrent"
+    ],
+    "SNMP_cefcFanTrayStatusEntry": [
+      "entPhysicalIndex",
+      "cefcFanTrayOperStatus"
+    ],
+    "SNMP_cefcFRUPowerSupplyGroupEntry": [
+      "cefcPowerNonRedundantReason",
+      "cefcPowerRedundancyOperMode",
+      "cefcPowerUnits",
+      "cefcTotalDrawnCurrent",
+      "cefcPowerRedundancyMode",
+      "cefcTotalAvailableCurrent",
+      "entPhysicalIndex"
+    ],
+    "SNMP_entPhysicalEntry": [
+      "entPhysicalSerialNum",
+      "entPhysicalHardwareRev",
+      "entPhysicalName",
+      "entPhysicalIndex"
+    ],
+    "SNMP_entSensorThresholdEntry": [
+      "entSensorThresholdRelation",
+      "entSensorThresholdSeverity",
+      "entSensorThresholdIndex",
+      "entSensorThresholdValue",
+      "entPhysicalIndex",
+      "entSensorThresholdEvaluation"
+    ]
+  },
+  "DataFields": {
+    "entSensorThresholdRelation": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorThresholdEntry"
+    },
+    "entSensorThresholdSeverity": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorThresholdEntry"
+    },
+    "cefcFanTrayOperStatus": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFanTrayStatusEntry"
+    },
+    "cefcPowerNonRedundantReason": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFRUPowerSupplyGroupEntry"
+    },
+    "entSensorThresholdIndex": {
+      "IsKey": true,
+      "JoinKey": "entSensorThresholdIndex",
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorThresholdEntry"
+    },
+    "entSensorThresholdValue": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorThresholdEntry"
+    },
+    "cefcFRUPowerOperStatus": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFRUPowerStatusEntry"
+    },
+    "cefcPowerRedundancyOperMode": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFRUPowerSupplyGroupEntry"
+    },
+    "cefcPowerUnits": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFRUPowerSupplyGroupEntry"
+    },
+    "cefcTotalAvailableCurrent": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFRUPowerSupplyGroupEntry"
+    },
+    "cefcPowerRedundancyMode": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFRUPowerSupplyGroupEntry"
+    },
+    "entPhysicalName": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entPhysicalEntry"
+    },
+    "cefcFRUCurrent": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFRUPowerStatusEntry"
+    },
+    "entSensorThresholdEvaluation": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorThresholdEntry"
+    },
+    "entSensorPrecision": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorValueEntry"
+    },
+    "entSensorValue": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorValueEntry"
+    },
+    "entPhysicalSerialNum": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entPhysicalEntry"
+    },
+    "entSensorType": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorValueEntry"
+    },
+    "entSensorStatus": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorValueEntry"
+    },
+    "cefcFRUPowerAdminStatus": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFRUPowerStatusEntry"
+    },
+    "entPhysicalHardwareRev": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entPhysicalEntry"
+    },
+    "entPhysicalIndex": {
+      "IsKey": true,
+      "JoinKey": "entPhysicalIndex",
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entPhysicalEntry"
+    },
+    "cefcTotalDrawnCurrent": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_cefcFRUPowerSupplyGroupEntry"
+    },
+    "entSensorScale": {
+      "IsKey": false,
+      "JoinKey": null,
+      "Protocol": "SNMP",
+      "DataTable": "SNMP_entSensorValueEntry"
+    }
+  },
+  "MPs": {
+    "Cisco_Nexus": {
+      "Tag": "netw_switch_cisco",
+      "Name": "Cisco Nexus"
+    }
+  }
+}

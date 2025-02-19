@@ -1,0 +1,401 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BackendMsg",
+  "description": "Messages that can be sent by the backend.",
+  "anyOf": [
+    {
+      "description": "Send an asynchronous API request to the agent. The result will be received in an AgentMsg::Response.",
+      "type": "object",
+      "anyOf": [
+        {
+          "description": "Ping() -> Pong",
+          "type": "object",
+          "required": [
+            "request"
+          ],
+          "properties": {
+            "request": {
+              "type": "string",
+              "enum": [
+                "ping"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Shutdown() -> Ok",
+          "type": "object",
+          "required": [
+            "request"
+          ],
+          "properties": {
+            "request": {
+              "type": "string",
+              "enum": [
+                "shutdown"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Config(...) -> Ok / Error",
+          "type": "object",
+          "required": [
+            "config",
+            "request"
+          ],
+          "properties": {
+            "request": {
+              "type": "string",
+              "enum": [
+                "config"
+              ]
+            },
+            "config": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "description": "Install -> Ok / Error",
+          "type": "object",
+          "required": [
+            "package",
+            "request"
+          ],
+          "properties": {
+            "request": {
+              "type": "string",
+              "enum": [
+                "install"
+              ]
+            },
+            "package": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "description": "GetTable() -> Table / Error",
+          "type": "object",
+          "required": [
+            "host",
+            "request",
+            "table"
+          ],
+          "properties": {
+            "request": {
+              "type": "string",
+              "enum": [
+                "get_table"
+              ]
+            },
+            "host": {
+              "type": "string"
+            },
+            "table": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "description": "GetSnmpTable(host, auth, oid) -> SnmpTable / Error",
+          "type": "object",
+          "required": [
+            "auth",
+            "host",
+            "oid",
+            "request"
+          ],
+          "properties": {
+            "request": {
+              "type": "string",
+              "enum": [
+                "get_snmp_table"
+              ]
+            },
+            "host": {
+              "type": "string"
+            },
+            "auth": {
+              "$ref": "#/definitions/Auth"
+            },
+            "oid": {
+              "$ref": "#/definitions/Oid"
+            }
+          }
+        }
+      ],
+      "required": [
+        "message",
+        "req_id"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": [
+            "request"
+          ]
+        },
+        "req_id": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    {
+      "description": "Send an asynchronous API response to the agent. This is a response to AgentMsg::Request.",
+      "type": "object",
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "response"
+          ],
+          "properties": {
+            "response": {
+              "type": "string",
+              "enum": [
+                "pong"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "error",
+            "response"
+          ],
+          "properties": {
+            "response": {
+              "type": "string",
+              "enum": [
+                "error"
+              ]
+            },
+            "error": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "response"
+          ],
+          "properties": {
+            "response": {
+              "type": "string",
+              "enum": [
+                "ok"
+              ]
+            }
+          }
+        }
+      ],
+      "required": [
+        "message",
+        "req_id"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": [
+            "response"
+          ]
+        },
+        "req_id": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "Auth": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "community",
+            "version"
+          ],
+          "properties": {
+            "version": {
+              "type": "string",
+              "enum": [
+                "2c"
+              ]
+            },
+            "community": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "anyOf": [
+            {
+              "type": "object",
+              "required": [
+                "level"
+              ],
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "enum": [
+                    "noAuthNoPriv"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "auth",
+                "level"
+              ],
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "enum": [
+                    "authNoPriv"
+                  ]
+                },
+                "auth": {
+                  "$ref": "#/definitions/V3AuthParams"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "auth",
+                "level",
+                "priv"
+              ],
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "enum": [
+                    "authPriv"
+                  ]
+                },
+                "auth": {
+                  "$ref": "#/definitions/V3AuthParams"
+                },
+                "priv": {
+                  "$ref": "#/definitions/V3PrivParams"
+                }
+              }
+            }
+          ],
+          "required": [
+            "version"
+          ],
+          "properties": {
+            "version": {
+              "type": "string",
+              "enum": [
+                "3"
+              ]
+            },
+            "context": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "context_engine": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "security_engine": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "destination_engine": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          }
+        }
+      ]
+    },
+    "V3AuthParams": {
+      "type": "object",
+      "required": [
+        "password",
+        "protocol",
+        "user"
+      ],
+      "properties": {
+        "protocol": {
+          "$ref": "#/definitions/V3AuthProtocol"
+        },
+        "user": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "V3AuthProtocol": {
+      "type": "string",
+      "enum": [
+        "SHA",
+        "MD5"
+      ]
+    },
+    "V3PrivParams": {
+      "type": "object",
+      "required": [
+        "password",
+        "protocol"
+      ],
+      "properties": {
+        "protocol": {
+          "$ref": "#/definitions/V3PrivProtocol"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "V3PrivProtocol": {
+      "type": "string",
+      "enum": [
+        "DES",
+        "AES"
+      ]
+    },
+    "Oid": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint64",
+        "minimum": 0.0
+      }
+    }
+  }
+}

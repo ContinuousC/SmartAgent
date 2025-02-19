@@ -1,0 +1,17 @@
+[package]
+name    = "nmap"
+version = "0.1.0"
+authors = ["Maarten Deprez <mdp@si-int.eu>"]
+repository = "https://github.com/ContinuousC/SmartAgent"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+
+[dependencies]
+serde = { version = "1.0", features = [ "derive" ] }
+tokio = { version = "1.0", features = [ "process" ] }
+serde-xml-rs = "0.4"
+thiserror = "1.0"
+nom = "7.0"
+log = "0.4.16"

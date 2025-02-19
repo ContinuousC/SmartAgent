@@ -1,0 +1,46 @@
+[package]
+name    = "protocol"
+description = "Protocol plugin interface for SmartAgent"
+version = "0.1.5"
+authors = ["Maarten Deprez <mdp@si-int.eu>"]
+repository = "https://github.com/ContinuousC/SmartAgent"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+[features]
+default = ["async"]
+# enable blocking operationsfor counter_db
+blocking = []
+# enable async operations for counter_db
+async = ["tokio"]
+
+reqwest = ["tokio", "dep:reqwest", "dep:rdp-rs-2", "dep:base64"]
+
+[[bin]]
+name = "protocol-api"
+required-features = ["rpc"]
+
+[dependencies]
+serde = { version = "1.0", features = [ "derive" ] }
+serde_json = { version = "1.0", features = ["raw_value"] }
+uuid = { version = "1.1.2", features = ["v4", "serde"]}
+clap = { version = "3.2.21", features = ["derive"] }
+async-trait = "0.1"
+thiserror = "1.0"
+log = "0.4.14"
+tokio = { version = "1.0", features = [ "fs", "io-util" ], optional = true }
+
+rpc = { registry = "si", version = "0.1.25", optional = true}
+
+etc_base = { registry = "si", version = "0.1", path = "../etc_base" }
+value = { registry = "si", version = "0.1.6", path = "../value" }
+agent_utils = { registry = "si", version = "0.2", path = "../agent_utils", features = ["key-reader"]}
+agent_serde = { registry = "si", version = "0.1", path = "../agent_serde" }
+logger = { registry = "si", version = "0.1", path = "../logger" }
+serde_path_to_error = "0.1.8"
+tap = "1.0.1"
+
+reqwest  = { version = "0.12.7", features = ["cookies", "native-tls"], optional = true }
+rdp-rs-2 = { version = "0.1.2", optional = true }
+base64 = { version = "0.22.1", optional = true }

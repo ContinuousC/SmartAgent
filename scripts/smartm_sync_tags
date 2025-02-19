@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+# -*- mode: python -*-
+
+import os
+import sys
+import json
+import glob
+import subprocess
+
+
+try:
+    smartm_tags = {(str(mp['Tag']), mp['Name'])
+                   for spec in glob.glob("%s/local/share/mnow/agent/mps/*.json"
+                                         % os.environ['OMD_ROOT'])
+                   for mp in list(json.load(open(spec))['MPs'].values())}
+except Exception as e:
+    print('Failed to load MP specifications: %s: %s' % (type(e).__name__, str(e)), file=sys.stderr)
+    exit(1)
+
+
+multisite_path = "%s/etc/check_mk/multisite.d/wato" % os.environ['OMD_ROOT']
+    
+if os.path.exists('%s/hosttags.mk' % multisite_path):
+
+    # Load hosttags file
+
+    hosttags_file = "%s/hosttags.mk" % multisite_path
+
+    env = {
+        'wato_host_tags': [],
+        'wato_aux_tags': []
+    }
+
+    try:
+        exec(compile(open(hosttags_file, "rb").read(), hosttags_file, 'exec'), env, env)
+    except Exception as e:
+        print('Failed to load current host tags file: %s: %s' % (type(e).__name__, str(e)), file=sys.stderr)
+        exit(1)
+
+    existing_tags = set(tag[0]
+                        for group in env['wato_host_tags'] if not group[1].startswith('SmartM/')
+                        for tag in group[2])
+
+    # Write out new host tags
+
+    os.rename(hosttags_file, '%s.bak' % hosttags_file)
+
+    print('wato_host_tags += %s\nwato_aux_tags += %s' \
+        % (repr([tag for tag in env['wato_host_tags'] if not tag[1].startswith('SmartM/')]
+                + [(key, 'SmartM/%s' % name, [(key, '%s (SmartM)' % name, [])])
+                   for key,name in smartm_tags if key not in existing_tags]),
+           repr(env['wato_aux_tags'])), file=open(hosttags_file, 'w'))
+
+
+if os.path.exists('%s/tags.mk' % multisite_path):
+
+    hosttags_file = "%s/tags.mk" % multisite_path
+
+    env = { 'wato_tags': {} }
+
+    try:
+        exec(compile(open(hosttags_file, "rb").read(), hosttags_file, 'exec'), env, env)
+    except Exception as e:
+        print('Failed to load current host tags file: %s: %s' % (type(e).__name__, str(e)), file=sys.stderr)
+        exit(1)
+
+    existing_tags = set(tag.get('id')
+                        for group in env['wato_tags']['tag_groups'] if group.get('topic') != 'SmartM'
+                        for tag in group.get('tags', []))
+
+    # Write out new host tags
+
+    os.rename(hosttags_file, '%s.bak' % hosttags_file)
+
+    print('wato_tags.update(%s)' \
+        % repr({ 'aux_tags': env['wato_tags']['aux_tags'],
+                 'tag_groups': [tag for tag in env['wato_tags']['tag_groups'] if tag.get('topic') != 'SmartM']
+                 + [{'topic': 'SmartM', 'title': name, 'id': key, 'tags': [{'title': name, 'id': key, 'aux_tags': []}]}
+                    for key,name in smartm_tags if key not in existing_tags] }), file=open(hosttags_file, 'w'))
+
+subprocess.Popen(['omd', 'reload', 'apache']).communicate()

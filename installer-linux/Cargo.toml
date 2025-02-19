@@ -1,0 +1,19 @@
+[package]
+name = "installer-linux"
+version = "0.1.0"
+authors = ["Maarten Deprez <mdp@si-int.eu>"]
+repository = "https://github.com/ContinuousC/SmartAgent"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+base64 = "0.13"
+clap = { version = "3.0", features = ["derive"] }
+glob = "0.3"
+nom = "7.0"
+
+logger = { path = "../logger" }
+agent_utils = { path = "../agent_utils" }

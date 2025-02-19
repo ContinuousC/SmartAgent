@@ -1,0 +1,676 @@
+# -*- mode: python -*-
+
+import sys,os,ast
+import json,fcntl
+import traceback
+import itertools
+import functools
+import copy
+import re
+
+
+"""Context for every cmk version
+
+Attributes:
+    cmk_version     A string representing the cmk version, in the format MAJOR.MINOR.PATCHPVERSION.EDITION
+                    That said. PATCH has not been used since 1.2. so asume its 0
+    config          A module/class with the get_config_cache function
+    default_config  A module/class containing the default wato config
+    get_autochecks  A function used to retrieve inventorised checks, expects the autochecksfile
+    get_mode        A function used to retrieve the mode of the agent (active, current, inventory), expects the stack
+    check_types     A function used to retrieve the checktypes the agent should poll
+    get_tags        A function used to retrieve tags from a host (def get_tags(hostname: str) -> list), expects the context and hostname
+"""
+class SmartMCmkContext(object):
+    
+    def __init__(
+        self, 
+        cmk_version, 
+        config, default_config, 
+        get_mode, get_tags, 
+        get_autochecks,
+        get_checktypes
+    ):
+        self.cmk_version = cmk_version
+        self.config = config
+        self.default_config = default_config
+        self.get_mode = get_mode
+        self.get_tags = get_tags
+        self.get_autochecks = get_autochecks
+        self.get_checktypes = get_checktypes
+        
+def __get_autochecks_16_later(check_table, autochecks_file):
+    try: return set(check['check_plugin_name'] for check
+            in ast.literal_eval(open(autochecks_file).read())) |\
+        set(check_table)
+    except (IOError, OSError): return set()
+
+def __get_autochecks_22(autochecks_file, hostname):
+    import cmk.base.config as config
+    return __get_autochecks_16_later((
+            str(k) for k,v in config.get_config_cache().check_table(hostname)), 
+        autochecks_file)
+
+def __get_autochecks_16(autochecks_file, hostname):
+    import cmk_base.check_table as check_table
+    from cmk_base.check_api_utils import set_hostname
+    
+    set_hostname(hostname) # required for cmk -D
+    return __get_autochecks_16_later((c._check_plugin_name for c in
+                                      check_table.get_precompiled_check_table(hostname)), 
+                                     autochecks_file)
+    # do not reset hostname, or cmk1.6 will cry
+
+def __get_autochecks_12(autochecks_file, hostname):
+    try: return set(check[0] for check
+            in ast.literal_eval(open(autochecks_file).read())) |\
+        set(service for service, item in config.get_check_table(hostname)) 
+    except (IOError, OSError): return set()
+
+def __get_mode_16(stack):
+    return 'active' if sys.argv[0].startswith('%s/var/check_mk/precompiled/' % os.environ['OMD_ROOT']) \
+            else 'inventory' if 'commandline_discovery' in stack \
+            else 'current'
+            
+def __get_mode_12(stack):
+    return 'inventory' if 'get_info_for_discovery' in stack \
+            else 'active' if 'do_precompile_hostchecks' in stack \
+            else 'current'
+            
+def __get_tags_22(hostname):
+    return list(set(config.get_config_cache().tags(hostname).values()))
+
+def __get_tags_16(hostname):
+    return list({v for v in config.get_config_cache()
+                                  .get_host_config(hostname)
+                                  .tag_groups.values()
+                    if v not in [None, ""]})
+    
+def __get_tags_12( hostname):
+    return list({val for val in tags_of_host(hostname)
+                     if val not in [None, ""]
+                     and not val.startswith("/")
+                     and not val.startswith("site:")})
+            
+def __get_checktypes_16():
+    try: return sys.argv[sys.argv.index('--checks') + 1].split(',')
+    except: return None
+def __get_checktypes_12():
+    return getattr(config, 'check_types', None)
+
+def cmk_22_context():
+    import cmk.base.config as config
+    import cmk.utils.version as version
+    import cmk.base.default_config as default_config
+    
+    itertools.imap = map
+    
+    return SmartMCmkContext(
+        version.omd_version(), 
+        config, default_config, 
+        __get_mode_16, __get_tags_22,
+        __get_autochecks_22, 
+        __get_checktypes_16)
+    
+def cmk_16_context():
+    import cmk
+    import cmk_base.config as config
+    import cmk_base.default_config as default_config
+
+    return SmartMCmkContext(
+        cmk.__version__, 
+        config, default_config, 
+        __get_mode_16, __get_tags_16,
+        __get_autochecks_16, 
+        __get_checktypes_16)
+
+def cmk_12_context():
+    import __main__ as config
+    import __main__ as default_config
+
+    config.get_config_cache = lambda: config
+    
+    return SmartMCmkContext(check_mk_version, 
+                   config, default_config, 
+                   __get_mode_12, __get_tags_12,
+                   __get_autochecks_12, 
+                   __get_checktypes_12) 
+    
+
+try: _ctx = cmk_22_context()
+except: 
+    try: _ctx = cmk_16_context()
+    except: _ctx = cmk_12_context()
+config = _ctx.config
+default_config = _ctx.default_config
+    
+def try_cast(*types):
+    def __cast(value):
+        for t in types:
+            try: return t(value)
+            except: continue
+        return value 
+    return __cast 
+
+def is_valid_ip_address(ip_address):
+    if not ip_address: return False
+    ipv4_pattern = r'^(\d{1,3}\.){3}\d{1,3}$'
+    ipv6_pattern = r'^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$'
+    return re.match(ipv4_pattern, ip_address) or re.match(ipv6_pattern, ip_address)
+
+def get_config(origin, hostname):
+    config_cache = config.get_config_cache()
+    return next(iter(config_cache.host_extra_conf(hostname, origin)))
+        
+def get_opt_config(origin, hostname, default = None):
+    config_cache = config.get_config_cache()
+    return next(iter(config_cache.host_extra_conf(hostname, origin)), default)
+
+def scopy_config(origin, hostname, default = None):
+    return copy.copy(get_config(origin, hostname, default))
+
+
+def dcopy_config(origin, hostname, default = None):
+    return copy.deepcopy(get_config(origin, hostname, default))
+
+def get_httpconfig(origin, hostname, ipaddress, port = None):
+    cnf = {"hostname": hostname, "ipaddress": ipaddress}
+    cnf.update(get_opt_config(origin, hostname, {}))
+    
+    if port is not None: cnf.setdefault("port", port)
+    for enum in ("host_allias", "https_strategy"):
+        if val := cnf.get(enum):
+            if isinstance(val, tuple): cnf[enum] = {val[0]: val[1]}
+    
+    return cnf
+
+def agent_smartm(params, hostname, ipaddress):
+    # Detect config mode: inventory, active (at last reload) or current
+    
+    # Verbosity detection via check_mk's parsing is problematic,
+    # so we try to get it form argv directly...
+    verbosity = ( 3 if '--debug' in sys.argv[1:]
+                  else 2 if '--verbose' in sys.argv[1:] or any(
+                          'v' in arg.split('=',1)[0] for arg in sys.argv[1:]
+                          if arg.startswith('-') and not arg.startswith('--'))
+                  else 0 )
+
+
+    # Detect if config needs to be (re)generated.
+    omd_root = os.environ['OMD_ROOT']
+    stack = [fun for (_,_,fun,_) in traceback.extract_stack()]
+    mode = _ctx.get_mode(stack)
+    plugin_file = "%s/local/share/check_mk/checks/agent_smartm" % omd_root
+    conf_dir = "%s/var/mnow/config/%s" % (omd_root, mode)
+    conf_file = '%s/%s.json' % (conf_dir, hostname)
+    cmk_conf_dir = "%s/etc/check_mk/conf.d" % omd_root
+    autochecks_file = '%s/var/check_mk/autochecks/%s.mk' % (omd_root, hostname)
+    packed_config_file = '%s/var/check_mk/base/precompiled_check_config.mk' % omd_root
+    has_packed_config = mode == 'active' and _ctx.cmk_version >= '1.6'
+
+
+    try: update = os.stat(conf_file).st_mtime < max(
+            os.stat(plugin_file).st_mtime,
+            os.stat(packed_config_file).st_mtime if has_packed_config
+            else max(os.stat(autochecks_file).st_mtime,
+                     max(os.stat("%s/%s" % (p,f)).st_mtime
+                         for p,ds,fs in os.walk(cmk_conf_dir)
+                         for f in fs if f.endswith(".mk"))))
+    except OSError: update = True
+
+
+    # Check if ipaddress is valid. When dynamic IP-adresses are used, ipaddress will equal the hostname and not be a valid ip.
+    is_ip_valid = is_valid_ip_address(ipaddress)
+    if not is_ip_valid: ipaddress = None
+    # Generate config.
+    if update:
+
+        try: os.makedirs(conf_dir)
+        except OSError: pass
+
+        fd = open(conf_file, 'w')
+        fcntl.flock(fd, fcntl.LOCK_EX)
+        try: json.dump({
+                'agent': params,
+                'tags': _ctx.get_tags(hostname),
+                'checks': list(_ctx.get_autochecks(autochecks_file, hostname)),
+                'SNMP': smartm_snmp_rules(hostname, ipaddress),
+                'SSH': smartm_ssh_rules(hostname, ipaddress),
+                'Azure': smartm_azure_rules(hostname),
+                'WMI': smartm_wmi_rules(hostname, ipaddress),
+                'Powershell': smartm_powershell_rules(hostname, ipaddress),
+                'API': smartm_api_rules(hostname, ipaddress),
+                'SQL': smartm_sql_rules(hostname, ipaddress)
+        }, fd, indent = 4)
+        except Exception as e:
+            traceback.print_exc()
+            raise e
+
+        fcntl.flock(fd, fcntl.LOCK_UN)
+
+
+    # Return command line.
+    check_types = _ctx.get_checktypes()
+    return '-H %s %s%s%s%s' % (
+        hostname, 
+        ' -I %s' % (ipaddress) if is_ip_valid else '',
+        ' -%s' % ('v' * verbosity) if verbosity else '',
+        ' --checks %s' % ','.join(check_types) if check_types else '',
+        ' --%s' % mode if mode != 'current' else '')
+
+
+# SNMP rules.
+
+default_config.snmp_optimization = []
+default_config.snmp_quirks = []
+
+def smartm_snmp_rules(hostname, ipaddress):
+    config_cache = config.get_config_cache()
+    auth = next(iter(config_cache.host_extra_conf(hostname, config.snmp_communities)), None)
+    bulk = next(iter(config_cache.host_extra_conf(hostname, config.bulkwalk_hosts)), None) \
+        not in [False, '@negate', None]
+    snmpv2c = next(iter(config_cache.host_extra_conf(hostname, config.snmpv2c_hosts)), None) \
+        not in [False, '@negate', None]
+    return {
+        "host_name": hostname,
+        "ip_addr": ipaddress,
+        "host_config": {
+            'auth': smartm_snmp_auth_rule(auth, bulk, snmpv2c),
+            'bulk_host': bulk,
+            'bulk_opts': next(iter(config_cache.host_extra_conf(hostname, config.snmp_optimization)), {}),
+            'quirks': next(iter(config_cache.host_extra_conf(hostname, config.snmp_quirks)), {}),
+            'use_walk': next(iter(config_cache.host_extra_conf(hostname, config.usewalk_hosts)), None) not in [False, '@negate', None],
+            'timing': next(iter(config_cache.host_extra_conf(hostname, config.snmp_timing)), None),
+            'port': next(iter(config_cache.host_extra_conf(hostname, config.snmp_ports)), None),
+            'snmpv3_contexts': list((("all" if check is None else {"group": check}),
+                                     [context or None for context in contexts])
+                                    for check,contexts in config_cache.host_extra_conf(
+                                            hostname, config.snmpv3_contexts)),
+        }
+    }
+
+def smartm_snmp_auth_rule(rule, bulk, snmpv2c):
+    return {'version': '2c', 'community': 'public'} if rule is None \
+        else {'version': '1' if not bulk and not snmpv2c else '2c', 'community': rule} if isinstance(rule, (str,bytes)) \
+        else {
+                'version': '3',
+                'level': rule[0],
+                'auth': {
+                    'protocol': rule[1],
+                    'user': rule[2],
+                    'password': rule[3]
+                } if rule[0] in ['authNoPriv', 'authPriv'] else None,
+                'priv': {
+                    'protocol': rule[4],
+                    'password': rule[5]
+                } if rule[0] in ['authPriv'] else None,
+        }
+
+# Azure rules
+
+default_config.azure_tenant = []
+default_config.azure_client = []
+default_config.azure_subscriptions = []
+default_config.azure_resourceGroups = []
+
+def smartm_azure_rules(hostname):
+    config_cache = config.get_config_cache()
+    client_info = next(iter(config_cache.host_extra_conf(
+                hostname, config.azure_client)), None)
+    if isinstance(client_info, dict):
+        client_info["tenantId"] = next(itertools.imap(lambda rule: rule['tenantId'],
+                                            iter(config_cache.host_extra_conf(
+                                    hostname, config.azure_tenant))), None)
+
+    return {
+	    'client': client_info,
+	    'subscriptions': next(itertools.imap(lambda rule: rule['subscriptions'],
+                                                 iter(config_cache.host_extra_conf(
+			                             hostname, config.azure_subscriptions))), None),
+        'resourceGroups': next(itertools.imap(lambda rule: rule['resourceGroups'],
+                                            iter(config_cache.host_extra_conf(
+                                                hostname, config.azure_resourceGroups))), None),
+	}
+
+
+# SSH rules.
+default_config.ssh_authentication = []
+default_config.ssh_connectivity = []
+default_config.ssh_options = []
+default_config.ssh_jumphosts = []
+
+def smartm_ssh_rules(hostname, ipaddress):
+    from functools import partial
+    smartm_ssh_conn_rule_with_hostname = partial(smartm_ssh_conn_rule, hostname=hostname, ipaddress = ipaddress)
+    config_cache = config.get_config_cache()
+    
+    return {
+        'credentials': next(itertools.imap(smartm_ssh_cred_rule,
+                                    config_cache.host_extra_conf(
+                                        hostname, config.ssh_authentication)), None),
+        'connectivity': next(itertools.imap(smartm_ssh_conn_rule_with_hostname,
+                                    config_cache.host_extra_conf(
+                                        hostname, config.ssh_connectivity)),
+                             {"hostname": hostname, "ipaddress": ipaddress}),
+        'options': next(itertools.imap(smartm_ssh_options_rule,
+                                    config_cache.host_extra_conf(
+                                        hostname, config.ssh_options)), {}),
+        'jumphosts': next(itertools.imap(smartm_ssh_jumphosts_rule,
+                                    config_cache.host_extra_conf(
+                                        hostname, config.ssh_jumphosts)), []),
+    }
+
+def smartm_ssh_cred_rule(rule):
+    '''
+    Some refactoring so serde_json can handle this enum in rust.
+    {
+        "username": "mnow",
+        "credential_type": {
+            "identity_file",
+            {
+                "identity_file": ".ssh/id_rsa"
+            }
+        }
+    }
+
+    {
+        "username": "mnow",
+        credential_type: {"type": "identity_file", "identity_file": ".ssh/id_rsa"}
+    '''
+    rule = copy.deepcopy(rule)
+    if "credential_type" in rule.keys():
+        temp = rule.pop("credential_type")
+        rule["credential_type"] = {}
+        rule["credential_type"]["type"] = temp[0]
+        rule["credential_type"].update(temp[1])
+    return rule
+
+def smartm_ssh_conn_rule(rule, hostname, ipaddress):
+    rule["hostname"] = hostname
+    rule["ipaddress"] = ipaddress
+    return rule
+
+def smartm_ssh_options_rule(rule):
+    return rule
+
+def smartm_ssh_jumphosts_rule(rule):
+    return rule
+
+# WinRM rules
+default_config.winrm_connectivity = []
+default_config.winrm_credentials = []
+default_config.winrm_options = []
+def smartm_windows_connection_rules(hostname, ipaddress):
+    config_cache = config.get_config_cache()
+    
+    ps_conn = copy.deepcopy(
+        next(iter(config_cache.host_extra_conf(
+            hostname, config.winrm_connectivity)), dict()))
+    # backwards compat
+    if isinstance(ps_conn, tuple): (conn_method, ps_config) = ps_conn
+    else: (conn_method, ps_config) = "WinRM", ps_conn
+    ps_config["hostname"] = hostname
+    
+    login_method, creds = copy.deepcopy(
+        next(iter(config_cache.host_extra_conf(
+            hostname, config.winrm_credentials)), (None, None)))
+    if login_method is None:
+        ps_config["credentials"] = None
+    elif isinstance(creds, dict):
+        if login_method == "Kerberos": creds = {
+                "hostname": next(iter(hostname.split("."))),
+                "realm": creds["realm"].upper(),
+                "ccache_name": "%s:%s" % creds.get("ccache_name")}
+        if login_method in ["Basic", "Ntlm"] and "password" not in creds:
+            creds["password"] = ""
+        ps_config["credentials"] = {login_method: creds}
+    elif login_method == "Certificate":
+        pkey, cert = creds
+        ps_config["credentials"] = {login_method: {"private_key": pkey,
+                                                   "public_cert": cert}}
+        
+    if conn_method == "WinRM":
+        if ipaddress: ps_config["ip_address"] = ipaddress
+        allias = ps_config.get("host_allias")
+        ps_config["host_allias"] = allias if isinstance(allias, tuple) else \
+                                ("Ip", ipaddress) if allias else None                
+        ps_config["options"]= next(iter(config_cache.host_extra_conf(
+            hostname, config.winrm_options)), dict())
+    
+    return {conn_method: ps_config}
+
+default_config.powershell_context = []
+def smartm_powershell_rules(hostname, ipaddress):
+    config_cache = config.get_config_cache()    
+    return {"connection": smartm_windows_connection_rules(hostname, ipaddress),
+            "script_context": {k: v[1] for k, v in itertools.chain.from_iterable(
+                               config_cache.host_extra_conf(hostname, config.powershell_context))}}
+
+default_config.wmi_options = []
+default_config.wmi_retries = []
+default_config.wmi_quircks = []
+default_config.wmic_connectivity = []
+def smartm_wmi_rules(hostname, ipaddress):
+    config_cache = config.get_config_cache()
+
+    wmi_config = copy.deepcopy(
+        next(iter(config_cache.host_extra_conf(
+            hostname, config.wmi_options)), dict())
+    )
+    wmi_config["retries"] = next(iter(config_cache.host_extra_conf(
+                hostname, config.wmi_retries)), None)
+    
+    dcom_config = copy.deepcopy(next(iter(config_cache.host_extra_conf(
+                                hostname, config.wmic_connectivity)), None))
+    
+    if dcom_config: 
+        method, creds = dcom_config["credentials"]
+        dcom_config["credentials"] = {method: creds}
+        dcom_config["hostname"] = hostname
+        if hostname != ipaddress:
+            dcom_config["ipaddress"] = ipaddress
+        wmi_config["dcom"] = dcom_config
+    else:
+        wmi_config["powershell"] = smartm_windows_connection_rules(hostname, ipaddress)
+        
+
+    quircks = copy.deepcopy(next(iter(config_cache.host_extra_conf(
+                hostname, config.wmi_quircks)), dict()))
+    local_as_utc = quircks.get("local_as_utc")
+    if local_as_utc: local_as_utc = {
+        "timezone": local_as_utc["timezone"],
+        "fields": functools.reduce(
+            lambda accum, classname_fieldname: (
+                accum.setdefault(classname_fieldname[0], list()).append(classname_fieldname[1]), 
+            accum)[1],
+            local_as_utc.get("fields", list()),
+            dict())}
+    quircks["local_as_utc"] = local_as_utc
+    wmi_config["quircks"] = quircks
+
+    return wmi_config
+
+# API rules.
+def smartm_api_rules(hostname, ipaddress,):
+	return {'vmware': smartm_vmware_rules(hostname, ipaddress),
+            'ms_graph': smartm_ms_graph_rules(hostname),
+            'azure': smartm_azure_rules(hostname),
+            'ldap': smartm_ldap_rules(hostname),
+            'cache': smartm_cache_rules(hostname, ipaddress),
+            "mirth": smartm_mirth_rules(hostname, ipaddress),
+            "unity": smartm_unity_rules(hostname, ipaddress),
+            "xenapp_director": smartm_xenapp_rules(hostname, ipaddress),
+            "proxmox": smartm_proxmox_rules(hostname, ipaddress),
+            "elastic": smartm_elastic_rules(hostname, ipaddress)}
+
+
+default_config.vmware_connectivity = []
+default_config.vmware_credentials = []
+default_config.vmware_is_cluster = []
+def smartm_vmware_rules(hostname, ipaddress):
+    config_cache = config.get_config_cache()                    
+    allias = copy.deepcopy(
+            next(itertools.imap(lambda rule: rule.get('host_allias'),
+                            iter(config_cache.host_extra_conf(
+                    hostname, config.vmware_connectivity))), None)
+    )
+
+    allias = allias if isinstance(allias, tuple) else ("Ip", ipaddress) if allias else None
+        
+    return {
+		'host': hostname,
+		'port': next(itertools.imap(lambda rule: rule.get('port'),
+                            iter(config_cache.host_extra_conf(
+                    hostname, config.vmware_connectivity))), None),
+        'certificate': next(itertools.imap(lambda rule: rule.get('certificate'),
+                            iter(config_cache.host_extra_conf(
+                    hostname, config.vmware_connectivity))), None),
+        'disable_certificate_verification': next(itertools.imap(lambda rule: rule.get('disable_certificate_verification'),
+                            iter(config_cache.host_extra_conf(
+                    hostname, config.vmware_connectivity))), None),
+        'disable_hostname_verification': next(itertools.imap(lambda rule: rule.get('disable_hostname_verification'),
+                            iter(config_cache.host_extra_conf(
+                    hostname, config.vmware_connectivity))), None),
+		'credentials': next(iter(config_cache.host_extra_conf(
+                    hostname, config.vmware_credentials)), None),
+		'is_cluster': next(itertools.imap(lambda rule: rule['is_cluster'],
+                            iter(config_cache.host_extra_conf(
+                    hostname, config.vmware_is_cluster))), False),
+        "host_allias": allias
+	}
+
+
+default_config.cache_connectivity = []
+default_config.cache_credentials = []
+def smartm_cache_rules(hostname, ipaddress):
+    config_cache = config.get_config_cache()    
+    credentials = next(iter(config_cache.host_extra_conf(
+                    hostname, config.cache_credentials)), None)
+    if credentials is None: return None
+    
+    connectivity = next(iter(config_cache.host_extra_conf(
+                hostname, config.cache_connectivity)), None)
+    
+    allias = copy.deepcopy(
+        next(itertools.imap(lambda rule: rule.get('host_allias'),
+                        iter(config_cache.host_extra_conf(
+                hostname, config.cache_connectivity))), None)
+    )
+    allias = allias if isinstance(allias, tuple) else ("Ip", ipaddress) if allias else None
+    
+    return {
+		'host': hostname,
+		'port': connectivity.get('port') if connectivity else None,
+		'timeout': connectivity.get('timeout') if connectivity else None,
+        'certificate': connectivity.get('certificate') if connectivity else None,
+        'disable_certificate_verification': connectivity.get('disable_certificate_verification') if connectivity else None,
+        'disable_hostname_verification': connectivity.get('disable_hostname_verification') if connectivity else None,
+		'credentials': credentials,
+        "host_allias": allias,
+	}
+
+default_config.ms_graph_tenant = []
+default_config.ms_graph_client = []
+default_config.ms_graph_rapports = []
+def smartm_ms_graph_rules(hostname):
+    config_cache = config.get_config_cache()
+    credentials = next(iter(config_cache.host_extra_conf(
+                hostname, config.ms_graph_client)), None)
+    if isinstance(credentials, dict):
+         credentials["tenantId"] = next(itertools.imap(lambda rule: rule['tenantId'],
+                                            iter(config_cache.host_extra_conf(
+			                        hostname, config.ms_graph_tenant))), None)
+    conf = {
+	    'credentials': credentials,
+        'rapports': next(iter(config_cache.host_extra_conf(
+                hostname, config.ms_graph_rapports)), None)
+    }
+    return conf
+
+default_config.ldap = []
+def smartm_ldap_rules(hostname):
+    config_cache = config.get_config_cache()
+    ldap_config = copy.deepcopy(
+        next(iter(config_cache.host_extra_conf(
+                hostname, config.ldap)), list())
+    )
+    
+    for cnf in ldap_config:
+        # add hostname
+        cnf.setdefault("host_config", dict())["hostname"] = hostname
+
+        # specific comes out as ("Specific", [....])
+        repl_conf = cnf.get("replication_config")
+        if isinstance(repl_conf, tuple):
+            cnf["replication_config"] = {repl_conf[0]: repl_conf[1]}
+
+    return ldap_config
+
+default_config.mirth_http_client = []
+default_config.mirth_api_auth = []
+default_config.mirth_smb_auth = []
+default_config.mirth_smb_opts = []
+def smartm_mirth_rules(hostname, ipaddress):
+    try: return {"http_client": get_httpconfig(config.mirth_http_client, hostname, ipaddress, 55502),
+                 "api_auth": get_config(config.mirth_api_auth, hostname),
+                 "smb_auth": get_opt_config(config.mirth_smb_auth, hostname),
+                 "smb_opts": get_opt_config(config.mirth_smb_opts, hostname)}
+    except StopIteration: return None
+
+default_config.dell_unity_creds = []
+default_config.dell_unity_http = []
+def smartm_unity_rules(hostname, ipaddress):
+    try: return {"auth": get_config(config.dell_unity_creds, hostname),
+                 "http": get_httpconfig(config.dell_unity_http, hostname, ipaddress)}
+    except StopIteration: return None
+    
+default_config.xenapp_director_auth = []
+default_config.xenapp_director_client = []
+default_config.xenapp_director_server = []
+def smartm_xenapp_rules(hostname, ipaddress):
+    try: return {"auth": get_config(config.xenapp_director_auth, hostname),
+                 "http": get_httpconfig(config.xenapp_director_client, hostname, ipaddress),
+                 "director_server": get_opt_config(config.xenapp_director_server, hostname)}
+    except StopIteration: return None
+
+default_config.sql_instances = []
+default_config.sql_credentials = []
+default_config.sql_odbc_options = []
+def smartm_sql_rules(hostname, ipaddress):
+    try_int= try_cast(int)
+    config_cache = config.get_config_cache()
+    cur_config = {"hostname": hostname, "ip": ipaddress}
+    instances = (
+        next(iter(config_cache.host_extra_conf(
+                hostname, config.sql_instances)), dict())
+    )
+    instances["instances"] = [try_int(i) for i in instances.get("instances", list())]
+    cur_config.update(instances)
+    cur_config.update(
+        next(iter(config_cache.host_extra_conf(
+                hostname, config.sql_credentials)), dict())
+    )
+    cur_config.update(
+        next(iter(config_cache.host_extra_conf(
+                hostname, config.sql_odbc_options)), dict())
+    )
+    return cur_config
+
+default_config.proxmox_creds = []
+default_config.proxmox_http = []
+def smartm_proxmox_rules(hostname, ipaddress):
+    try: return {"auth": get_config(config.proxmox_creds, hostname),
+                 "http": get_httpconfig(config.proxmox_http, hostname, ipaddress)}
+    except StopIteration: return None
+  
+default_config.elastic_http = []
+default_config.elastic_auth = []
+default_config.elastic_nodes = []  
+def smartm_elastic_rules(hostname, ipaddress):
+    try: return {"auth": get_config(config.elastic_auth, hostname),
+                 "http": get_httpconfig(config.elastic_http, hostname, ipaddress, 9200)}
+    except StopIteration as e: 
+        print(f"failed to generate config for {hostname}:elastic {e}")
+        return None
+
+special_agent_info['smartm'] = agent_smartm

@@ -1,0 +1,12 @@
+[submodule "external/key-reader"]
+	path = external/key-reader
+	url = git@sigit01:Development/MonitorNow/KeyReader
+[submodule "external/netsnmp"]
+	path = external/netsnmp
+	url = git@sigit01:Development/Agents/NetSNMP-rs
+[submodule "external/Rpc"]
+	path = external/rpc
+	url = git@sigit01:Development/ContinuousC/Rpc
+[submodule "external/mssql-browser"]
+	path = external/mssql-browser
+	url = git@sigit01:Development/Agents/mssql-browser

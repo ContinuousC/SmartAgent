@@ -1,0 +1,21 @@
+{
+    "name": "agent-connector",
+    "version": "0.1.13",
+    "description": "",
+    "main": "agent_connector.js",
+    "files": [
+	"agent_connector.js"
+    ],
+    "license": "ISC",
+    "dependencies": {
+	"cbor": "^6.0.0",
+	"rpc": "^0.1.5"
+    },
+    "repository": {
+	"type": "git",
+	"url": "git@sigit01:Development/Agents/SmartAgent"
+    },
+    "publishConfig": {
+        "registry": "http://sigit01:4873/"
+    }
+}

@@ -1,0 +1,32 @@
+[package]
+name = "smart-agent-lib"
+description = "SmartAgent functions for Javascript and Typescript."
+version = "0.1.15"
+authors = ["Maarten Deprez <mdp@si-int.eu>"]
+repository = "https://github.com/ContinuousC/SmartAgent"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2" }
+chrono = { version = "0.4", features = ["wasmbind"] }
+getrandom = { version = "0.2", features = ["js"] }
+uuid = { version = "0.8", features = [ "v4", "wasm-bindgen" ] }
+serde = { version = "1.0", features = [ "derive" ] }
+serde-wasm-bindgen = "0.4"
+serde_json = "1.0"
+thiserror = "1.0"
+nom = "7.0"
+
+etc_base = { registry = "si", version = "0.1" }
+etc = { registry = "si", version = "0.1" }
+unit = { registry = "si", version = "0.1" }
+value = { registry = "si", version = "0.1", features = ["dbschema"] }
+agent_utils = { registry = "si", version = "0.1" }
+dbschema = { registry = "si", version = "0.1.21" }
+rule-engine = { registry = "si", version = "0.1.17" }
+metrics-types = { registry = "si", version = "0.1.2" }

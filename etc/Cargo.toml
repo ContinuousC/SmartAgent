@@ -1,0 +1,31 @@
+[package]
+name    = "etc"
+description = "ETC types"
+version = "0.1.9"
+authors = ["Maarten Deprez <mdp@si-int.eu>"]
+repository = "https://github.com/ContinuousC/SmartAgent"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+tokio = { version = "1.0", features = ["sync"], optional = true }
+serde = { version = "1.0", features = [ "derive" ] }
+serde_json = { version = "1.0", features = [ "raw_value" ] }
+thiserror = "1.0"
+log = "0.4.14"
+smart-default = "0.6"
+
+dbschema = { registry = "si", version = "0.1" }
+
+rule-engine = { registry = "si", version = "0.1.32" }
+
+agent_utils = { registry = "si", version = "0.2", path = "../agent_utils" }
+agent_derive = { registry = "si", version = "0.1.1", path = "../agent_derive" }
+etc_base = { registry = "si", version = "0.1.1", path = "../etc_base" }
+protocol = { registry = "si", version = "0.1", path = "../protocol" }
+unit = { registry = "si", version = "0.1", path = "../unit" }
+value = { registry = "si", version = "0.1", path = "../value" }
+expression = { registry = "si", version = "0.1", path = "../expression" }
+query = { registry = "si", version = "0.1", path = "../query" }
+# protocols = { registry = "si", version = "0.1", path = "../protocols" }

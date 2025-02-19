@@ -1,0 +1,10 @@
+#!/usr/bin/python
+# -*- mode: python -*-
+
+import sys, os
+
+print "VMWare plugin started (socket: %d)" % int(sys.argv[1])
+socket = os.fdopen(int(sys.argv[1]), 'r+')
+
+print "Request: %s" % socket.readline()
+print >>socket, "Response!"

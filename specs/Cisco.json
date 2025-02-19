@@ -1,0 +1,2192 @@
+{
+    "Checks": {
+        "Cisco_CPU_SmartM": {
+            "Description": "This check gives the CPU of the system as measured by instance of the CPU's and the overall CPU wide system memory",
+            "MP": "Cisco",
+            "Name": "CPU",
+            "Tables": [
+                "Cisco_CPU_cpmCPUTotalEntry"
+            ]
+        },
+        "Cisco_Health_SmartM": {
+            "Description": "This check gives the health of all components in the system.\nDefault thresholds are \"warning\" for warning and \"critical\", \"notFunctioning\" for critical",
+            "MP": "Cisco",
+            "Name": "Health",
+            "Tables": [
+                "Cisco_Health_ciscoEnvMonTemperatureStatusEntry",
+                "Cisco_Health_ciscoEnvMonFanStatusEntry",
+                "Cisco_Health_ciscoEnvMonSupplyStatusEntry"
+            ]
+        },
+        "Cisco_Memory_Pool_SmartM": {
+            "Description": "This check gives the memory per memory pool",
+            "MP": "Cisco",
+            "Name": "Memory Pool",
+            "Tables": [
+                "Cisco_Memory Pool_ciscoMemoryPoolEntry"
+            ]
+        },
+        "Cisco_Reload_SmartM": {
+            "Description": "The reload reason for Cisco",
+            "MP": "Cisco",
+            "Name": "Reload",
+            "Tables": [
+                "Cisco_Reload_Reload"
+            ]
+        },
+        "Cisco_Stack_SmartM": {
+            "Description": "This check monitors the status of the Cisco Stack.",
+            "MP": "Cisco",
+            "Name": "Stack",
+            "Tables": [
+                "Cisco_Stack_Switchstate"
+            ]
+        }
+    },
+    "DataFields": {
+        "SNMP_ciscoEnvMonFanState": {
+            "DataTable": "SNMP_ciscoEnvMonFanStatusEntry",
+            "IsKey": false,
+            "Name": "ciscoEnvMonFanState",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonFanStatusDescr": {
+            "DataTable": "SNMP_ciscoEnvMonFanStatusEntry",
+            "IsKey": false,
+            "Name": "ciscoEnvMonFanStatusDescr",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonFanStatusIndex": {
+            "DataTable": "SNMP_ciscoEnvMonFanStatusEntry",
+            "IsKey": true,
+            "Name": "ciscoEnvMonFanStatusIndex",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonSupplySource": {
+            "DataTable": "SNMP_ciscoEnvMonSupplyStatusEntry",
+            "IsKey": false,
+            "Name": "ciscoEnvMonSupplySource",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonSupplyState": {
+            "DataTable": "SNMP_ciscoEnvMonSupplyStatusEntry",
+            "IsKey": false,
+            "Name": "ciscoEnvMonSupplyState",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonSupplyStatusDescr": {
+            "DataTable": "SNMP_ciscoEnvMonSupplyStatusEntry",
+            "IsKey": false,
+            "Name": "ciscoEnvMonSupplyStatusDescr",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonSupplyStatusIndex": {
+            "DataTable": "SNMP_ciscoEnvMonSupplyStatusEntry",
+            "IsKey": true,
+            "Name": "ciscoEnvMonSupplyStatusIndex",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonTemperatureState": {
+            "DataTable": "SNMP_ciscoEnvMonTemperatureStatusEntry",
+            "IsKey": false,
+            "Name": "ciscoEnvMonTemperatureState",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonTemperatureStatusDescr": {
+            "DataTable": "SNMP_ciscoEnvMonTemperatureStatusEntry",
+            "IsKey": false,
+            "Name": "ciscoEnvMonTemperatureStatusDescr",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonTemperatureStatusIndex": {
+            "DataTable": "SNMP_ciscoEnvMonTemperatureStatusEntry",
+            "IsKey": true,
+            "Name": "ciscoEnvMonTemperatureStatusIndex",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonTemperatureStatusValue": {
+            "DataTable": "SNMP_ciscoEnvMonTemperatureStatusEntry",
+            "IsKey": false,
+            "Name": "ciscoEnvMonTemperatureStatusValue",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoEnvMonTemperatureThreshold": {
+            "DataTable": "SNMP_ciscoEnvMonTemperatureStatusEntry",
+            "IsKey": false,
+            "Name": "ciscoEnvMonTemperatureThreshold",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoMemoryPoolFree": {
+            "DataTable": "SNMP_ciscoMemoryPoolEntry",
+            "IsKey": false,
+            "Name": "ciscoMemoryPoolFree",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoMemoryPoolName": {
+            "DataTable": "SNMP_ciscoMemoryPoolEntry",
+            "IsKey": false,
+            "Name": "ciscoMemoryPoolName",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoMemoryPoolType": {
+            "DataTable": "SNMP_ciscoMemoryPoolEntry",
+            "IsKey": true,
+            "Name": "ciscoMemoryPoolType",
+            "Protocol": "SNMP"
+        },
+        "SNMP_ciscoMemoryPoolUsed": {
+            "DataTable": "SNMP_ciscoMemoryPoolEntry",
+            "IsKey": false,
+            "Name": "ciscoMemoryPoolUsed",
+            "Protocol": "SNMP"
+        },
+        "SNMP_cpmCPUMemoryFree": {
+            "DataTable": "SNMP_cpmCPUTotalEntry",
+            "IsKey": false,
+            "Name": "cpmCPUMemoryFree",
+            "Protocol": "SNMP"
+        },
+        "SNMP_cpmCPUMemoryKernelReserved": {
+            "DataTable": "SNMP_cpmCPUTotalEntry",
+            "IsKey": false,
+            "Name": "cpmCPUMemoryKernelReserved",
+            "Protocol": "SNMP"
+        },
+        "SNMP_cpmCPUMemoryUsed": {
+            "DataTable": "SNMP_cpmCPUTotalEntry",
+            "IsKey": false,
+            "Name": "cpmCPUMemoryUsed",
+            "Protocol": "SNMP"
+        },
+        "SNMP_cpmCPUTotal5minRev": {
+            "DataTable": "SNMP_cpmCPUTotalEntry",
+            "IsKey": false,
+            "Name": "cpmCPUTotal5minRev",
+            "Protocol": "SNMP"
+        },
+        "SNMP_cpmCPUTotalIndex": {
+            "DataTable": "SNMP_cpmCPUTotalEntry",
+            "IsKey": true,
+            "Name": "cpmCPUTotalIndex",
+            "Protocol": "SNMP"
+        },
+        "SNMP_cswSwitchNumCurrent": {
+            "DataTable": "SNMP_cswSwitchInfoEntry",
+            "IsKey": false,
+            "Name": "cswSwitchNumCurrent",
+            "Protocol": "SNMP"
+        },
+        "SNMP_cswSwitchState": {
+            "DataTable": "SNMP_cswSwitchInfoEntry",
+            "IsKey": false,
+            "Name": "cswSwitchState",
+            "Protocol": "SNMP"
+        },
+        "SNMP_entPhysicalIndex": {
+            "DataTable": "SNMP_entPhysicalEntry",
+            "IsKey": true,
+            "Name": "entPhysicalIndex",
+            "Protocol": "SNMP"
+        },
+        "SNMP_hostName": {
+            "DataTable": "SNMP_noIndex",
+            "IsKey": false,
+            "Name": "hostName",
+            "Protocol": "SNMP"
+        },
+        "SNMP_whyReload": {
+            "DataTable": "SNMP_noIndex",
+            "IsKey": false,
+            "Name": "whyReload",
+            "Protocol": "SNMP"
+        }
+    },
+    "DataTableFields": {
+        "SNMP_ciscoEnvMonFanStatusEntry": [
+            "SNMP_ciscoEnvMonFanStatusDescr",
+            "SNMP_ciscoEnvMonFanStatusIndex",
+            "SNMP_ciscoEnvMonFanState"
+        ],
+        "SNMP_ciscoEnvMonSupplyStatusEntry": [
+            "SNMP_ciscoEnvMonSupplyState",
+            "SNMP_ciscoEnvMonSupplyStatusIndex",
+            "SNMP_ciscoEnvMonSupplyStatusDescr",
+            "SNMP_ciscoEnvMonSupplySource"
+        ],
+        "SNMP_ciscoEnvMonTemperatureStatusEntry": [
+            "SNMP_ciscoEnvMonTemperatureState",
+            "SNMP_ciscoEnvMonTemperatureStatusIndex",
+            "SNMP_ciscoEnvMonTemperatureThreshold",
+            "SNMP_ciscoEnvMonTemperatureStatusValue",
+            "SNMP_ciscoEnvMonTemperatureStatusDescr"
+        ],
+        "SNMP_ciscoMemoryPoolEntry": [
+            "SNMP_ciscoMemoryPoolUsed",
+            "SNMP_ciscoMemoryPoolFree",
+            "SNMP_ciscoMemoryPoolType",
+            "SNMP_ciscoMemoryPoolName"
+        ],
+        "SNMP_cpmCPUTotalEntry": [
+            "SNMP_cpmCPUTotalIndex",
+            "SNMP_cpmCPUTotal5minRev",
+            "SNMP_cpmCPUMemoryUsed",
+            "SNMP_cpmCPUMemoryKernelReserved",
+            "SNMP_cpmCPUMemoryFree"
+        ],
+        "SNMP_cswSwitchInfoEntry": [
+            "SNMP_cswSwitchNumCurrent",
+            "SNMP_cswSwitchState",
+            "SNMP_entPhysicalIndex"
+        ],
+        "SNMP_entPhysicalEntry": [
+            "SNMP_entPhysicalIndex"
+        ],
+        "SNMP_noIndex": [
+            "SNMP_hostName",
+            "SNMP_whyReload"
+        ]
+    },
+    "DataTables": {
+        "SNMP_ciscoEnvMonFanStatusEntry": {
+            "Name": "ciscoEnvMonFanStatusEntry",
+            "Protocol": "SNMP",
+            "Singleton": false
+        },
+        "SNMP_ciscoEnvMonSupplyStatusEntry": {
+            "Name": "ciscoEnvMonSupplyStatusEntry",
+            "Protocol": "SNMP",
+            "Singleton": false
+        },
+        "SNMP_ciscoEnvMonTemperatureStatusEntry": {
+            "Name": "ciscoEnvMonTemperatureStatusEntry",
+            "Protocol": "SNMP",
+            "Singleton": false
+        },
+        "SNMP_ciscoMemoryPoolEntry": {
+            "Name": "ciscoMemoryPoolEntry",
+            "Protocol": "SNMP",
+            "Singleton": false
+        },
+        "SNMP_cpmCPUTotalEntry": {
+            "Name": "cpmCPUTotalEntry",
+            "Protocol": "SNMP",
+            "Singleton": false
+        },
+        "SNMP_cswSwitchInfoEntry": {
+            "Name": "cswSwitchInfoEntry",
+            "Protocol": "SNMP",
+            "Singleton": false
+        },
+        "SNMP_entPhysicalEntry": {
+            "Name": "entPhysicalEntry",
+            "Protocol": "SNMP",
+            "Singleton": false
+        },
+        "SNMP_noIndex": {
+            "Name": "noIndex",
+            "Protocol": "SNMP",
+            "Singleton": true
+        }
+    },
+    "Fields": {
+        "Cisco_ciscoEnvMonFanState": {
+            "AutoScale": false,
+            "Description": "The current state of the fan being instrumented.",
+            "DisplayUnit": null,
+            "Header": "State",
+            "InputType": {
+                "enum": {
+                    "1": "normal",
+                    "2": "warning",
+                    "3": "critical",
+                    "4": "shutdown",
+                    "5": "notPresent",
+                    "6": "notFunctioning"
+                }
+            },
+            "Inventorized": false,
+            "Name": "ciscoEnvMonFanState",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonFanStatusEntry",
+                    "SNMP_ciscoEnvMonFanState",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "critical": null,
+                "warning": null
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonFanStatusDescr": {
+            "AutoScale": false,
+            "Description": "Textual description of the fan being instrumented. This description is a short textual label, suitable as a human-sensible identification for the rest of the information in the entry.",
+            "DisplayUnit": null,
+            "Header": "Name",
+            "InputType": "string",
+            "Inventorized": false,
+            "Name": "ciscoEnvMonFanStatusDescr",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonFanStatusEntry",
+                    "SNMP_ciscoEnvMonFanStatusDescr",
+                    {
+                        "RegSubst": [
+                            "Data",
+                            ",.*$",
+                            ""
+                        ]
+                    }
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonFanStatusIndex": {
+            "AutoScale": false,
+            "Description": "Unique index for the fan being instrumented. This index is for SNMP purposes only, and has no intrinsic meaning.",
+            "DisplayUnit": null,
+            "Header": null,
+            "InputType": "integer",
+            "Inventorized": false,
+            "Name": "ciscoEnvMonFanStatusIndex",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonFanStatusEntry",
+                    "SNMP_ciscoEnvMonFanStatusIndex",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonSupplySource": {
+            "AutoScale": false,
+            "Description": "The power supply source. unknown - Power supply source unknown ac - AC power supply dc - DC power supply externalPowerSupply - External power supply internalRedundant - Internal redundant power supply ",
+            "DisplayUnit": null,
+            "Header": "Source",
+            "InputType": {
+                "enum": {
+                    "1": "unknown",
+                    "2": "ac",
+                    "3": "dc",
+                    "4": "externalPowerSupply",
+                    "5": "internalRedundant"
+                }
+            },
+            "Inventorized": false,
+            "Name": "ciscoEnvMonSupplySource",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonSupplyStatusEntry",
+                    "SNMP_ciscoEnvMonSupplySource",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonSupplyState": {
+            "AutoScale": false,
+            "Description": "The current state of the power supply being instrumented.",
+            "DisplayUnit": null,
+            "Header": "State",
+            "InputType": {
+                "enum": {
+                    "1": "normal",
+                    "2": "warning",
+                    "3": "critical",
+                    "4": "shutdown",
+                    "5": "notPresent",
+                    "6": "notFunctioning"
+                }
+            },
+            "Inventorized": false,
+            "Name": "ciscoEnvMonSupplyState",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonSupplyStatusEntry",
+                    "SNMP_ciscoEnvMonSupplyState",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "critical": null,
+                "warning": null
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonSupplyStatusDescr": {
+            "AutoScale": false,
+            "Description": "Textual description of the power supply being instrumented. This description is a short textual label, suitable as a human-sensible identification for the rest of the information in the entry.",
+            "DisplayUnit": null,
+            "Header": "Name",
+            "InputType": "string",
+            "Inventorized": false,
+            "Name": "ciscoEnvMonSupplyStatusDescr",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonSupplyStatusEntry",
+                    "SNMP_ciscoEnvMonSupplyStatusDescr",
+                    {
+                        "RegSubst": [
+                            "Data",
+                            ",.*$",
+                            ""
+                        ]
+                    }
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonSupplyStatusIndex": {
+            "AutoScale": false,
+            "Description": "Unique index for the power supply being instrumented. This index is for SNMP purposes only, and has no intrinsic meaning.",
+            "DisplayUnit": null,
+            "Header": null,
+            "InputType": "integer",
+            "Inventorized": false,
+            "Name": "ciscoEnvMonSupplyStatusIndex",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonSupplyStatusEntry",
+                    "SNMP_ciscoEnvMonSupplyStatusIndex",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonTemperatureState": {
+            "AutoScale": false,
+            "Description": "The current state of the testpoint being instrumented.",
+            "DisplayUnit": null,
+            "Header": "State",
+            "InputType": {
+                "enum": {
+                    "1": "normal",
+                    "2": "warning",
+                    "3": "critical",
+                    "4": "shutdown",
+                    "5": "notPresent",
+                    "6": "notFunctioning"
+                }
+            },
+            "Inventorized": false,
+            "Name": "ciscoEnvMonTemperatureState",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonTemperatureStatusEntry",
+                    "SNMP_ciscoEnvMonTemperatureState",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "critical": null,
+                "warning": null
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonTemperatureStatusDescr": {
+            "AutoScale": false,
+            "Description": "Textual description of the testpoint being instrumented. This description is a short textual label, suitable as a human-sensible identification for the rest of the information in the entry.",
+            "DisplayUnit": null,
+            "Header": "Name",
+            "InputType": "string",
+            "Inventorized": false,
+            "Name": "ciscoEnvMonTemperatureStatusDescr",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonTemperatureStatusEntry",
+                    "SNMP_ciscoEnvMonTemperatureStatusDescr",
+                    {
+                        "RegSubst": [
+                            "Data",
+                            ",.*$",
+                            ""
+                        ]
+                    }
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonTemperatureStatusIndex": {
+            "AutoScale": false,
+            "Description": "Unique index for the testpoint being instrumented. This index is for SNMP purposes only, and has no intrinsic meaning.",
+            "DisplayUnit": null,
+            "Header": null,
+            "InputType": "integer",
+            "Inventorized": false,
+            "Name": "ciscoEnvMonTemperatureStatusIndex",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonTemperatureStatusEntry",
+                    "SNMP_ciscoEnvMonTemperatureStatusIndex",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonTemperatureStatusValue": {
+            "AutoScale": false,
+            "Description": "The current measurement of the testpoint being instrumented.",
+            "DisplayUnit": {
+                "Temperature": "Celsius"
+            },
+            "Header": "Value",
+            "InputType": {
+                "quantity": "Temperature"
+            },
+            "Inventorized": false,
+            "Name": "ciscoEnvMonTemperatureStatusValue",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": true,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonTemperatureStatusEntry",
+                    "SNMP_ciscoEnvMonTemperatureStatusValue",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Temperature": "Celsius"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "critical": {
+                    "selector": {
+                        "Ge": [
+                            "Data",
+                            {
+                                "Variable": "ciscoEnvMonTemperatureThreshold"
+                            }
+                        ]
+                    }
+                },
+                "warning": null
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoEnvMonTemperatureThreshold": {
+            "AutoScale": false,
+            "Description": "The highest value that the associated instance of the object ciscoEnvMonTemperatureStatusValue may obtain before an emergency shutdown of the managed device is initiated.",
+            "DisplayUnit": null,
+            "Header": null,
+            "InputType": "integer",
+            "Inventorized": false,
+            "Name": "ciscoEnvMonTemperatureThreshold",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoEnvMonTemperatureStatusEntry",
+                    "SNMP_ciscoEnvMonTemperatureThreshold",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoMemoryPoolFree": {
+            "AutoScale": false,
+            "Description": "Indicates the number of bytes from the memory pool that are currently unused on the managed device. Note that the sum of ciscoMemoryPoolUsed and ciscoMemoryPoolFree is the total amount of memory in the pool",
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Unit"
+                }
+            },
+            "Header": null,
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Name": "ciscoMemoryPoolFree",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoMemoryPoolEntry",
+                    "SNMP_ciscoMemoryPoolFree",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoMemoryPoolFree_Total": {
+            "AutoScale": false,
+            "Description": "Indicated the total number of bytes available in the memory pool.",
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Giga"
+                }
+            },
+            "Header": "Memory Total",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Name": "ciscoMemoryPoolFree_Total",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Formula": {
+                    "Quantity": [
+                        {
+                            "Add": [
+                                {
+                                    "Variable": "ciscoMemoryPoolUsed"
+                                },
+                                {
+                                    "Variable": "ciscoMemoryPoolFree"
+                                }
+                            ]
+                        },
+                        {
+                            "Information": {
+                                "Byte": "Unit"
+                            }
+                        }
+                    ]
+                }
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoMemoryPoolName": {
+            "AutoScale": false,
+            "Description": "A textual name assigned to the memory pool. This object is suitable for output to a human operator, and may also be used to distinguish among the various pool types, especially among dynamic pools.",
+            "DisplayUnit": null,
+            "Header": "Pool Name",
+            "InputType": "string",
+            "Inventorized": false,
+            "Name": "ciscoMemoryPoolName",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": true,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoMemoryPoolEntry",
+                    "SNMP_ciscoMemoryPoolName",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoMemoryPoolType": {
+            "AutoScale": false,
+            "Description": "The type of memory pool for which this entry contains information.",
+            "DisplayUnit": null,
+            "Header": null,
+            "InputType": "integer",
+            "Inventorized": false,
+            "Name": "ciscoMemoryPoolType",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoMemoryPoolEntry",
+                    "SNMP_ciscoMemoryPoolType",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_ciscoMemoryPoolUsed": {
+            "AutoScale": false,
+            "Description": "Indicates the number of bytes from the memory pool that are currently in use by applications on the managed device.",
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Giga"
+                }
+            },
+            "Header": "Memory Used",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Name": "ciscoMemoryPoolUsed",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": true,
+            "Reference": {
+                "Variable": "ciscoMemoryPoolFree_Total"
+            },
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_ciscoMemoryPoolEntry",
+                    "SNMP_ciscoMemoryPoolUsed",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Unit"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "critical": {
+                    "selector": {
+                        "Ge": [
+                            "Data",
+                            {
+                                "Literal": {
+                                    "string": [
+                                        57,
+                                        53,
+                                        37
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                "warning": {
+                    "selector": {
+                        "Ge": [
+                            "Data",
+                            {
+                                "Literal": {
+                                    "string": [
+                                        56,
+                                        53,
+                                        37
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_cpmCPUMemoryFree": {
+            "AutoScale": false,
+            "Description": "The overall CPU wide system memory which is currently free.",
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Kilo"
+                }
+            },
+            "Header": null,
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Name": "cpmCPUMemoryFree",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_cpmCPUTotalEntry",
+                    "SNMP_cpmCPUMemoryFree",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Kilo"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_cpmCPUMemoryKernelReserved": {
+            "AutoScale": false,
+            "Description": "The overall CPU wide system memory which is reserved for kernel usage.",
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Giga"
+                }
+            },
+            "Header": "Kernel Reserved",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Name": "cpmCPUMemoryKernelReserved",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_cpmCPUTotalEntry",
+                    "SNMP_cpmCPUMemoryKernelReserved",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Kilo"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_cpmCPUMemoryUsed": {
+            "AutoScale": false,
+            "Description": "The overall CPU wide system memory which is currently under use.",
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Giga"
+                }
+            },
+            "Header": "Memory Used",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Name": "cpmCPUMemoryUsed",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": true,
+            "Reference": {
+                "Variable": "cpmCPUMemory_Total"
+            },
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_cpmCPUTotalEntry",
+                    "SNMP_cpmCPUMemoryUsed",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Information": {
+                                    "Byte": "Kilo"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "critical": null,
+                "warning": null
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_cpmCPUMemory_Total": {
+            "AutoScale": false,
+            "Description": "The total of the overall CPU wide system memory",
+            "DisplayUnit": {
+                "Information": {
+                    "Byte": "Giga"
+                }
+            },
+            "Header": "Memory Total",
+            "InputType": {
+                "quantity": "Information"
+            },
+            "Inventorized": false,
+            "Name": "cpmCPUMemory_Total",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Formula": {
+                    "Quantity": [
+                        {
+                            "Add": [
+                                {
+                                    "Variable": "cpmCPUMemoryUsed"
+                                },
+                                {
+                                    "Variable": "cpmCPUMemoryFree"
+                                }
+                            ]
+                        },
+                        {
+                            "Information": {
+                                "Byte": "Kilo"
+                            }
+                        }
+                    ]
+                }
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_cpmCPUTotal5minRev": {
+            "AutoScale": false,
+            "Description": "The overall CPU busy percentage in the last 5 minute period. This object deprecates the object cpmCPUTotal5min and increases the value range to (0..100).",
+            "DisplayUnit": {
+                "Dimensionless": "Percent"
+            },
+            "Header": "CPU",
+            "InputType": {
+                "quantity": "Dimensionless"
+            },
+            "Inventorized": false,
+            "Name": "cpmCPUTotal5minRev",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": true,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_cpmCPUTotalEntry",
+                    "SNMP_cpmCPUTotal5minRev",
+                    {
+                        "Quantity": [
+                            "Data",
+                            {
+                                "Dimensionless": "Percent"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Threshold": {
+                "critical": null,
+                "warning": null
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_cpmCPUTotalIndex": {
+            "AutoScale": false,
+            "Description": "An index that uniquely represents a CPU (or group of CPUs) whose CPU load information is reported by a row in this table. This index is assigned arbitrarily by the engine and is not saved over reboots.",
+            "DisplayUnit": null,
+            "Header": "CPU Index",
+            "InputType": "integer",
+            "Inventorized": false,
+            "Name": "cpmCPUTotalIndex",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_cpmCPUTotalEntry",
+                    "SNMP_cpmCPUTotalIndex",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_cswSwitchNumCurrent": {
+            "AutoScale": false,
+            "Description": "This object contains the current switch identification number. This number should match any logical labeling on the switch. For example, a switch whose interfaces are labeled 'interface #3' this value should be 3.",
+            "DisplayUnit": null,
+            "Header": "Switch ID\nnumber",
+            "InputType": "integer",
+            "Inventorized": false,
+            "Name": "cswSwitchNumCurrent",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_cswSwitchInfoEntry",
+                    "SNMP_cswSwitchNumCurrent",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_cswSwitchState": {
+            "AutoScale": false,
+            "Description": "The current state of a switch: waiting - Waiting for a limited time on other switches in the stack to come online. progressing - Master election or mismatch checks in progress. added - The switch is added to the stack. ready - The switch is operational. sdmMismatch - The SDM template configured on the master is not supported by the new member. verMismatch - The operating system version running on the master is different from the operating system version running on this member. featureMismatch - Some of the features configured on the master are not supported on this member. newMasterInit - Waiting for the new master to finish initialization after master switchover (Master Re-Init). provisioned - The switch is not an active member of the stack. invalid - The switch's state machine is in an invalid state.",
+            "DisplayUnit": null,
+            "Header": "Switch State",
+            "InputType": {
+                "enum": {
+                    "1": "waiting",
+                    "2": "progressing",
+                    "3": "added",
+                    "4": "ready",
+                    "5": "sdmMismatch",
+                    "6": "verMismatch",
+                    "7": "featureMismatch",
+                    "8": "newMasterInit",
+                    "9": "provisioned",
+                    "10": "invalid"
+                }
+            },
+            "Inventorized": false,
+            "Name": "cswSwitchState",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_cswSwitchInfoEntry",
+                    "SNMP_cswSwitchState",
+                    "Data"
+                ]
+            },
+            "Threshold": {
+                "critical": null,
+                "warning": null
+            },
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_entPhysicalIndex": {
+            "AutoScale": false,
+            "Description": "The index for this entry.",
+            "DisplayUnit": null,
+            "Header": null,
+            "InputType": "integer",
+            "Inventorized": false,
+            "Name": "entPhysicalIndex",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_entPhysicalEntry",
+                    "SNMP_entPhysicalIndex",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_hostName": {
+            "AutoScale": false,
+            "Description": "This variable represents the name of the host in printable ascii characters.",
+            "DisplayUnit": null,
+            "Header": "Hostname",
+            "InputType": "string",
+            "Inventorized": false,
+            "Name": "hostName",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_noIndex",
+                    "SNMP_hostName",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        },
+        "Cisco_whyReload": {
+            "AutoScale": false,
+            "Description": "This variable contains a printable octet string which contains the reason why the system was last restarted.",
+            "DisplayUnit": null,
+            "Header": "Reload Reason",
+            "InputType": "string",
+            "Inventorized": false,
+            "Name": "whyReload",
+            "NumericFormat": "%.2f",
+            "Operators": null,
+            "Perfdata": false,
+            "Reference": null,
+            "References": null,
+            "RelativeDisplayType": "percentage",
+            "RelativeFormat": "%.2f",
+            "Selector": false,
+            "Source": {
+                "Data": [
+                    "SNMP_noIndex",
+                    "SNMP_whyReload",
+                    "Data"
+                ]
+            },
+            "Threshold": null,
+            "TimeDisplayType": null,
+            "Units": null
+        }
+    },
+    "Input": {
+        "Azure": {
+            "DataFields": {},
+            "DataTables": {}
+        },
+        "SNMP": {
+            "DataFields": {
+                "SNMP_ciscoEnvMonFanState": "ciscoEnvMonFanState",
+                "SNMP_ciscoEnvMonFanStatusDescr": "ciscoEnvMonFanStatusDescr",
+                "SNMP_ciscoEnvMonFanStatusIndex": "ciscoEnvMonFanStatusIndex",
+                "SNMP_ciscoEnvMonSupplySource": "ciscoEnvMonSupplySource",
+                "SNMP_ciscoEnvMonSupplyState": "ciscoEnvMonSupplyState",
+                "SNMP_ciscoEnvMonSupplyStatusDescr": "ciscoEnvMonSupplyStatusDescr",
+                "SNMP_ciscoEnvMonSupplyStatusIndex": "ciscoEnvMonSupplyStatusIndex",
+                "SNMP_ciscoEnvMonTemperatureState": "ciscoEnvMonTemperatureState",
+                "SNMP_ciscoEnvMonTemperatureStatusDescr": "ciscoEnvMonTemperatureStatusDescr",
+                "SNMP_ciscoEnvMonTemperatureStatusIndex": "ciscoEnvMonTemperatureStatusIndex",
+                "SNMP_ciscoEnvMonTemperatureStatusValue": "ciscoEnvMonTemperatureStatusValue",
+                "SNMP_ciscoEnvMonTemperatureThreshold": "ciscoEnvMonTemperatureThreshold",
+                "SNMP_ciscoMemoryPoolFree": "ciscoMemoryPoolFree",
+                "SNMP_ciscoMemoryPoolName": "ciscoMemoryPoolName",
+                "SNMP_ciscoMemoryPoolType": "ciscoMemoryPoolType",
+                "SNMP_ciscoMemoryPoolUsed": "ciscoMemoryPoolUsed",
+                "SNMP_cpmCPUMemoryFree": "cpmCPUMemoryFree",
+                "SNMP_cpmCPUMemoryKernelReserved": "cpmCPUMemoryKernelReserved",
+                "SNMP_cpmCPUMemoryUsed": "cpmCPUMemoryUsed",
+                "SNMP_cpmCPUTotal5minRev": "cpmCPUTotal5minRev",
+                "SNMP_cpmCPUTotalIndex": "cpmCPUTotalIndex",
+                "SNMP_cswSwitchNumCurrent": "cswSwitchNumCurrent",
+                "SNMP_cswSwitchState": "cswSwitchState",
+                "SNMP_entPhysicalIndex": "entPhysicalIndex",
+                "SNMP_hostName": "hostName",
+                "SNMP_whyReload": "whyReload"
+            },
+            "DataTables": {
+                "SNMP_ciscoEnvMonFanStatusEntry": "ciscoEnvMonFanStatusEntry",
+                "SNMP_ciscoEnvMonSupplyStatusEntry": "ciscoEnvMonSupplyStatusEntry",
+                "SNMP_ciscoEnvMonTemperatureStatusEntry": "ciscoEnvMonTemperatureStatusEntry",
+                "SNMP_ciscoMemoryPoolEntry": "ciscoMemoryPoolEntry",
+                "SNMP_cpmCPUTotalEntry": "cpmCPUTotalEntry",
+                "SNMP_cswSwitchInfoEntry": "cswSwitchInfoEntry",
+                "SNMP_entPhysicalEntry": "entPhysicalEntry",
+                "SNMP_noIndex": null
+            },
+            "Events": {},
+            "Modules": {},
+            "Objects": {
+                "ciscoEnvMonFanState": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonFanState",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.4.1.3",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonFanStatusDescr": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonFanStatusDescr",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.4.1.2",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonFanStatusEntry": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonFanStatusEntry",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.4.1",
+                    "Type": "Table"
+                },
+                "ciscoEnvMonFanStatusIndex": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonFanStatusIndex",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.4.1.1",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonSupplySource": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonSupplySource",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.5.1.4",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonSupplyState": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonSupplyState",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.5.1.3",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonSupplyStatusDescr": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonSupplyStatusDescr",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.5.1.2",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonSupplyStatusEntry": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonSupplyStatusEntry",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.5.1",
+                    "Type": "Table"
+                },
+                "ciscoEnvMonSupplyStatusIndex": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonSupplyStatusIndex",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.5.1.1",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonTemperatureState": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonTemperatureState",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.3.1.6",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonTemperatureStatusDescr": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonTemperatureStatusDescr",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.3.1.2",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonTemperatureStatusEntry": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonTemperatureStatusEntry",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.3.1",
+                    "Type": "Table"
+                },
+                "ciscoEnvMonTemperatureStatusIndex": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonTemperatureStatusIndex",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.3.1.1",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonTemperatureStatusValue": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonTemperatureStatusValue",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.3.1.3",
+                    "Type": "Scalar"
+                },
+                "ciscoEnvMonTemperatureThreshold": {
+                    "Module": ".0",
+                    "Name": "ciscoEnvMonTemperatureThreshold",
+                    "OID": ".1.3.6.1.4.1.9.9.13.1.3.1.4",
+                    "Type": "Scalar"
+                },
+                "ciscoMemoryPoolEntry": {
+                    "Module": ".0",
+                    "Name": "ciscoMemoryPoolEntry",
+                    "OID": ".1.3.6.1.4.1.9.9.48.1.1.1",
+                    "Type": "Table"
+                },
+                "ciscoMemoryPoolFree": {
+                    "Module": ".0",
+                    "Name": "ciscoMemoryPoolFree",
+                    "OID": ".1.3.6.1.4.1.9.9.48.1.1.1.6",
+                    "Type": "Scalar"
+                },
+                "ciscoMemoryPoolName": {
+                    "Module": ".0",
+                    "Name": "ciscoMemoryPoolName",
+                    "OID": ".1.3.6.1.4.1.9.9.48.1.1.1.2",
+                    "Type": "Scalar"
+                },
+                "ciscoMemoryPoolType": {
+                    "Module": ".0",
+                    "Name": "ciscoMemoryPoolType",
+                    "OID": ".1.3.6.1.4.1.9.9.48.1.1.1.1",
+                    "Type": "Scalar"
+                },
+                "ciscoMemoryPoolUsed": {
+                    "Module": ".0",
+                    "Name": "ciscoMemoryPoolUsed",
+                    "OID": ".1.3.6.1.4.1.9.9.48.1.1.1.5",
+                    "Type": "Scalar"
+                },
+                "cpmCPUMemoryFree": {
+                    "Module": ".0",
+                    "Name": "cpmCPUMemoryFree",
+                    "OID": ".1.3.6.1.4.1.9.9.109.1.1.1.1.13",
+                    "Type": "Scalar"
+                },
+                "cpmCPUMemoryKernelReserved": {
+                    "Module": ".0",
+                    "Name": "cpmCPUMemoryKernelReserved",
+                    "OID": ".1.3.6.1.4.1.9.9.109.1.1.1.1.14",
+                    "Type": "Scalar"
+                },
+                "cpmCPUMemoryUsed": {
+                    "Module": ".0",
+                    "Name": "cpmCPUMemoryUsed",
+                    "OID": ".1.3.6.1.4.1.9.9.109.1.1.1.1.12",
+                    "Type": "Scalar"
+                },
+                "cpmCPUTotal5minRev": {
+                    "Module": ".0",
+                    "Name": "cpmCPUTotal5minRev",
+                    "OID": ".1.3.6.1.4.1.9.9.109.1.1.1.1.8",
+                    "Type": "Scalar"
+                },
+                "cpmCPUTotalEntry": {
+                    "Module": ".0",
+                    "Name": "cpmCPUTotalEntry",
+                    "OID": ".1.3.6.1.4.1.9.9.109.1.1.1.1",
+                    "Type": "Table"
+                },
+                "cpmCPUTotalIndex": {
+                    "Module": ".0",
+                    "Name": "cpmCPUTotalIndex",
+                    "OID": ".1.3.6.1.4.1.9.9.109.1.1.1.1.1",
+                    "Type": "Scalar"
+                },
+                "cswSwitchInfoEntry": {
+                    "Module": ".0",
+                    "Name": "cswSwitchInfoEntry",
+                    "OID": ".1.3.6.1.4.1.9.9.500.1.2.1.1",
+                    "Type": "Table"
+                },
+                "cswSwitchNumCurrent": {
+                    "Module": ".0",
+                    "Name": "cswSwitchNumCurrent",
+                    "OID": ".1.3.6.1.4.1.9.9.500.1.2.1.1.1",
+                    "Type": "Scalar"
+                },
+                "cswSwitchState": {
+                    "Module": ".0",
+                    "Name": "cswSwitchState",
+                    "OID": ".1.3.6.1.4.1.9.9.500.1.2.1.1.6",
+                    "Type": "Scalar"
+                },
+                "entPhysicalEntry": {
+                    "Module": ".0",
+                    "Name": "entPhysicalEntry",
+                    "OID": ".1.3.6.1.2.1.47.1.1.1.1",
+                    "Type": "Table"
+                },
+                "entPhysicalIndex": {
+                    "Module": ".0",
+                    "Name": "entPhysicalIndex",
+                    "OID": ".1.3.6.1.2.1.47.1.1.1.1.1",
+                    "Type": "Scalar"
+                },
+                "hostName": {
+                    "Module": ".0",
+                    "Name": "hostName",
+                    "OID": ".1.3.6.1.4.1.9.2.1.3",
+                    "Type": "Scalar"
+                },
+                "whyReload": {
+                    "Module": ".0",
+                    "Name": "whyReload",
+                    "OID": ".1.3.6.1.4.1.9.2.1.2",
+                    "Type": "Scalar"
+                }
+            },
+            "Scalars": {
+                "ciscoEnvMonFanState": {
+                    "ErrorEnum": false,
+                    "Syntax": "INTEGER",
+                    "Table": "ciscoEnvMonFanStatusEntry",
+                    "ValueList": {
+                        "1": "normal",
+                        "2": "warning",
+                        "3": "critical",
+                        "4": "shutdown",
+                        "5": "notPresent",
+                        "6": "notFunctioning"
+                    }
+                },
+                "ciscoEnvMonFanStatusDescr": {
+                    "ErrorEnum": false,
+                    "Syntax": "OCTET STRING",
+                    "Table": "ciscoEnvMonFanStatusEntry",
+                    "ValueList": null
+                },
+                "ciscoEnvMonFanStatusIndex": {
+                    "ErrorEnum": false,
+                    "Syntax": "Integer32",
+                    "Table": "ciscoEnvMonFanStatusEntry",
+                    "ValueList": null
+                },
+                "ciscoEnvMonSupplySource": {
+                    "ErrorEnum": false,
+                    "Syntax": "INTEGER",
+                    "Table": "ciscoEnvMonSupplyStatusEntry",
+                    "ValueList": {
+                        "1": "unknown",
+                        "2": "ac",
+                        "3": "dc",
+                        "4": "externalPowerSupply",
+                        "5": "internalRedundant"
+                    }
+                },
+                "ciscoEnvMonSupplyState": {
+                    "ErrorEnum": false,
+                    "Syntax": "INTEGER",
+                    "Table": "ciscoEnvMonSupplyStatusEntry",
+                    "ValueList": {
+                        "1": "normal",
+                        "2": "warning",
+                        "3": "critical",
+                        "4": "shutdown",
+                        "5": "notPresent",
+                        "6": "notFunctioning"
+                    }
+                },
+                "ciscoEnvMonSupplyStatusDescr": {
+                    "ErrorEnum": false,
+                    "Syntax": "OCTET STRING",
+                    "Table": "ciscoEnvMonSupplyStatusEntry",
+                    "ValueList": null
+                },
+                "ciscoEnvMonSupplyStatusIndex": {
+                    "ErrorEnum": false,
+                    "Syntax": "Integer32",
+                    "Table": "ciscoEnvMonSupplyStatusEntry",
+                    "ValueList": null
+                },
+                "ciscoEnvMonTemperatureState": {
+                    "ErrorEnum": false,
+                    "Syntax": "INTEGER",
+                    "Table": "ciscoEnvMonTemperatureStatusEntry",
+                    "ValueList": {
+                        "1": "normal",
+                        "2": "warning",
+                        "3": "critical",
+                        "4": "shutdown",
+                        "5": "notPresent",
+                        "6": "notFunctioning"
+                    }
+                },
+                "ciscoEnvMonTemperatureStatusDescr": {
+                    "ErrorEnum": false,
+                    "Syntax": "OCTET STRING",
+                    "Table": "ciscoEnvMonTemperatureStatusEntry",
+                    "ValueList": null
+                },
+                "ciscoEnvMonTemperatureStatusIndex": {
+                    "ErrorEnum": false,
+                    "Syntax": "Integer32",
+                    "Table": "ciscoEnvMonTemperatureStatusEntry",
+                    "ValueList": null
+                },
+                "ciscoEnvMonTemperatureStatusValue": {
+                    "ErrorEnum": false,
+                    "Syntax": "Gauge32",
+                    "Table": "ciscoEnvMonTemperatureStatusEntry",
+                    "ValueList": null
+                },
+                "ciscoEnvMonTemperatureThreshold": {
+                    "ErrorEnum": false,
+                    "Syntax": "Integer32",
+                    "Table": "ciscoEnvMonTemperatureStatusEntry",
+                    "ValueList": null
+                },
+                "ciscoMemoryPoolFree": {
+                    "ErrorEnum": false,
+                    "Syntax": "Gauge32",
+                    "Table": "ciscoMemoryPoolEntry",
+                    "ValueList": null
+                },
+                "ciscoMemoryPoolName": {
+                    "ErrorEnum": false,
+                    "Syntax": "OCTET STRING",
+                    "Table": "ciscoMemoryPoolEntry",
+                    "ValueList": null
+                },
+                "ciscoMemoryPoolType": {
+                    "ErrorEnum": false,
+                    "Syntax": "Integer32",
+                    "Table": "ciscoMemoryPoolEntry",
+                    "ValueList": null
+                },
+                "ciscoMemoryPoolUsed": {
+                    "ErrorEnum": false,
+                    "Syntax": "Gauge32",
+                    "Table": "ciscoMemoryPoolEntry",
+                    "ValueList": null
+                },
+                "cpmCPUMemoryFree": {
+                    "ErrorEnum": false,
+                    "Syntax": "Gauge32",
+                    "Table": "cpmCPUTotalEntry",
+                    "ValueList": null
+                },
+                "cpmCPUMemoryKernelReserved": {
+                    "ErrorEnum": false,
+                    "Syntax": "Gauge32",
+                    "Table": "cpmCPUTotalEntry",
+                    "ValueList": null
+                },
+                "cpmCPUMemoryUsed": {
+                    "ErrorEnum": false,
+                    "Syntax": "Gauge32",
+                    "Table": "cpmCPUTotalEntry",
+                    "ValueList": null
+                },
+                "cpmCPUTotal5minRev": {
+                    "ErrorEnum": false,
+                    "Syntax": "Gauge32",
+                    "Table": "cpmCPUTotalEntry",
+                    "ValueList": null
+                },
+                "cpmCPUTotalIndex": {
+                    "ErrorEnum": false,
+                    "Syntax": "Unsigned32",
+                    "Table": "cpmCPUTotalEntry",
+                    "ValueList": null
+                },
+                "cswSwitchNumCurrent": {
+                    "ErrorEnum": false,
+                    "Syntax": "Unsigned32",
+                    "Table": "cswSwitchInfoEntry",
+                    "ValueList": null
+                },
+                "cswSwitchState": {
+                    "ErrorEnum": false,
+                    "Syntax": "INTEGER",
+                    "Table": "cswSwitchInfoEntry",
+                    "ValueList": {
+                        "1": "waiting",
+                        "2": "progressing",
+                        "3": "added",
+                        "4": "ready",
+                        "5": "sdmMismatch",
+                        "6": "verMismatch",
+                        "7": "featureMismatch",
+                        "8": "newMasterInit",
+                        "9": "provisioned",
+                        "10": "invalid"
+                    }
+                },
+                "entPhysicalIndex": {
+                    "ErrorEnum": false,
+                    "Syntax": "Integer32",
+                    "Table": "entPhysicalEntry",
+                    "ValueList": null
+                },
+                "hostName": {
+                    "ErrorEnum": false,
+                    "Syntax": "OCTET STRING",
+                    "Table": "noIndex",
+                    "ValueList": null
+                },
+                "whyReload": {
+                    "ErrorEnum": false,
+                    "Syntax": "OCTET STRING",
+                    "Table": "noIndex",
+                    "ValueList": null
+                }
+            },
+            "Tables": {
+                "ciscoEnvMonFanStatusEntry": {
+                    "Augments": null,
+                    "Index": [
+                        "ciscoEnvMonFanStatusIndex"
+                    ]
+                },
+                "ciscoEnvMonSupplyStatusEntry": {
+                    "Augments": null,
+                    "Index": [
+                        "ciscoEnvMonSupplyStatusIndex"
+                    ]
+                },
+                "ciscoEnvMonTemperatureStatusEntry": {
+                    "Augments": null,
+                    "Index": [
+                        "ciscoEnvMonTemperatureStatusIndex"
+                    ]
+                },
+                "ciscoMemoryPoolEntry": {
+                    "Augments": null,
+                    "Index": [
+                        "ciscoMemoryPoolType"
+                    ]
+                },
+                "cpmCPUTotalEntry": {
+                    "Augments": null,
+                    "Index": [
+                        "cpmCPUTotalIndex"
+                    ]
+                },
+                "cswSwitchInfoEntry": {
+                    "Augments": null,
+                    "Index": [
+                        "entPhysicalIndex"
+                    ]
+                },
+                "entPhysicalEntry": {
+                    "Augments": null,
+                    "Index": [
+                        "entPhysicalIndex"
+                    ]
+                }
+            }
+        }
+    },
+    "MPs": {
+        "Cisco": {
+            "AgentAPI": "V1",
+            "Checks": [
+                "Cisco_CPU_SmartM",
+                "Cisco_Health_SmartM",
+                "Cisco_Memory_Pool_SmartM",
+                "Cisco_Reload_SmartM",
+                "Cisco_Stack_SmartM"
+            ],
+            "Name": "Cisco",
+            "Tag": "netw_cisco"
+        }
+    },
+    "Queries": {
+        "Cisco_CPU_cpmCPUTotalEntry": {
+            "TableQueries": [
+                {
+                    "DataTable": "SNMP_cpmCPUTotalEntry",
+                    "JoinKey": {
+                        "cpmCPUTotalIndex": "SNMP_cpmCPUTotalIndex"
+                    },
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    }
+                }
+            ]
+        },
+        "Cisco_Health_ciscoEnvMonFanStatusEntry": {
+            "TableQueries": [
+                {
+                    "DataTable": "SNMP_ciscoEnvMonFanStatusEntry",
+                    "JoinKey": {
+                        "ciscoEnvMonFanStatusIndex": "SNMP_ciscoEnvMonFanStatusIndex"
+                    },
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    }
+                }
+            ]
+        },
+        "Cisco_Health_ciscoEnvMonSupplyStatusEntry": {
+            "TableQueries": [
+                {
+                    "DataTable": "SNMP_ciscoEnvMonSupplyStatusEntry",
+                    "JoinKey": {
+                        "ciscoEnvMonSupplyStatusIndex": "SNMP_ciscoEnvMonSupplyStatusIndex"
+                    },
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    }
+                }
+            ]
+        },
+        "Cisco_Health_ciscoEnvMonTemperatureStatusEntry": {
+            "TableQueries": [
+                {
+                    "DataTable": "SNMP_ciscoEnvMonTemperatureStatusEntry",
+                    "JoinKey": {
+                        "ciscoEnvMonTemperatureStatusIndex": "SNMP_ciscoEnvMonTemperatureStatusIndex"
+                    },
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    }
+                }
+            ]
+        },
+        "Cisco_Memory Pool_ciscoMemoryPoolEntry": {
+            "TableQueries": [
+                {
+                    "DataTable": "SNMP_ciscoMemoryPoolEntry",
+                    "JoinKey": {
+                        "ciscoMemoryPoolType": "SNMP_ciscoMemoryPoolType"
+                    },
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    }
+                }
+            ]
+        },
+        "Cisco_Reload_Reload": {
+            "TableQueries": [
+                {
+                    "DataTable": "SNMP_noIndex",
+                    "JoinKey": {},
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    }
+                }
+            ]
+        },
+        "Cisco_Stack_Switchstate": {
+            "TableQueries": [
+                {
+                    "DataTable": "SNMP_entPhysicalEntry",
+                    "JoinKey": {
+                        "entPhysicalIndex": "SNMP_entPhysicalIndex"
+                    },
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    }
+                },
+                {
+                    "DataTable": "SNMP_cswSwitchInfoEntry",
+                    "JoinKey": {
+                        "entPhysicalIndex": "SNMP_entPhysicalIndex"
+                    },
+                    "JoinType": "outer",
+                    "PreFilter": {
+                        "all": []
+                    }
+                }
+            ]
+        }
+    },
+    "Tables": {
+        "Cisco_CPU_cpmCPUTotalEntry": {
+            "Changes": {
+                "Added": "show",
+                "Configurable": false,
+                "Removed": "hide"
+            },
+            "Description": null,
+            "Fields": [
+                "Cisco_cpmCPUMemoryUsed",
+                "Cisco_cpmCPUTotal5minRev",
+                "Cisco_cpmCPUMemoryFree",
+                "Cisco_cpmCPUMemoryKernelReserved",
+                "Cisco_cpmCPUMemory_Total",
+                "Cisco_cpmCPUTotalIndex"
+            ],
+            "ItemId": {
+                "Variable": "cpmCPUTotalIndex"
+            },
+            "ItemName": {
+                "Variable": "cpmCPUTotalIndex"
+            },
+            "ItemType": [
+                "CPU",
+                "CPUs"
+            ],
+            "Name": "Cisco_CPU_cpmCPUTotalEntry",
+            "Query": "Cisco_CPU_cpmCPUTotalEntry",
+            "Singleton": false,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Cisco_cpmCPUTotalIndex",
+                        "Cisco_cpmCPUTotal5minRev",
+                        "Cisco_cpmCPUMemory_Total",
+                        "Cisco_cpmCPUMemoryUsed",
+                        "Cisco_cpmCPUMemoryKernelReserved"
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": null
+        },
+        "Cisco_Health_ciscoEnvMonFanStatusEntry": {
+            "Changes": {
+                "Added": "info",
+                "Configurable": false,
+                "Removed": "warn"
+            },
+            "Description": null,
+            "Fields": [
+                "Cisco_ciscoEnvMonFanStatusDescr",
+                "Cisco_ciscoEnvMonFanStatusIndex",
+                "Cisco_ciscoEnvMonFanState"
+            ],
+            "ItemId": {
+                "Variable": "ciscoEnvMonFanStatusDescr"
+            },
+            "ItemName": {
+                "Variable": "ciscoEnvMonFanStatusDescr"
+            },
+            "ItemType": [
+                "FAN",
+                "FANs"
+            ],
+            "Name": "Cisco_Health_ciscoEnvMonFanStatusEntry",
+            "Query": "Cisco_Health_ciscoEnvMonFanStatusEntry",
+            "Singleton": false,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Cisco_ciscoEnvMonFanStatusDescr",
+                        "Cisco_ciscoEnvMonFanState"
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": "FANs"
+        },
+        "Cisco_Health_ciscoEnvMonSupplyStatusEntry": {
+            "Changes": {
+                "Added": "info",
+                "Configurable": false,
+                "Removed": "warn"
+            },
+            "Description": null,
+            "Fields": [
+                "Cisco_ciscoEnvMonSupplyStatusDescr",
+                "Cisco_ciscoEnvMonSupplySource",
+                "Cisco_ciscoEnvMonSupplyStatusIndex",
+                "Cisco_ciscoEnvMonSupplyState"
+            ],
+            "ItemId": {
+                "Variable": "ciscoEnvMonSupplyStatusDescr"
+            },
+            "ItemName": {
+                "Variable": "ciscoEnvMonSupplyStatusDescr"
+            },
+            "ItemType": [
+                "Power Supply",
+                "Power Supplies"
+            ],
+            "Name": "Cisco_Health_ciscoEnvMonSupplyStatusEntry",
+            "Query": "Cisco_Health_ciscoEnvMonSupplyStatusEntry",
+            "Singleton": false,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Cisco_ciscoEnvMonSupplyStatusDescr",
+                        "Cisco_ciscoEnvMonSupplyState",
+                        "Cisco_ciscoEnvMonSupplySource"
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": "Power Supply"
+        },
+        "Cisco_Health_ciscoEnvMonTemperatureStatusEntry": {
+            "Changes": {
+                "Added": "info",
+                "Configurable": false,
+                "Removed": "warn"
+            },
+            "Description": null,
+            "Fields": [
+                "Cisco_ciscoEnvMonTemperatureStatusIndex",
+                "Cisco_ciscoEnvMonTemperatureStatusDescr",
+                "Cisco_ciscoEnvMonTemperatureThreshold",
+                "Cisco_ciscoEnvMonTemperatureState",
+                "Cisco_ciscoEnvMonTemperatureStatusValue"
+            ],
+            "ItemId": {
+                "Variable": "ciscoEnvMonTemperatureStatusDescr"
+            },
+            "ItemName": {
+                "Variable": "ciscoEnvMonTemperatureStatusDescr"
+            },
+            "ItemType": [
+                "Temperature",
+                "Temperatures"
+            ],
+            "Name": "Cisco_Health_ciscoEnvMonTemperatureStatusEntry",
+            "Query": "Cisco_Health_ciscoEnvMonTemperatureStatusEntry",
+            "Singleton": false,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Cisco_ciscoEnvMonTemperatureStatusDescr",
+                        "Cisco_ciscoEnvMonTemperatureState",
+                        "Cisco_ciscoEnvMonTemperatureStatusValue"
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": "Temperature"
+        },
+        "Cisco_Memory Pool_ciscoMemoryPoolEntry": {
+            "Changes": {
+                "Added": "info",
+                "Configurable": false,
+                "Removed": "warn"
+            },
+            "Description": null,
+            "Fields": [
+                "Cisco_ciscoMemoryPoolType",
+                "Cisco_ciscoMemoryPoolUsed",
+                "Cisco_ciscoMemoryPoolFree_Total",
+                "Cisco_ciscoMemoryPoolFree",
+                "Cisco_ciscoMemoryPoolName"
+            ],
+            "ItemId": {
+                "Variable": "ciscoMemoryPoolName"
+            },
+            "ItemName": {
+                "Variable": "ciscoMemoryPoolName"
+            },
+            "ItemType": [
+                "Pool",
+                "Pools"
+            ],
+            "Name": "Cisco_Memory Pool_ciscoMemoryPoolEntry",
+            "Query": "Cisco_Memory Pool_ciscoMemoryPoolEntry",
+            "Singleton": false,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Cisco_ciscoMemoryPoolName",
+                        "Cisco_ciscoMemoryPoolFree_Total",
+                        "Cisco_ciscoMemoryPoolUsed"
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": null
+        },
+        "Cisco_Reload_Reload": {
+            "Changes": {
+                "Added": "info",
+                "Configurable": false,
+                "Removed": "warn"
+            },
+            "Description": null,
+            "Fields": [
+                "Cisco_whyReload",
+                "Cisco_hostName"
+            ],
+            "ItemId": {
+                "Variable": "whyReload"
+            },
+            "ItemName": {
+                "Variable": "whyReload"
+            },
+            "ItemType": [
+                "Reload",
+                "Reloads"
+            ],
+            "Name": "Cisco_Reload_Reload",
+            "Query": "Cisco_Reload_Reload",
+            "Singleton": true,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Cisco_hostName",
+                        "Cisco_whyReload"
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": null
+        },
+        "Cisco_Stack_Switchstate": {
+            "Changes": {
+                "Added": "info",
+                "Configurable": false,
+                "Removed": "warn"
+            },
+            "Description": null,
+            "Fields": [
+                "Cisco_cswSwitchState",
+                "Cisco_entPhysicalIndex",
+                "Cisco_cswSwitchNumCurrent"
+            ],
+            "ItemId": null,
+            "ItemName": null,
+            "ItemType": [
+                "Stack Element",
+                "Stack Elements"
+            ],
+            "Name": "Cisco_Stack_Switchstate",
+            "Query": "Cisco_Stack_Switchstate",
+            "Singleton": false,
+            "SubTables": [
+                {
+                    "Fields": [
+                        "Cisco_cswSwitchNumCurrent",
+                        "Cisco_cswSwitchState"
+                    ],
+                    "Name": null
+                }
+            ],
+            "Title": null
+        }
+    }
+}

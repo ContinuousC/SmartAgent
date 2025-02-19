@@ -1,0 +1,26 @@
+[package]
+name    = "value"
+description = "SmartAgent value and value type objects"
+version = "0.1.14"
+authors = ["Maarten Deprez <mdp@si-int.eu>"]
+repository = "https://github.com/ContinuousC/SmartAgent"
+license = "Elastic-2.0"
+edition = "2021"
+publish = false
+
+
+[features]
+schemars = ["dep:schemars", "unit/schemars"]
+
+[dependencies]
+serde = { version = "1.0", features = [ "derive", "rc" ] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = [ "serde" ] }
+thiserror = "1.0"
+schemars = { version = "0.8.21", features = ["chrono"], optional = true }
+
+dbschema = { registry = "si", version = "0.1", optional = true }
+
+unit = { registry = "si", version = "0.1.7", path = "../unit" }
+agent_serde = { registry = "si", version = "0.1", path = "../agent_serde" }
+agent_utils = { registry = "si", version = "0.2.1", path = "../agent_utils", default-features = false }
