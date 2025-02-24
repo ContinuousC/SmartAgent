@@ -5,40 +5,40 @@ resolver = "2"
 members = [
    # "agent",
    # "broker",
-   "omd_agent",
+   # "omd_agent",
    # "agent_service",
-   "agent_derive",
-   "agent_serde",
-   "agent_utils",
+   # "agent_derive",
+   # "agent_serde",
+   # "agent_utils",
    # "scheduler",
    # "installer-linux",
    # "agent-api",
    # "broker-api",
    # "nmap",
-   "elastic",
-   "prereqs/winrm",
-   "protocol",
-   "protocols/snmp",
-   "protocols/azure",
-   "protocols/rest",
-   "protocols/powershell",
-   "protocols/wmi",
-   "protocols/api",
-   "protocols/sql",
-   "protocols/ssh",
+   # "elastic",
+   # "prereqs/winrm",
+   # "protocol",
+   # "protocols/snmp",
+   # "protocols/azure",
+   # "protocols/rest",
+   # "protocols/powershell",
+   # "protocols/wmi",
+   # "protocols/api",
+   # "protocols/sql",
+   # "protocols/ssh",
    # "protocol_daemon",
    # "ssh",
-   "etc_base",
-   "etc",
-   "logger",
-   "expression",
-   "query",
-   "value",
+   # "etc_base",
+   # "etc",
+   # "logger",
+   # "expression",
+   # "query",
+   # "value",
    "unit",
-   "type_check",
+   # "type_check",
    # "js-lib",
    # "py-lib",
-   "py3-lib"
+   # "py3-lib"
 ]
 
 exclude = [
@@ -69,38 +69,38 @@ opt-level = 3
 strip = true
 lto = false
 
-[patch.si]
+[patch.crates-io]
 # agent = { path = "agent" }
 # broker = { path = "broker" }
-omd_agent = { path = "omd_agent" }
+# omd_agent = { path = "omd_agent" }
 # agent_service = { path = "agent_service" }
-agent_derive = { path = "agent_derive" }
-agent_serde = { path = "agent_serde" }
-agent_utils = { path = "agent_utils" }
+# agent_derive = { path = "agent_derive" }
+# agent_serde = { path = "agent_serde" }
+# agent_utils = { path = "agent_utils" }
 # scheduler = { path = "scheduler" }
 # installer-linux = { path = "installer-linux" }
 # agent-api = { path = "agent-api" }
 # broker-api = { path = "broker-api" }
 # nmap = { path = "nmap" }
-elastic = { path = "elastic" }
-protocol = { path = "protocol" }
-snmp_protocol = { path = "protocols/snmp" }
-rest_protocol = { path = "protocols/rest" }
-azure_protocol = { path = "protocols/azure" }
-powershell_protocol = { path = "protocols/powershell" }
-wmi_protocol = { path = "protocols/wmi" }
-api_protocol = { path = "protocols/api" }
-sql_protocol = { path = "protocols/sql" }
-ssh_protocol = { path = "protocols/ssh" }
+# elastic = { path = "elastic" }
+# protocol = { path = "protocol" }
+# snmp_protocol = { path = "protocols/snmp" }
+# rest_protocol = { path = "protocols/rest" }
+# azure_protocol = { path = "protocols/azure" }
+# powershell_protocol = { path = "protocols/powershell" }
+# wmi_protocol = { path = "protocols/wmi" }
+# api_protocol = { path = "protocols/api" }
+# sql_protocol = { path = "protocols/sql" }
+# ssh_protocol = { path = "protocols/ssh" }
 # ssh = { path = "ssh" }
-etc_base = { path = "etc_base" }
-etc = { path = "etc" }
-logger = { path = "logger" }
-expression = { path = "expression" }
-query = { path = "query" }
-value = { path = "value" }
+# etc_base = { path = "etc_base" }
+# etc = { path = "etc" }
+# logger = { path = "logger" }
+# expression = { path = "expression" }
+# query = { path = "query" }
+# value = { path = "value" }
 unit = { path = "unit" }
-type_check = { path = "type_check" }
+# type_check = { path = "type_check" }
 # smart-agent-lib = { path = "js-lib" }
 
 #rule-engine = { git = "ssh://git@sigit01/~/Development/ContinuousC/RuleEngine", branch = "entities" }
@@ -113,3 +113,7 @@ type_check = { path = "type_check" }
 # rule-types = { version = "0.1.0", path = "../../../RuleEngine/Source/Rust/rule-types" }
 # dbschema = { path = "../../../DBSchema/Source/Rust/dbschema" }
 # dbschema-derive = { version = "0.1.0", path = "../../../DBSchema/Source/Rust/dbschema-derive" }
+
+
+tsify = { git = "https://github.com/ContinuousC/Tsify.git", rev = "de64626ba4dd8a3abca8b8b2dd082334890ec60c", version = "=0.4.8" }
+tsify-macros = { git = "https://github.com/ContinuousC/Tsify.git", rev = "de64626ba4dd8a3abca8b8b2dd082334890ec60c", version = "=0.4.8" }
