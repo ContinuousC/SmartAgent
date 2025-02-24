@@ -19,8 +19,8 @@ chrono = { version = "0.4", features = [ "serde" ] }
 thiserror = "1.0"
 schemars = { version = "0.8.21", features = ["chrono"], optional = true }
 
-dbschema = { registry = "si", version = "0.1", optional = true }
+dbschema = { version = "0.1", optional = true }
 
-unit = { registry = "si", version = "0.1.7", path = "../unit" }
-agent_serde = { registry = "si", version = "0.1", path = "../agent_serde" }
-agent_utils = { registry = "si", version = "0.2.1", path = "../agent_utils", default-features = false }
+unit = { version = "0.1.7", path = "../unit" }
+agent_serde = { version = "0.1", path = "../agent_serde" }
+agent_utils = { version = "0.2.1", path = "../agent_utils", default-features = false }
