@@ -7,9 +7,9 @@ members = [
    # "broker",
    # "omd_agent",
    # "agent_service",
-   # "agent_derive",
-   # "agent_serde",
-   # "agent_utils",
+   "agent_derive",
+   "agent_serde",
+   "agent_utils",
    # "scheduler",
    # "installer-linux",
    # "agent-api",
@@ -33,7 +33,7 @@ members = [
    # "logger",
    # "expression",
    # "query",
-   # "value",
+   "value",
    "unit",
    # "type_check",
    # "js-lib",
@@ -74,9 +74,9 @@ lto = false
 # broker = { path = "broker" }
 # omd_agent = { path = "omd_agent" }
 # agent_service = { path = "agent_service" }
-# agent_derive = { path = "agent_derive" }
-# agent_serde = { path = "agent_serde" }
-# agent_utils = { path = "agent_utils" }
+agent_derive = { path = "agent_derive" }
+agent_serde = { path = "agent_serde" }
+agent_utils = { path = "agent_utils" }
 # scheduler = { path = "scheduler" }
 # installer-linux = { path = "installer-linux" }
 # agent-api = { path = "agent-api" }
@@ -98,22 +98,13 @@ lto = false
 # logger = { path = "logger" }
 # expression = { path = "expression" }
 # query = { path = "query" }
-# value = { path = "value" }
+value = { path = "value" }
 unit = { path = "unit" }
 # type_check = { path = "type_check" }
 # smart-agent-lib = { path = "js-lib" }
 
-#rule-engine = { git = "ssh://git@sigit01/~/Development/ContinuousC/RuleEngine", branch = "entities" }
-
-# rpc = { version = "0.1.26", path = "../../../Rpc/Source/Rust/rpc" }
-# rpc_derive = { version = "0.1.15", path = "../../../Rpc/Source/Rust/rpc_derive" }
-# dbdaemon-api = { version = "0.1.0", path = "../../../DBDaemon/Source/Rust/dbdaemon-api" }
-# metrics-engine-api = { version = "0.1.0", path = "../../../MetricsEngine/Source/Rust/metrics-engine-api" }
-# metrics-types = { path = "../../../MetricsEngine/Source/Rust/metrics-types" }
-# rule-types = { version = "0.1.0", path = "../../../RuleEngine/Source/Rust/rule-types" }
-# dbschema = { path = "../../../DBSchema/Source/Rust/dbschema" }
-# dbschema-derive = { version = "0.1.0", path = "../../../DBSchema/Source/Rust/dbschema-derive" }
-
+dbschema = { git = "https://github.com/ContinuousC/DBSchema.git", tag = "dbschema_v0.1.39", version = "=0.1.39" }
+dbschema-derive = { git = "https://github.com/ContinuousC/DBSchema.git", tag = "dbschema-derive_v0.1.9", version = "=0.1.9" }
 
 tsify = { git = "https://github.com/ContinuousC/Tsify.git", rev = "de64626ba4dd8a3abca8b8b2dd082334890ec60c", version = "=0.4.8" }
 tsify-macros = { git = "https://github.com/ContinuousC/Tsify.git", rev = "de64626ba4dd8a3abca8b8b2dd082334890ec60c", version = "=0.4.8" }
